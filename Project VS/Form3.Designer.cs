@@ -32,16 +32,16 @@ namespace Project_VS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCheck));
             this.labelCheckCost = new System.Windows.Forms.Label();
             this.textBoxCheckCostNum = new System.Windows.Forms.TextBox();
-            this.buttonCheckCostNum = new System.Windows.Forms.Button();
-            this.buttonBackToHome = new System.Windows.Forms.Button();
             this.textBoxSelesai = new System.Windows.Forms.TextBox();
+            this.buttonBackToHome = new System.Windows.Forms.Button();
+            this.buttonCheckCostNum = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelCheckCost
             // 
             this.labelCheckCost.AutoSize = true;
             this.labelCheckCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCheckCost.Location = new System.Drawing.Point(183, 66);
+            this.labelCheckCost.Location = new System.Drawing.Point(227, 58);
             this.labelCheckCost.Name = "labelCheckCost";
             this.labelCheckCost.Size = new System.Drawing.Size(406, 32);
             this.labelCheckCost.TabIndex = 0;
@@ -49,33 +49,11 @@ namespace Project_VS
             // 
             // textBoxCheckCostNum
             // 
-            this.textBoxCheckCostNum.Location = new System.Drawing.Point(189, 126);
+            this.textBoxCheckCostNum.Location = new System.Drawing.Point(233, 124);
             this.textBoxCheckCostNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxCheckCostNum.Name = "textBoxCheckCostNum";
-            this.textBoxCheckCostNum.Size = new System.Drawing.Size(389, 26);
+            this.textBoxCheckCostNum.Size = new System.Drawing.Size(400, 26);
             this.textBoxCheckCostNum.TabIndex = 1;
-            // 
-            // buttonCheckCostNum
-            // 
-            this.buttonCheckCostNum.Image = global::Project_VS.Properties.Resources.Check;
-            this.buttonCheckCostNum.Location = new System.Drawing.Point(189, 220);
-            this.buttonCheckCostNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonCheckCostNum.Name = "buttonCheckCostNum";
-            this.buttonCheckCostNum.Size = new System.Drawing.Size(141, 62);
-            this.buttonCheckCostNum.TabIndex = 2;
-            this.buttonCheckCostNum.UseVisualStyleBackColor = true;
-            this.buttonCheckCostNum.Click += new System.EventHandler(this.buttonCheckCostNum_Click);
-            // 
-            // buttonBackToHome
-            // 
-            this.buttonBackToHome.Image = global::Project_VS.Properties.Resources.Back;
-            this.buttonBackToHome.Location = new System.Drawing.Point(438, 220);
-            this.buttonBackToHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonBackToHome.Name = "buttonBackToHome";
-            this.buttonBackToHome.Size = new System.Drawing.Size(141, 62);
-            this.buttonBackToHome.TabIndex = 3;
-            this.buttonBackToHome.UseVisualStyleBackColor = true;
-            this.buttonBackToHome.Click += new System.EventHandler(this.buttonBackToHome_Click);
             // 
             // textBoxSelesai
             // 
@@ -84,6 +62,28 @@ namespace Project_VS
             this.textBoxSelesai.Name = "textBoxSelesai";
             this.textBoxSelesai.Size = new System.Drawing.Size(112, 26);
             this.textBoxSelesai.TabIndex = 4;
+            // 
+            // buttonBackToHome
+            // 
+            this.buttonBackToHome.Image = global::Project_VS.Properties.Resources.Back;
+            this.buttonBackToHome.Location = new System.Drawing.Point(425, 220);
+            this.buttonBackToHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonBackToHome.Name = "buttonBackToHome";
+            this.buttonBackToHome.Size = new System.Drawing.Size(237, 105);
+            this.buttonBackToHome.TabIndex = 3;
+            this.buttonBackToHome.UseVisualStyleBackColor = true;
+            this.buttonBackToHome.Click += new System.EventHandler(this.buttonBackToHome_Click);
+            // 
+            // buttonCheckCostNum
+            // 
+            this.buttonCheckCostNum.Image = global::Project_VS.Properties.Resources.Check;
+            this.buttonCheckCostNum.Location = new System.Drawing.Point(202, 220);
+            this.buttonCheckCostNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonCheckCostNum.Name = "buttonCheckCostNum";
+            this.buttonCheckCostNum.Size = new System.Drawing.Size(181, 105);
+            this.buttonCheckCostNum.TabIndex = 2;
+            this.buttonCheckCostNum.UseVisualStyleBackColor = true;
+            this.buttonCheckCostNum.Click += new System.EventHandler(this.buttonCheckCostNum_Click);
             // 
             // FormCheck
             // 

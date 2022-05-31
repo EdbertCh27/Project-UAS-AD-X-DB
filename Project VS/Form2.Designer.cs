@@ -37,10 +37,10 @@ namespace Project_VS
             this.labelKeluhan = new System.Windows.Forms.Label();
             this.comboBoxKeluhan = new System.Windows.Forms.ComboBox();
             this.comboBoxGantiPart = new System.Windows.Forms.ComboBox();
-            this.buttonBackToHome = new System.Windows.Forms.Button();
             this.comboBoxGantiFilter = new System.Windows.Forms.ComboBox();
             this.comboBoxRepaint = new System.Windows.Forms.ComboBox();
             this.comboBoxOli = new System.Windows.Forms.ComboBox();
+            this.buttonBackToHome = new System.Windows.Forms.Button();
             this.buttonInput = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -141,17 +141,6 @@ namespace Project_VS
             this.comboBoxGantiPart.TabIndex = 7;
             this.comboBoxGantiPart.Visible = false;
             // 
-            // buttonBackToHome
-            // 
-            this.buttonBackToHome.Image = global::Project_VS.Properties.Resources.Back;
-            this.buttonBackToHome.Location = new System.Drawing.Point(359, 411);
-            this.buttonBackToHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonBackToHome.Name = "buttonBackToHome";
-            this.buttonBackToHome.Size = new System.Drawing.Size(141, 72);
-            this.buttonBackToHome.TabIndex = 8;
-            this.buttonBackToHome.UseVisualStyleBackColor = true;
-            this.buttonBackToHome.Click += new System.EventHandler(this.buttonBackToHome_Click);
-            // 
             // comboBoxGantiFilter
             // 
             this.comboBoxGantiFilter.FormattingEnabled = true;
@@ -196,13 +185,24 @@ namespace Project_VS
             this.comboBoxOli.TabIndex = 12;
             this.comboBoxOli.Visible = false;
             // 
+            // buttonBackToHome
+            // 
+            this.buttonBackToHome.Image = global::Project_VS.Properties.Resources.Back;
+            this.buttonBackToHome.Location = new System.Drawing.Point(359, 411);
+            this.buttonBackToHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonBackToHome.Name = "buttonBackToHome";
+            this.buttonBackToHome.Size = new System.Drawing.Size(217, 115);
+            this.buttonBackToHome.TabIndex = 8;
+            this.buttonBackToHome.UseVisualStyleBackColor = true;
+            this.buttonBackToHome.Click += new System.EventHandler(this.buttonBackToHome_Click);
+            // 
             // buttonInput
             // 
             this.buttonInput.Image = global::Project_VS.Properties.Resources.Input;
             this.buttonInput.Location = new System.Drawing.Point(102, 411);
             this.buttonInput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonInput.Name = "buttonInput";
-            this.buttonInput.Size = new System.Drawing.Size(136, 72);
+            this.buttonInput.Size = new System.Drawing.Size(213, 115);
             this.buttonInput.TabIndex = 2;
             this.buttonInput.UseVisualStyleBackColor = true;
             this.buttonInput.Click += new System.EventHandler(this.buttonInput_Click);

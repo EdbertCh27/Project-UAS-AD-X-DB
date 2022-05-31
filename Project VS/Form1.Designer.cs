@@ -37,10 +37,10 @@ namespace Project_VS
             // buttonCheck
             // 
             this.buttonCheck.Image = global::Project_VS.Properties.Resources.Check_home;
-            this.buttonCheck.Location = new System.Drawing.Point(482, 220);
+            this.buttonCheck.Location = new System.Drawing.Point(471, 208);
             this.buttonCheck.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonCheck.Name = "buttonCheck";
-            this.buttonCheck.Size = new System.Drawing.Size(283, 106);
+            this.buttonCheck.Size = new System.Drawing.Size(367, 218);
             this.buttonCheck.TabIndex = 1;
             this.buttonCheck.UseVisualStyleBackColor = true;
             this.buttonCheck.Click += new System.EventHandler(this.buttonCheck_Click);
@@ -48,10 +48,10 @@ namespace Project_VS
             // buttonService
             // 
             this.buttonService.Image = global::Project_VS.Properties.Resources.Service;
-            this.buttonService.Location = new System.Drawing.Point(124, 220);
+            this.buttonService.Location = new System.Drawing.Point(12, 208);
             this.buttonService.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonService.Name = "buttonService";
-            this.buttonService.Size = new System.Drawing.Size(283, 106);
+            this.buttonService.Size = new System.Drawing.Size(417, 218);
             this.buttonService.TabIndex = 0;
             this.buttonService.UseVisualStyleBackColor = true;
             this.buttonService.Click += new System.EventHandler(this.buttonService_Click);

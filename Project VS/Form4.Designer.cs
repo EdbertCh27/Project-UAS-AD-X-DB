@@ -40,8 +40,8 @@ namespace Project_VS
             this.textBoxNoHpCust = new System.Windows.Forms.TextBox();
             this.textBoxTypeMobilCust = new System.Windows.Forms.TextBox();
             this.textBoxNomorPolisiCust = new System.Windows.Forms.TextBox();
-            this.buttonInputDataCust = new System.Windows.Forms.Button();
             this.labelSilahkanIsiData = new System.Windows.Forms.Label();
+            this.buttonInputDataCust = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelNamaCust
@@ -129,17 +129,6 @@ namespace Project_VS
             this.textBoxNomorPolisiCust.Size = new System.Drawing.Size(160, 26);
             this.textBoxNomorPolisiCust.TabIndex = 9;
             // 
-            // buttonInputDataCust
-            // 
-            this.buttonInputDataCust.Image = global::Project_VS.Properties.Resources.Input;
-            this.buttonInputDataCust.Location = new System.Drawing.Point(202, 359);
-            this.buttonInputDataCust.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonInputDataCust.Name = "buttonInputDataCust";
-            this.buttonInputDataCust.Size = new System.Drawing.Size(161, 64);
-            this.buttonInputDataCust.TabIndex = 10;
-            this.buttonInputDataCust.UseVisualStyleBackColor = true;
-            this.buttonInputDataCust.Click += new System.EventHandler(this.buttonInputDataCust_Click);
-            // 
             // labelSilahkanIsiData
             // 
             this.labelSilahkanIsiData.AutoSize = true;
@@ -149,6 +138,17 @@ namespace Project_VS
             this.labelSilahkanIsiData.Size = new System.Drawing.Size(476, 32);
             this.labelSilahkanIsiData.TabIndex = 11;
             this.labelSilahkanIsiData.Text = "Silahkan Lengkapi Data Customer";
+            // 
+            // buttonInputDataCust
+            // 
+            this.buttonInputDataCust.Image = global::Project_VS.Properties.Resources.Input;
+            this.buttonInputDataCust.Location = new System.Drawing.Point(202, 359);
+            this.buttonInputDataCust.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonInputDataCust.Name = "buttonInputDataCust";
+            this.buttonInputDataCust.Size = new System.Drawing.Size(177, 91);
+            this.buttonInputDataCust.TabIndex = 10;
+            this.buttonInputDataCust.UseVisualStyleBackColor = true;
+            this.buttonInputDataCust.Click += new System.EventHandler(this.buttonInputDataCust_Click);
             // 
             // FormInputCostumer
             // 

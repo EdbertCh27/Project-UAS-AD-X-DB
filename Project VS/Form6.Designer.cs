@@ -167,10 +167,10 @@ namespace Project_VS
             // buttonOK
             // 
             this.buttonOK.Image = global::Project_VS.Properties.Resources.OK;
-            this.buttonOK.Location = new System.Drawing.Point(460, 306);
+            this.buttonOK.Location = new System.Drawing.Point(458, 270);
             this.buttonOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(109, 48);
+            this.buttonOK.Size = new System.Drawing.Size(124, 70);
             this.buttonOK.TabIndex = 13;
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
