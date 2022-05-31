@@ -13,7 +13,9 @@ namespace Project_VS
 {
     public partial class FormService : Form
     {
-        
+        string simpanServiceBerkala;
+        string simpanServiceGantiPart;
+        string simpanKeluhan;
         public FormService()
         {
             InitializeComponent();
@@ -33,19 +35,71 @@ namespace Project_VS
             BukaFormWelcome.ShowDialog();
         }
 
-        private void comboBoxPilihanService_SelectedIndexChanged(object sender, EventArgs e)
+        public void comboBoxPilihanService_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBoxPilihanService.SelectedIndex == 0)
+            {
                 comboBoxServiceBerkala.Visible = true;
-            
-            else if (comboBoxPilihanService.SelectedIndex == 3)
+                comboBoxGantiPart.Visible = false;
+                comboBoxOli.Visible = false;
+                comboBoxRepaint.Visible = false;
+                comboBoxGantiFilter.Visible = false;
+                comboBoxOli.Visible = false;
+            }
+  
+            else if (comboBoxPilihanService.SelectedIndex == 6)
+            {
+                comboBoxServiceBerkala.Visible = false;
                 comboBoxGantiPart.Visible = true;
+                comboBoxOli.Visible = false;
+                comboBoxRepaint.Visible = false;
+                comboBoxGantiFilter.Visible = false;
+                comboBoxOli.Visible = false;
+            }
+
+            else if (comboBoxPilihanService.SelectedIndex == 4)
+            {
+                comboBoxServiceBerkala.Visible = false;
+                comboBoxGantiPart.Visible = false;
+                comboBoxOli.Visible = false;
+                comboBoxRepaint.Visible = true;
+                comboBoxGantiFilter.Visible = false;
+                comboBoxOli.Visible = false;
+            }
+
+            else if (comboBoxPilihanService.SelectedIndex == 10)
+            {
+                comboBoxServiceBerkala.Visible = false;
+                comboBoxGantiPart.Visible = false;
+                comboBoxOli.Visible = false;
+                comboBoxRepaint.Visible = false;
+                comboBoxGantiFilter.Visible = true;
+                comboBoxOli.Visible = false;
+            }
+
+            else if (comboBoxPilihanService.SelectedIndex == 2)
+            {
+                comboBoxServiceBerkala.Visible = false;
+                comboBoxGantiPart.Visible = false;
+                comboBoxOli.Visible = false;
+                comboBoxRepaint.Visible = false;
+                comboBoxGantiFilter.Visible = false;
+                comboBoxOli.Visible = true;
+            }
 
             else
+            {
                 comboBoxServiceBerkala.Visible = false;
+                comboBoxGantiPart.Visible = false;
+                comboBoxOli.Visible = false;
+                comboBoxRepaint.Visible = false;
+                comboBoxGantiFilter.Visible = false;
+                comboBoxOli.Visible = false;
+            }
+                
         }
 
-        private void comboBoxKeluhan_SelectedIndexChanged(object sender, EventArgs e)
+        public void comboBoxKeluhan_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBoxKeluhan.SelectedIndex == 0)
                 textBoxKeluhan.Visible = true;
@@ -55,10 +109,34 @@ namespace Project_VS
 
         private void buttonInput_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Permintaanmu Sudah Tercatat, Silahkan Isi Data Diri");
+            MessageBox.Show("Berikut adalah stock yang tersedia ! \nJika Barang yang dibutuhkan kosong, silahkan menunggu 3 hari.");
             this.Hide();
-            FormInputCostumer BukaFormInputCost = new FormInputCostumer();
-            BukaFormInputCost.ShowDialog();
+
+            FormCheckStock BukaFormStock = new FormCheckStock();
+            BukaFormStock.ShowDialog();
+        }
+
+        public void dataService(int posisi)
+        {
+            if(comboBoxPilihanService.SelectedIndex == 0)
+            {
+                simpanServiceBerkala = comboBoxServiceBerkala.Text;
+            }
+            else if(comboBoxPilihanService.SelectedIndex == 3)
+            {
+                simpanServiceBerkala = comboBoxGantiPart.Text;
+            }
+            else
+            {
+                simpanServiceBerkala = comboBoxPilihanService.Text;
+            }
+        }
+
+        private void buttonBackToHome_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormWelcome BukaFormWelcome = new FormWelcome();
+            BukaFormWelcome.ShowDialog();
         }
     }
 }

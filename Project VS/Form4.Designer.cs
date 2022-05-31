@@ -33,12 +33,12 @@ namespace Project_VS
             this.labelAlamatCust = new System.Windows.Forms.Label();
             this.labelNoPolCost = new System.Windows.Forms.Label();
             this.labelPhone = new System.Windows.Forms.Label();
-            this.labelMerkMobil = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.labelTypeMobil = new System.Windows.Forms.Label();
+            this.textBoxNamaCust = new System.Windows.Forms.TextBox();
+            this.textBoxAlamatCust = new System.Windows.Forms.TextBox();
+            this.textBoxNoHpCust = new System.Windows.Forms.TextBox();
+            this.textBoxTypeMobilCust = new System.Windows.Forms.TextBox();
+            this.textBoxNomorPolisiCust = new System.Windows.Forms.TextBox();
             this.buttonInputDataCust = new System.Windows.Forms.Button();
             this.labelSilahkanIsiData = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -79,49 +79,49 @@ namespace Project_VS
             this.labelPhone.TabIndex = 2;
             this.labelPhone.Text = "No. Hp";
             // 
-            // labelMerkMobil
+            // labelTypeMobil
             // 
-            this.labelMerkMobil.AutoSize = true;
-            this.labelMerkMobil.Location = new System.Drawing.Point(80, 188);
-            this.labelMerkMobil.Name = "labelMerkMobil";
-            this.labelMerkMobil.Size = new System.Drawing.Size(76, 17);
-            this.labelMerkMobil.TabIndex = 4;
-            this.labelMerkMobil.Text = "Merk Mobil";
+            this.labelTypeMobil.AutoSize = true;
+            this.labelTypeMobil.Location = new System.Drawing.Point(80, 188);
+            this.labelTypeMobil.Name = "labelTypeMobil";
+            this.labelTypeMobil.Size = new System.Drawing.Size(77, 17);
+            this.labelTypeMobil.TabIndex = 4;
+            this.labelTypeMobil.Text = "Type Mobil";
             // 
-            // textBox1
+            // textBoxNamaCust
             // 
-            this.textBox1.Location = new System.Drawing.Point(180, 74);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(286, 22);
-            this.textBox1.TabIndex = 5;
+            this.textBoxNamaCust.Location = new System.Drawing.Point(180, 74);
+            this.textBoxNamaCust.Name = "textBoxNamaCust";
+            this.textBoxNamaCust.Size = new System.Drawing.Size(286, 22);
+            this.textBoxNamaCust.TabIndex = 5;
             // 
-            // textBox2
+            // textBoxAlamatCust
             // 
-            this.textBox2.Location = new System.Drawing.Point(180, 112);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(286, 22);
-            this.textBox2.TabIndex = 6;
+            this.textBoxAlamatCust.Location = new System.Drawing.Point(180, 112);
+            this.textBoxAlamatCust.Name = "textBoxAlamatCust";
+            this.textBoxAlamatCust.Size = new System.Drawing.Size(286, 22);
+            this.textBoxAlamatCust.TabIndex = 6;
             // 
-            // textBox3
+            // textBoxNoHpCust
             // 
-            this.textBox3.Location = new System.Drawing.Point(180, 152);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(143, 22);
-            this.textBox3.TabIndex = 7;
+            this.textBoxNoHpCust.Location = new System.Drawing.Point(180, 152);
+            this.textBoxNoHpCust.Name = "textBoxNoHpCust";
+            this.textBoxNoHpCust.Size = new System.Drawing.Size(143, 22);
+            this.textBoxNoHpCust.TabIndex = 7;
             // 
-            // textBox4
+            // textBoxTypeMobilCust
             // 
-            this.textBox4.Location = new System.Drawing.Point(180, 188);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(143, 22);
-            this.textBox4.TabIndex = 8;
+            this.textBoxTypeMobilCust.Location = new System.Drawing.Point(180, 188);
+            this.textBoxTypeMobilCust.Name = "textBoxTypeMobilCust";
+            this.textBoxTypeMobilCust.Size = new System.Drawing.Size(143, 22);
+            this.textBoxTypeMobilCust.TabIndex = 8;
             // 
-            // textBox5
+            // textBoxNomorPolisiCust
             // 
-            this.textBox5.Location = new System.Drawing.Point(180, 223);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(143, 22);
-            this.textBox5.TabIndex = 9;
+            this.textBoxNomorPolisiCust.Location = new System.Drawing.Point(180, 223);
+            this.textBoxNomorPolisiCust.Name = "textBoxNomorPolisiCust";
+            this.textBoxNomorPolisiCust.Size = new System.Drawing.Size(143, 22);
+            this.textBoxNomorPolisiCust.TabIndex = 9;
             // 
             // buttonInputDataCust
             // 
@@ -150,12 +150,12 @@ namespace Project_VS
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.labelSilahkanIsiData);
             this.Controls.Add(this.buttonInputDataCust);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.labelMerkMobil);
+            this.Controls.Add(this.textBoxNomorPolisiCust);
+            this.Controls.Add(this.textBoxTypeMobilCust);
+            this.Controls.Add(this.textBoxNoHpCust);
+            this.Controls.Add(this.textBoxAlamatCust);
+            this.Controls.Add(this.textBoxNamaCust);
+            this.Controls.Add(this.labelTypeMobil);
             this.Controls.Add(this.labelNoPolCost);
             this.Controls.Add(this.labelPhone);
             this.Controls.Add(this.labelAlamatCust);
@@ -173,12 +173,12 @@ namespace Project_VS
         private System.Windows.Forms.Label labelAlamatCust;
         private System.Windows.Forms.Label labelNoPolCost;
         private System.Windows.Forms.Label labelPhone;
-        private System.Windows.Forms.Label labelMerkMobil;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label labelTypeMobil;
+        private System.Windows.Forms.TextBox textBoxNamaCust;
+        private System.Windows.Forms.TextBox textBoxAlamatCust;
+        private System.Windows.Forms.TextBox textBoxNoHpCust;
+        private System.Windows.Forms.TextBox textBoxTypeMobilCust;
+        private System.Windows.Forms.TextBox textBoxNomorPolisiCust;
         private System.Windows.Forms.Button buttonInputDataCust;
         private System.Windows.Forms.Label labelSilahkanIsiData;
     }

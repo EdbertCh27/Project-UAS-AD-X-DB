@@ -37,6 +37,10 @@ namespace Project_VS
             this.labelKeluhan = new System.Windows.Forms.Label();
             this.comboBoxKeluhan = new System.Windows.Forms.ComboBox();
             this.comboBoxGantiPart = new System.Windows.Forms.ComboBox();
+            this.buttonBackToHome = new System.Windows.Forms.Button();
+            this.comboBoxGantiFilter = new System.Windows.Forms.ComboBox();
+            this.comboBoxRepaint = new System.Windows.Forms.ComboBox();
+            this.comboBoxOli = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // labelWhatKind
@@ -54,12 +58,19 @@ namespace Project_VS
             this.comboBoxPilihanService.FormattingEnabled = true;
             this.comboBoxPilihanService.Items.AddRange(new object[] {
             "Service Berkala",
+            "Service AC Mobil",
             "Ganti Oli",
             "Perbaiki Rem",
-            "Ganti Part"});
+            "Body Repaint",
+            "Body Repair",
+            "Ganti Part",
+            "Tune UP",
+            "Spooring Balancing",
+            "Ganti Aki",
+            "Ganti Filter"});
             this.comboBoxPilihanService.Location = new System.Drawing.Point(91, 84);
             this.comboBoxPilihanService.Name = "comboBoxPilihanService";
-            this.comboBoxPilihanService.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxPilihanService.Size = new System.Drawing.Size(168, 24);
             this.comboBoxPilihanService.TabIndex = 1;
             this.comboBoxPilihanService.SelectedIndexChanged += new System.EventHandler(this.comboBoxPilihanService_SelectedIndexChanged);
             // 
@@ -67,7 +78,7 @@ namespace Project_VS
             // 
             this.buttonInput.Location = new System.Drawing.Point(91, 329);
             this.buttonInput.Name = "buttonInput";
-            this.buttonInput.Size = new System.Drawing.Size(75, 23);
+            this.buttonInput.Size = new System.Drawing.Size(121, 58);
             this.buttonInput.TabIndex = 2;
             this.buttonInput.Text = "INPUT";
             this.buttonInput.UseVisualStyleBackColor = true;
@@ -123,18 +134,77 @@ namespace Project_VS
             this.comboBoxGantiPart.FormattingEnabled = true;
             this.comboBoxGantiPart.Items.AddRange(new object[] {
             "Velg",
-            "Bumper"});
+            "Bumper",
+            "Wiper Blade",
+            "Spion",
+            "Ban",
+            "Lampu"});
             this.comboBoxGantiPart.Location = new System.Drawing.Point(265, 84);
             this.comboBoxGantiPart.Name = "comboBoxGantiPart";
             this.comboBoxGantiPart.Size = new System.Drawing.Size(121, 24);
             this.comboBoxGantiPart.TabIndex = 7;
             this.comboBoxGantiPart.Visible = false;
             // 
+            // buttonBackToHome
+            // 
+            this.buttonBackToHome.Location = new System.Drawing.Point(319, 329);
+            this.buttonBackToHome.Name = "buttonBackToHome";
+            this.buttonBackToHome.Size = new System.Drawing.Size(125, 58);
+            this.buttonBackToHome.TabIndex = 8;
+            this.buttonBackToHome.Text = "Back To Home";
+            this.buttonBackToHome.UseVisualStyleBackColor = true;
+            this.buttonBackToHome.Click += new System.EventHandler(this.buttonBackToHome_Click);
+            // 
+            // comboBoxGantiFilter
+            // 
+            this.comboBoxGantiFilter.FormattingEnabled = true;
+            this.comboBoxGantiFilter.Items.AddRange(new object[] {
+            "AC",
+            "Bensin",
+            "Udara"});
+            this.comboBoxGantiFilter.Location = new System.Drawing.Point(265, 84);
+            this.comboBoxGantiFilter.Name = "comboBoxGantiFilter";
+            this.comboBoxGantiFilter.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxGantiFilter.TabIndex = 10;
+            this.comboBoxGantiFilter.Visible = false;
+            // 
+            // comboBoxRepaint
+            // 
+            this.comboBoxRepaint.FormattingEnabled = true;
+            this.comboBoxRepaint.Items.AddRange(new object[] {
+            "Merah",
+            "Biru",
+            "Putih",
+            "Kuning",
+            "Hitam",
+            "Silver"});
+            this.comboBoxRepaint.Location = new System.Drawing.Point(265, 84);
+            this.comboBoxRepaint.Name = "comboBoxRepaint";
+            this.comboBoxRepaint.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxRepaint.TabIndex = 11;
+            this.comboBoxRepaint.Visible = false;
+            // 
+            // comboBoxOli
+            // 
+            this.comboBoxOli.FormattingEnabled = true;
+            this.comboBoxOli.Items.AddRange(new object[] {
+            "Oli Mesin",
+            "Oli Gardan"});
+            this.comboBoxOli.Location = new System.Drawing.Point(265, 84);
+            this.comboBoxOli.Name = "comboBoxOli";
+            this.comboBoxOli.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxOli.TabIndex = 12;
+            this.comboBoxOli.Visible = false;
+            // 
             // FormService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(816, 462);
+            this.Controls.Add(this.comboBoxOli);
+            this.Controls.Add(this.comboBoxRepaint);
+            this.Controls.Add(this.comboBoxGantiFilter);
+            this.Controls.Add(this.buttonBackToHome);
             this.Controls.Add(this.comboBoxGantiPart);
             this.Controls.Add(this.comboBoxKeluhan);
             this.Controls.Add(this.labelKeluhan);
@@ -162,5 +232,9 @@ namespace Project_VS
         private System.Windows.Forms.Label labelKeluhan;
         private System.Windows.Forms.ComboBox comboBoxKeluhan;
         private System.Windows.Forms.ComboBox comboBoxGantiPart;
+        private System.Windows.Forms.Button buttonBackToHome;
+        private System.Windows.Forms.ComboBox comboBoxGantiFilter;
+        private System.Windows.Forms.ComboBox comboBoxRepaint;
+        private System.Windows.Forms.ComboBox comboBoxOli;
     }
 }
