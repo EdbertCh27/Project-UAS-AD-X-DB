@@ -29,37 +29,42 @@ namespace Project_VS
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonService = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormWelcome));
             this.buttonCheck = new System.Windows.Forms.Button();
+            this.buttonService = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // buttonService
-            // 
-            this.buttonService.Location = new System.Drawing.Point(190, 176);
-            this.buttonService.Name = "buttonService";
-            this.buttonService.Size = new System.Drawing.Size(108, 85);
-            this.buttonService.TabIndex = 0;
-            this.buttonService.Text = "SERVICE";
-            this.buttonService.UseVisualStyleBackColor = true;
-            this.buttonService.Click += new System.EventHandler(this.buttonService_Click);
             // 
             // buttonCheck
             // 
-            this.buttonCheck.Location = new System.Drawing.Point(447, 176);
+            this.buttonCheck.Image = global::Project_VS.Properties.Resources.Check_home;
+            this.buttonCheck.Location = new System.Drawing.Point(482, 220);
+            this.buttonCheck.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonCheck.Name = "buttonCheck";
-            this.buttonCheck.Size = new System.Drawing.Size(108, 85);
+            this.buttonCheck.Size = new System.Drawing.Size(283, 106);
             this.buttonCheck.TabIndex = 1;
-            this.buttonCheck.Text = "CHECK";
             this.buttonCheck.UseVisualStyleBackColor = true;
             this.buttonCheck.Click += new System.EventHandler(this.buttonCheck_Click);
             // 
+            // buttonService
+            // 
+            this.buttonService.Image = global::Project_VS.Properties.Resources.Service;
+            this.buttonService.Location = new System.Drawing.Point(124, 220);
+            this.buttonService.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonService.Name = "buttonService";
+            this.buttonService.Size = new System.Drawing.Size(283, 106);
+            this.buttonService.TabIndex = 0;
+            this.buttonService.UseVisualStyleBackColor = true;
+            this.buttonService.Click += new System.EventHandler(this.buttonService_Click);
+            // 
             // FormWelcome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.buttonCheck);
             this.Controls.Add(this.buttonService);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormWelcome";
             this.Text = "Welcome";
             this.ResumeLayout(false);

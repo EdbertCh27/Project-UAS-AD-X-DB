@@ -29,6 +29,7 @@ namespace Project_VS
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInvoice));
             this.labelInvoice = new System.Windows.Forms.Label();
             this.labelKodeCost = new System.Windows.Forms.Label();
             this.labelServiceCost = new System.Windows.Forms.Label();
@@ -43,36 +44,36 @@ namespace Project_VS
             // 
             this.labelInvoice.AutoSize = true;
             this.labelInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInvoice.Location = new System.Drawing.Point(300, 27);
+            this.labelInvoice.Location = new System.Drawing.Point(338, 34);
             this.labelInvoice.Name = "labelInvoice";
-            this.labelInvoice.Size = new System.Drawing.Size(117, 29);
+            this.labelInvoice.Size = new System.Drawing.Size(135, 32);
             this.labelInvoice.TabIndex = 0;
             this.labelInvoice.Text = "INVOICE";
             // 
             // labelKodeCost
             // 
             this.labelKodeCost.AutoSize = true;
-            this.labelKodeCost.Location = new System.Drawing.Point(253, 97);
+            this.labelKodeCost.Location = new System.Drawing.Point(285, 121);
             this.labelKodeCost.Name = "labelKodeCost";
-            this.labelKodeCost.Size = new System.Drawing.Size(105, 17);
+            this.labelKodeCost.Size = new System.Drawing.Size(120, 20);
             this.labelKodeCost.TabIndex = 1;
             this.labelKodeCost.Text = "Costumer Code";
             // 
             // labelServiceCost
             // 
             this.labelServiceCost.AutoSize = true;
-            this.labelServiceCost.Location = new System.Drawing.Point(253, 137);
+            this.labelServiceCost.Location = new System.Drawing.Point(285, 171);
             this.labelServiceCost.Name = "labelServiceCost";
-            this.labelServiceCost.Size = new System.Drawing.Size(55, 17);
+            this.labelServiceCost.Size = new System.Drawing.Size(61, 20);
             this.labelServiceCost.TabIndex = 2;
             this.labelServiceCost.Text = "Service";
             // 
             // labelTotal
             // 
             this.labelTotal.AutoSize = true;
-            this.labelTotal.Location = new System.Drawing.Point(253, 179);
+            this.labelTotal.Location = new System.Drawing.Point(285, 224);
             this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(40, 17);
+            this.labelTotal.Size = new System.Drawing.Size(44, 20);
             this.labelTotal.TabIndex = 3;
             this.labelTotal.Text = "Total";
             // 
@@ -80,9 +81,9 @@ namespace Project_VS
             // 
             this.labelPerintah.AutoSize = true;
             this.labelPerintah.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPerintah.Location = new System.Drawing.Point(159, 257);
+            this.labelPerintah.Location = new System.Drawing.Point(179, 321);
             this.labelPerintah.Name = "labelPerintah";
-            this.labelPerintah.Size = new System.Drawing.Size(383, 58);
+            this.labelPerintah.Size = new System.Drawing.Size(447, 64);
             this.labelPerintah.TabIndex = 4;
             this.labelPerintah.Text = "Silahkan Disimpan / Screenshot\r\nPembayaran ke Cashier";
             this.labelPerintah.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -90,35 +91,35 @@ namespace Project_VS
             // labelTotalHarga
             // 
             this.labelTotalHarga.AutoSize = true;
-            this.labelTotalHarga.Location = new System.Drawing.Point(405, 179);
+            this.labelTotalHarga.Location = new System.Drawing.Point(456, 224);
             this.labelTotalHarga.Name = "labelTotalHarga";
-            this.labelTotalHarga.Size = new System.Drawing.Size(40, 17);
+            this.labelTotalHarga.Size = new System.Drawing.Size(41, 20);
             this.labelTotalHarga.TabIndex = 7;
             this.labelTotalHarga.Text = "[......]";
             // 
             // labelIsiService
             // 
             this.labelIsiService.AutoSize = true;
-            this.labelIsiService.Location = new System.Drawing.Point(405, 137);
+            this.labelIsiService.Location = new System.Drawing.Point(456, 171);
             this.labelIsiService.Name = "labelIsiService";
-            this.labelIsiService.Size = new System.Drawing.Size(40, 17);
+            this.labelIsiService.Size = new System.Drawing.Size(41, 20);
             this.labelIsiService.TabIndex = 6;
             this.labelIsiService.Text = "[......]";
             // 
             // labelIsiCodeCost
             // 
             this.labelIsiCodeCost.AutoSize = true;
-            this.labelIsiCodeCost.Location = new System.Drawing.Point(405, 97);
+            this.labelIsiCodeCost.Location = new System.Drawing.Point(456, 121);
             this.labelIsiCodeCost.Name = "labelIsiCodeCost";
-            this.labelIsiCodeCost.Size = new System.Drawing.Size(40, 17);
+            this.labelIsiCodeCost.Size = new System.Drawing.Size(41, 20);
             this.labelIsiCodeCost.TabIndex = 5;
             this.labelIsiCodeCost.Text = "[......]";
             // 
             // FormInvoice
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.labelTotalHarga);
             this.Controls.Add(this.labelIsiService);
             this.Controls.Add(this.labelIsiCodeCost);
@@ -127,6 +128,8 @@ namespace Project_VS
             this.Controls.Add(this.labelServiceCost);
             this.Controls.Add(this.labelKodeCost);
             this.Controls.Add(this.labelInvoice);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormInvoice";
             this.Text = "Invoice";
             this.Load += new System.EventHandler(this.FormInvoice_Load);
