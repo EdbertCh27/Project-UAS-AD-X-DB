@@ -32,11 +32,11 @@ namespace Project_VS
 
         public void dataCostumer(int posisi) //????
         {
-            simpanNama = labelNamaCust.Text;
-            simpanAlamat = labelAlamatCust.Text;
-            simpanNoHp = labelPhone.Text;
-            simpanMerkMobil = labelTypeMobil.Text;
-            simpanNoPol = labelNoPolCost.Text;
+            simpanNama = textBoxNamaCust.Text;
+            simpanAlamat = textBoxAlamatCust.Text;
+            simpanNoHp = textBoxNoHpCust.Text;
+            simpanMerkMobil = textBoxTypeMobilCust.Text;
+            simpanNoPol = textBoxNomorPolisiCust.Text;
         }
     }
 }

@@ -50,5 +50,10 @@ namespace Project_VS
                 MessageBox.Show("Costumer Number tidak terdaftar !!");
             }
         }
+
+        private void textBoxCheckCostNum_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
