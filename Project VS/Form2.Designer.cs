@@ -132,9 +132,9 @@ namespace Project_VS
             this.comboBoxOli.Items.AddRange(new object[] {
             "Oli Mesin",
             "Oli Gardan"});
-            this.comboBoxOli.Location = new System.Drawing.Point(385, 178);
+            this.comboBoxOli.Location = new System.Drawing.Point(367, 178);
             this.comboBoxOli.Name = "comboBoxOli";
-            this.comboBoxOli.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxOli.Size = new System.Drawing.Size(139, 28);
             this.comboBoxOli.TabIndex = 12;
             this.comboBoxOli.Visible = false;
             // 
@@ -177,7 +177,7 @@ namespace Project_VS
             this.comboBoxPegawai.FormattingEnabled = true;
             this.comboBoxPegawai.Location = new System.Drawing.Point(535, 178);
             this.comboBoxPegawai.Name = "comboBoxPegawai";
-            this.comboBoxPegawai.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxPegawai.Size = new System.Drawing.Size(143, 28);
             this.comboBoxPegawai.TabIndex = 14;
             // 
             // FormService
