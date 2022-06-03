@@ -32,14 +32,15 @@ namespace Project_VS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormService));
             this.comboBoxPilihanService = new System.Windows.Forms.ComboBox();
             this.comboBoxServiceBerkala = new System.Windows.Forms.ComboBox();
-            this.textBoxKeluhan = new System.Windows.Forms.TextBox();
-            this.comboBoxKeluhan = new System.Windows.Forms.ComboBox();
             this.comboBoxGantiPart = new System.Windows.Forms.ComboBox();
             this.comboBoxGantiFilter = new System.Windows.Forms.ComboBox();
             this.comboBoxRepaint = new System.Windows.Forms.ComboBox();
             this.comboBoxOli = new System.Windows.Forms.ComboBox();
             this.buttonBackToHome = new System.Windows.Forms.Button();
             this.buttonInput = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboBoxPegawai = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxPilihanService
@@ -78,28 +79,6 @@ namespace Project_VS
             this.comboBoxServiceBerkala.Size = new System.Drawing.Size(121, 24);
             this.comboBoxServiceBerkala.TabIndex = 3;
             this.comboBoxServiceBerkala.Visible = false;
-            // 
-            // textBoxKeluhan
-            // 
-            this.textBoxKeluhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxKeluhan.Location = new System.Drawing.Point(168, 363);
-            this.textBoxKeluhan.Name = "textBoxKeluhan";
-            this.textBoxKeluhan.Size = new System.Drawing.Size(388, 27);
-            this.textBoxKeluhan.TabIndex = 4;
-            this.textBoxKeluhan.Visible = false;
-            // 
-            // comboBoxKeluhan
-            // 
-            this.comboBoxKeluhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxKeluhan.FormattingEnabled = true;
-            this.comboBoxKeluhan.Items.AddRange(new object[] {
-            "Ya",
-            "Tidak"});
-            this.comboBoxKeluhan.Location = new System.Drawing.Point(168, 329);
-            this.comboBoxKeluhan.Name = "comboBoxKeluhan";
-            this.comboBoxKeluhan.Size = new System.Drawing.Size(121, 28);
-            this.comboBoxKeluhan.TabIndex = 6;
-            this.comboBoxKeluhan.SelectedIndexChanged += new System.EventHandler(this.comboBoxKeluhan_SelectedIndexChanged);
             // 
             // comboBoxGantiPart
             // 
@@ -182,6 +161,25 @@ namespace Project_VS
             this.buttonInput.UseVisualStyleBackColor = false;
             this.buttonInput.Click += new System.EventHandler(this.buttonInput_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(168, 253);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(488, 194);
+            this.dataGridView1.TabIndex = 13;
+            // 
+            // comboBoxPegawai
+            // 
+            this.comboBoxPegawai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxPegawai.FormattingEnabled = true;
+            this.comboBoxPegawai.Location = new System.Drawing.Point(535, 178);
+            this.comboBoxPegawai.Name = "comboBoxPegawai";
+            this.comboBoxPegawai.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxPegawai.TabIndex = 14;
+            // 
             // FormService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -189,13 +187,13 @@ namespace Project_VS
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.comboBoxPegawai);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBoxOli);
             this.Controls.Add(this.comboBoxRepaint);
             this.Controls.Add(this.comboBoxGantiFilter);
             this.Controls.Add(this.buttonBackToHome);
             this.Controls.Add(this.comboBoxGantiPart);
-            this.Controls.Add(this.comboBoxKeluhan);
-            this.Controls.Add(this.textBoxKeluhan);
             this.Controls.Add(this.comboBoxServiceBerkala);
             this.Controls.Add(this.buttonInput);
             this.Controls.Add(this.comboBoxPilihanService);
@@ -205,8 +203,8 @@ namespace Project_VS
             this.Text = "Service Center";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormService_FormClosing);
             this.Load += new System.EventHandler(this.FormService_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -214,12 +212,12 @@ namespace Project_VS
         private System.Windows.Forms.ComboBox comboBoxPilihanService;
         private System.Windows.Forms.Button buttonInput;
         private System.Windows.Forms.ComboBox comboBoxServiceBerkala;
-        private System.Windows.Forms.TextBox textBoxKeluhan;
-        private System.Windows.Forms.ComboBox comboBoxKeluhan;
         private System.Windows.Forms.ComboBox comboBoxGantiPart;
         private System.Windows.Forms.Button buttonBackToHome;
         private System.Windows.Forms.ComboBox comboBoxGantiFilter;
         private System.Windows.Forms.ComboBox comboBoxRepaint;
         private System.Windows.Forms.ComboBox comboBoxOli;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox comboBoxPegawai;
     }
 }

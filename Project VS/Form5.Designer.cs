@@ -30,28 +30,20 @@ namespace Project_VS
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInvoice));
-            this.labelPerintah = new System.Windows.Forms.Label();
             this.labelTotalHarga = new System.Windows.Forms.Label();
             this.labelIsiService = new System.Windows.Forms.Label();
             this.labelIsiCodeCost = new System.Windows.Forms.Label();
+            this.buttonDone = new System.Windows.Forms.Button();
+            this.labelIsiTypeMobil = new System.Windows.Forms.Label();
+            this.labelIsiNoPol = new System.Windows.Forms.Label();
+            this.labelIsiCustomerName = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // labelPerintah
-            // 
-            this.labelPerintah.AutoSize = true;
-            this.labelPerintah.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPerintah.Location = new System.Drawing.Point(235, 386);
-            this.labelPerintah.Name = "labelPerintah";
-            this.labelPerintah.Size = new System.Drawing.Size(383, 58);
-            this.labelPerintah.TabIndex = 4;
-            this.labelPerintah.Text = "Silahkan Disimpan / Screenshot\r\nPembayaran ke Cashier";
-            this.labelPerintah.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelTotalHarga
             // 
             this.labelTotalHarga.AutoSize = true;
             this.labelTotalHarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalHarga.Location = new System.Drawing.Point(319, 287);
+            this.labelTotalHarga.Location = new System.Drawing.Point(319, 409);
             this.labelTotalHarga.Name = "labelTotalHarga";
             this.labelTotalHarga.Size = new System.Drawing.Size(114, 25);
             this.labelTotalHarga.TabIndex = 7;
@@ -61,7 +53,7 @@ namespace Project_VS
             // 
             this.labelIsiService.AutoSize = true;
             this.labelIsiService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIsiService.Location = new System.Drawing.Point(319, 231);
+            this.labelIsiService.Location = new System.Drawing.Point(319, 359);
             this.labelIsiService.Name = "labelIsiService";
             this.labelIsiService.Size = new System.Drawing.Size(114, 25);
             this.labelIsiService.TabIndex = 6;
@@ -71,11 +63,52 @@ namespace Project_VS
             // 
             this.labelIsiCodeCost.AutoSize = true;
             this.labelIsiCodeCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIsiCodeCost.Location = new System.Drawing.Point(319, 170);
+            this.labelIsiCodeCost.Location = new System.Drawing.Point(319, 158);
             this.labelIsiCodeCost.Name = "labelIsiCodeCost";
             this.labelIsiCodeCost.Size = new System.Drawing.Size(114, 25);
             this.labelIsiCodeCost.TabIndex = 5;
             this.labelIsiCodeCost.Text = "[..................]";
+            // 
+            // buttonDone
+            // 
+            this.buttonDone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDone.Location = new System.Drawing.Point(721, 433);
+            this.buttonDone.Name = "buttonDone";
+            this.buttonDone.Size = new System.Drawing.Size(99, 48);
+            this.buttonDone.TabIndex = 8;
+            this.buttonDone.Text = "DONE";
+            this.buttonDone.UseVisualStyleBackColor = true;
+            this.buttonDone.Click += new System.EventHandler(this.buttonDone_Click);
+            // 
+            // labelIsiTypeMobil
+            // 
+            this.labelIsiTypeMobil.AutoSize = true;
+            this.labelIsiTypeMobil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIsiTypeMobil.Location = new System.Drawing.Point(319, 259);
+            this.labelIsiTypeMobil.Name = "labelIsiTypeMobil";
+            this.labelIsiTypeMobil.Size = new System.Drawing.Size(114, 25);
+            this.labelIsiTypeMobil.TabIndex = 9;
+            this.labelIsiTypeMobil.Text = "[..................]";
+            // 
+            // labelIsiNoPol
+            // 
+            this.labelIsiNoPol.AutoSize = true;
+            this.labelIsiNoPol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIsiNoPol.Location = new System.Drawing.Point(319, 310);
+            this.labelIsiNoPol.Name = "labelIsiNoPol";
+            this.labelIsiNoPol.Size = new System.Drawing.Size(114, 25);
+            this.labelIsiNoPol.TabIndex = 10;
+            this.labelIsiNoPol.Text = "[..................]";
+            // 
+            // labelIsiCustomerName
+            // 
+            this.labelIsiCustomerName.AutoSize = true;
+            this.labelIsiCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIsiCustomerName.Location = new System.Drawing.Point(319, 208);
+            this.labelIsiCustomerName.Name = "labelIsiCustomerName";
+            this.labelIsiCustomerName.Size = new System.Drawing.Size(114, 25);
+            this.labelIsiCustomerName.TabIndex = 11;
+            this.labelIsiCustomerName.Text = "[..................]";
             // 
             // FormInvoice
             // 
@@ -84,10 +117,13 @@ namespace Project_VS
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.labelIsiCustomerName);
+            this.Controls.Add(this.labelIsiNoPol);
+            this.Controls.Add(this.labelIsiTypeMobil);
+            this.Controls.Add(this.buttonDone);
             this.Controls.Add(this.labelTotalHarga);
             this.Controls.Add(this.labelIsiService);
             this.Controls.Add(this.labelIsiCodeCost);
-            this.Controls.Add(this.labelPerintah);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormInvoice";
@@ -99,9 +135,12 @@ namespace Project_VS
         }
 
         #endregion
-        private System.Windows.Forms.Label labelPerintah;
         private System.Windows.Forms.Label labelTotalHarga;
         private System.Windows.Forms.Label labelIsiService;
         private System.Windows.Forms.Label labelIsiCodeCost;
+        private System.Windows.Forms.Button buttonDone;
+        private System.Windows.Forms.Label labelIsiTypeMobil;
+        private System.Windows.Forms.Label labelIsiNoPol;
+        private System.Windows.Forms.Label labelIsiCustomerName;
     }
 }

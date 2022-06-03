@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Project_VS
 {
@@ -17,11 +18,30 @@ namespace Project_VS
             InitializeComponent();
         }
 
+        MySqlConnection sqlConnect = new MySqlConnection("server=localhost;uid=root;pwd=;database=servicehonda");
+        MySqlCommand sqlCommand;
+        MySqlDataAdapter sqlAdapter;
+        String sqlQuery;
+        DataTable dtCustomerID = new DataTable();
+
         public void FormInvoice_Load(object sender, EventArgs e)
         {
-            //dataService();
-            //labelIsiCodeCost.Text =
-            //labelIsiService.Text = simpan
+            sqlQuery = "SELECT customer_ID FROM customer ORDER BY 1 DESC limit 1 ;";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtCustomerID);
+
+            labelIsiCodeCost.Text = dtCustomerID.Rows[0][0].ToString();
+            labelIsiCustomerName.Text = FormInputCostumer.simpanNama;
+            labelIsiService.Text = FormService.simpanPilihanService;
+            labelIsiTypeMobil.Text = FormInputCostumer.simpanTypeMobil;
+            labelIsiNoPol.Text = FormInputCostumer.simpanNoPol;
+
+        }
+
+        private void buttonDone_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

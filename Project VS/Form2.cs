@@ -13,15 +13,15 @@ namespace Project_VS
 {
     public partial class FormService : Form
     {
-        string simpanServiceBerkala;
+        public static string simpanServiceBerkala;
+        public static string simpanPilihanService;
         string simpanServiceGantiPart;
-        string simpanKeluhan;
         public FormService()
         {
             InitializeComponent();
         }
 
-        string simpanPilihanService;
+        
 
         private void FormService_Load(object sender, EventArgs e)
         {
@@ -45,6 +45,8 @@ namespace Project_VS
                 comboBoxRepaint.Visible = false;
                 comboBoxGantiFilter.Visible = false;
                 comboBoxOli.Visible = false;
+
+                simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
             }
   
             else if (comboBoxPilihanService.SelectedIndex == 6)
@@ -55,6 +57,8 @@ namespace Project_VS
                 comboBoxRepaint.Visible = false;
                 comboBoxGantiFilter.Visible = false;
                 comboBoxOli.Visible = false;
+
+                simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
             }
 
             else if (comboBoxPilihanService.SelectedIndex == 4)
@@ -65,6 +69,8 @@ namespace Project_VS
                 comboBoxRepaint.Visible = true;
                 comboBoxGantiFilter.Visible = false;
                 comboBoxOli.Visible = false;
+
+                simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
             }
 
             else if (comboBoxPilihanService.SelectedIndex == 10)
@@ -75,6 +81,8 @@ namespace Project_VS
                 comboBoxRepaint.Visible = false;
                 comboBoxGantiFilter.Visible = true;
                 comboBoxOli.Visible = false;
+
+                simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
             }
 
             else if (comboBoxPilihanService.SelectedIndex == 2)
@@ -85,6 +93,8 @@ namespace Project_VS
                 comboBoxRepaint.Visible = false;
                 comboBoxGantiFilter.Visible = false;
                 comboBoxOli.Visible = true;
+
+                simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
             }
 
             else
@@ -95,16 +105,11 @@ namespace Project_VS
                 comboBoxRepaint.Visible = false;
                 comboBoxGantiFilter.Visible = false;
                 comboBoxOli.Visible = false;
-            }
-                
-        }
 
-        public void comboBoxKeluhan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxKeluhan.SelectedIndex == 0)
-                textBoxKeluhan.Visible = true;
-            else
-                textBoxKeluhan.Visible = false;
+                simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
+            }
+
+            
         }
 
         private void buttonInput_Click(object sender, EventArgs e)
@@ -116,11 +121,11 @@ namespace Project_VS
             BukaFormStock.ShowDialog();
         }
 
-        public void dataService(int posisi)
+        /*public void dataService(int posisi)
         {
             if(comboBoxPilihanService.SelectedIndex == 0)
             {
-                simpanServiceBerkala = comboBoxServiceBerkala.Text;
+                simpanServiceBerkala = "Service Berkala " + comboBoxServiceBerkala.Text;
             }
             else if(comboBoxPilihanService.SelectedIndex == 3)
             {
@@ -130,7 +135,7 @@ namespace Project_VS
             {
                 simpanServiceBerkala = comboBoxPilihanService.Text;
             }
-        }
+        }*/
 
         private void buttonBackToHome_Click(object sender, EventArgs e)
         {
