@@ -101,6 +101,7 @@ namespace Project_VS
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormInputCostumer";
             this.Text = "Costumer Data";
+            this.Load += new System.EventHandler(this.FormInputCostumer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

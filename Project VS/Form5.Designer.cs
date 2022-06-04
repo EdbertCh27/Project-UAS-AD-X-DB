@@ -37,6 +37,7 @@ namespace Project_VS
             this.labelIsiTypeMobil = new System.Windows.Forms.Label();
             this.labelIsiNoPol = new System.Windows.Forms.Label();
             this.labelIsiCustomerName = new System.Windows.Forms.Label();
+            this.labelUsePart = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelTotalHarga
@@ -110,6 +111,16 @@ namespace Project_VS
             this.labelIsiCustomerName.TabIndex = 11;
             this.labelIsiCustomerName.Text = "[..................]";
             // 
+            // labelUsePart
+            // 
+            this.labelUsePart.AutoSize = true;
+            this.labelUsePart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsePart.Location = new System.Drawing.Point(456, 359);
+            this.labelUsePart.Name = "labelUsePart";
+            this.labelUsePart.Size = new System.Drawing.Size(114, 25);
+            this.labelUsePart.TabIndex = 12;
+            this.labelUsePart.Text = "[..................]";
+            // 
             // FormInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -117,6 +128,7 @@ namespace Project_VS
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.labelUsePart);
             this.Controls.Add(this.labelIsiCustomerName);
             this.Controls.Add(this.labelIsiNoPol);
             this.Controls.Add(this.labelIsiTypeMobil);
@@ -142,5 +154,6 @@ namespace Project_VS
         private System.Windows.Forms.Label labelIsiTypeMobil;
         private System.Windows.Forms.Label labelIsiNoPol;
         private System.Windows.Forms.Label labelIsiCustomerName;
+        private System.Windows.Forms.Label labelUsePart;
     }
 }

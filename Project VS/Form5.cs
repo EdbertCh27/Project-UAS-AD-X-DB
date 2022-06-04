@@ -24,6 +24,9 @@ namespace Project_VS
         String sqlQuery;
         DataTable dtCustomerID = new DataTable();
 
+        string pilianService = FormService.simpanPilihanService;
+        string pilihanPart = FormService.simpanServiceGantiPart;
+
         public void FormInvoice_Load(object sender, EventArgs e)
         {
             sqlQuery = "SELECT customer_ID FROM customer ORDER BY 1 DESC limit 1 ;";
@@ -33,9 +36,10 @@ namespace Project_VS
 
             labelIsiCodeCost.Text = dtCustomerID.Rows[0][0].ToString();
             labelIsiCustomerName.Text = FormInputCostumer.simpanNama;
-            labelIsiService.Text = FormService.simpanPilihanService;
+            labelIsiService.Text = pilianService;
             labelIsiTypeMobil.Text = FormInputCostumer.simpanTypeMobil;
             labelIsiNoPol.Text = FormInputCostumer.simpanNoPol;
+            labelUsePart.Text = FormService.simpanServiceGantiPart;
 
         }
 

@@ -27,7 +27,19 @@ namespace Project_VS
         MySqlCommand sqlCommand;
         MySqlDataAdapter sqlAdapter;
         String sqlQuery;
-        DataTable dtInputDataCustomer = new DataTable();
+        DataTable dtDataCustomerSekarang = new DataTable();
+
+        int hitungJumlahCust;
+
+        private void FormInputCostumer_Load(object sender, EventArgs e)
+        {
+            sqlQuery = "SELECT * FROM customer;";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtDataCustomerSekarang);
+
+            hitungJumlahCust = Convert.ToInt32(dtDataCustomerSekarang.Rows.Count) + 1;
+        }
 
         private void buttonInputDataCust_Click(object sender, EventArgs e)
         {
@@ -36,13 +48,32 @@ namespace Project_VS
             FormInvoice BukaFormInvoice = new FormInvoice();
             dataCostumer(0);
 
-            //if(SELECT * FROM CUSTOMER)
+            if (dtDataCustomerSekarang.Rows.Count < 10)
+            {
+                string sqlInputCustomer = "INSERT INTO customer VALUES('C00"+hitungJumlahCust+"', '"+textBoxNamaCust.Text+"', '"+textBoxAlamatCust.Text+"', '"+textBoxNoHpCust.Text+"', '"+textBoxNomorPolisiCust.Text+"', '"+textBoxTypeMobilCust.Text+"', '0')";
+                sqlConnect.Open();
+                sqlCommand = new MySqlCommand(sqlInputCustomer, sqlConnect);
+                sqlCommand.ExecuteNonQuery();
+                sqlConnect.Close();
+            }
+            else if(dtDataCustomerSekarang.Rows.Count >= 10)
+            {
+                string sqlInputCustomer = "INSERT INTO customer VALUES('C0" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text + "', '" + textBoxTypeMobilCust.Text + "', '0')";
+                sqlConnect.Open();
+                sqlCommand = new MySqlCommand(sqlInputCustomer, sqlConnect);
+                sqlCommand.ExecuteNonQuery();
+                sqlConnect.Close();
+            }
+            else if(dtDataCustomerSekarang.Rows.Count >= 100)
+            {
+                string sqlInputCustomer = "INSERT INTO customer VALUES('C" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text + "', '" + textBoxTypeMobilCust.Text + "', '0')";
+                sqlConnect.Open();
+                sqlCommand = new MySqlCommand(sqlInputCustomer, sqlConnect);
+                sqlCommand.ExecuteNonQuery();
+                sqlConnect.Close();
+            }
 
-            /*string sqlInputCustomer = "INSERT INTO customer VALUES('VC005', 'Vanessa Christie', 'VBR', '082196148989', 'L 1212 YS', 'CRV', '0')";
-            sqlConnect.Open();
-            sqlCommand = new MySqlCommand(sqlUpdateQuery, sqlConnect);
-            sqlCommand.ExecuteNonQuery();
-            sqlConnect.Close();*/
+            
 
             BukaFormInvoice.ShowDialog();
         }
@@ -56,5 +87,7 @@ namespace Project_VS
             simpanTypeMobil = textBoxTypeMobilCust.Text;
             simpanNoPol = textBoxNomorPolisiCust.Text;
         }
+
+        
     }
 }

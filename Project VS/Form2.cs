@@ -15,7 +15,10 @@ namespace Project_VS
     {
         public static string simpanServiceBerkala;
         public static string simpanPilihanService;
-        string simpanServiceGantiPart;
+        public static string simpanServiceGantiPart;
+        public static string simpanGantiOli;
+        public static string simpanBodyRepaint;
+        public static string simpanGantiFilter;
         public FormService()
         {
             InitializeComponent();
@@ -52,8 +55,6 @@ namespace Project_VS
                 comboBoxGantiFilter.Visible = false;
                 comboBoxOli.Visible = false;
 
-                simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
-
                 sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 001";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
@@ -62,6 +63,8 @@ namespace Project_VS
                 comboBoxPegawai.DataSource = dtPegawaiSB;
                 comboBoxPegawai.DisplayMember = "pegawai_nama";
                 comboBoxPegawai.ValueMember = "pegawai_ID";
+
+                simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
             }
   
             else if (comboBoxPilihanService.SelectedIndex == 6)
@@ -70,10 +73,8 @@ namespace Project_VS
                 comboBoxGantiPart.Visible = true;
                 comboBoxOli.Visible = false;
                 comboBoxRepaint.Visible = false;
-                comboBoxGantiFilter.Visible = false;
-
-                simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
-
+                comboBoxGantiFilter.Visible = false;        
+                
                 sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 001";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
@@ -82,6 +83,9 @@ namespace Project_VS
                 comboBoxPegawai.DataSource = dtPegawaiSB;
                 comboBoxPegawai.DisplayMember = "pegawai_nama";
                 comboBoxPegawai.ValueMember = "pegawai_ID";
+
+                simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
+
             }
 
             else if (comboBoxPilihanService.SelectedIndex == 4)
@@ -92,8 +96,6 @@ namespace Project_VS
                 comboBoxRepaint.Visible = true;
                 comboBoxGantiFilter.Visible = false;
 
-                simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
-
                 sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 001";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
@@ -102,6 +104,8 @@ namespace Project_VS
                 comboBoxPegawai.DataSource = dtPegawaiSB;
                 comboBoxPegawai.DisplayMember = "pegawai_nama";
                 comboBoxPegawai.ValueMember = "pegawai_ID";
+
+                simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
             }
 
             else if (comboBoxPilihanService.SelectedIndex == 10)
@@ -165,17 +169,37 @@ namespace Project_VS
                 comboBoxPegawai.DisplayMember = "pegawai_nama";
                 comboBoxPegawai.ValueMember = "pegawai_ID";
             }
-
             
         }
 
         private void buttonInput_Click(object sender, EventArgs e)
         {
+            /*simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
+
+            if (comboBoxGantiPart.Visible = true)
+            {
+                simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
+            }
+            else if (comboBoxOli.Visible = true)
+            {
+                simpanGantiOli = comboBoxOli.SelectedItem.ToString();
+            }
+            else if (comboBoxRepaint.Visible = true)
+            {
+                simpanBodyRepaint = comboBoxRepaint.SelectedItem.ToString();
+            }
+            else if (comboBoxGantiFilter.Visible = true)
+            {
+                simpanGantiFilter = comboBoxGantiFilter.SelectedItem.ToString();
+            }*/
+
+
             MessageBox.Show("Berikut adalah stock yang tersedia ! \nJika Barang yang dibutuhkan kosong, silahkan menunggu 3 hari.");
             this.Hide();
 
             FormCheckStock BukaFormStock = new FormCheckStock();
             BukaFormStock.ShowDialog();
+
         }
 
         /*public void dataService(int posisi)
