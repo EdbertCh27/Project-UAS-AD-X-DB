@@ -32,9 +32,14 @@ namespace Project_VS
         DataTable dtPegawaiOli = new DataTable();
         DataTable dtPegawaiUmum = new DataTable();
 
+        DataTable dtLayanan = new DataTable();
         private void FormService_Load(object sender, EventArgs e)
         {
-            
+            sqlQuery = "";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtLayanan);
+            dgvTabelLayanan.DataSource = dtLayanan;
         }
 
         private void FormService_FormClosing(object sender, FormClosingEventArgs e)
