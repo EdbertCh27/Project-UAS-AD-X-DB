@@ -29,7 +29,7 @@ namespace Project_VS
         String sqlQuery;
         DataTable dtDataCustomerSekarang = new DataTable();
 
-        int hitungJumlahCust;
+        public static int hitungJumlahCust;
 
         private void FormInputCostumer_Load(object sender, EventArgs e)
         {
@@ -43,9 +43,7 @@ namespace Project_VS
 
         private void buttonInputDataCust_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Data Sudah Lengkap dan tersimpan");
-            this.Hide();
-            FormInvoice BukaFormInvoice = new FormInvoice();
+            
             dataCostumer(0);
 
             if (dtDataCustomerSekarang.Rows.Count < 10)
@@ -71,11 +69,18 @@ namespace Project_VS
                 sqlCommand = new MySqlCommand(sqlInputCustomer, sqlConnect);
                 sqlCommand.ExecuteNonQuery();
                 sqlConnect.Close();
+
             }
 
-            
 
-            BukaFormInvoice.ShowDialog();
+            MessageBox.Show("Data Sudah Lengkap dan tersimpan");
+            this.Hide();
+
+            FormService BukaFormService = new FormService();
+            BukaFormService.ShowDialog();
+
+            //FormInvoice BukaFormInvoice = new FormInvoice();
+            //BukaFormInvoice.ShowDialog();
         }
 
         public void dataCostumer(int posisi) //????

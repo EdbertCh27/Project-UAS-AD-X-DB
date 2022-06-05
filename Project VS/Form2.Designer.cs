@@ -31,7 +31,6 @@ namespace Project_VS
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormService));
             this.comboBoxPilihanService = new System.Windows.Forms.ComboBox();
-            this.comboBoxServiceBerkala = new System.Windows.Forms.ComboBox();
             this.comboBoxGantiPart = new System.Windows.Forms.ComboBox();
             this.comboBoxGantiFilter = new System.Windows.Forms.ComboBox();
             this.comboBoxRepaint = new System.Windows.Forms.ComboBox();
@@ -42,6 +41,8 @@ namespace Project_VS
             this.comboBoxPegawai = new System.Windows.Forms.ComboBox();
             this.textBoxKiloMeterMobil = new System.Windows.Forms.TextBox();
             this.textBoxMobilKeteranganWarna = new System.Windows.Forms.TextBox();
+            this.labelCurrDate = new System.Windows.Forms.Label();
+            this.dtpHariIni = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabelLayanan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,29 +62,15 @@ namespace Project_VS
             "Spooring Balancing",
             "Ganti Aki",
             "Ganti Filter"});
-            this.comboBoxPilihanService.Location = new System.Drawing.Point(168, 178);
+            this.comboBoxPilihanService.Location = new System.Drawing.Point(60, 197);
             this.comboBoxPilihanService.Name = "comboBoxPilihanService";
             this.comboBoxPilihanService.Size = new System.Drawing.Size(168, 28);
             this.comboBoxPilihanService.TabIndex = 1;
             this.comboBoxPilihanService.SelectedIndexChanged += new System.EventHandler(this.comboBoxPilihanService_SelectedIndexChanged);
             // 
-            // comboBoxServiceBerkala
-            // 
-            this.comboBoxServiceBerkala.FormattingEnabled = true;
-            this.comboBoxServiceBerkala.Items.AddRange(new object[] {
-            "1.000 km",
-            "5.000 km",
-            "10.000 km",
-            "15.000 km",
-            "20.000 km"});
-            this.comboBoxServiceBerkala.Location = new System.Drawing.Point(385, 178);
-            this.comboBoxServiceBerkala.Name = "comboBoxServiceBerkala";
-            this.comboBoxServiceBerkala.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxServiceBerkala.TabIndex = 3;
-            this.comboBoxServiceBerkala.Visible = false;
-            // 
             // comboBoxGantiPart
             // 
+            this.comboBoxGantiPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxGantiPart.FormattingEnabled = true;
             this.comboBoxGantiPart.Items.AddRange(new object[] {
             "Velg",
@@ -92,27 +79,29 @@ namespace Project_VS
             "Spion",
             "Ban",
             "Lampu"});
-            this.comboBoxGantiPart.Location = new System.Drawing.Point(385, 178);
+            this.comboBoxGantiPart.Location = new System.Drawing.Point(265, 197);
             this.comboBoxGantiPart.Name = "comboBoxGantiPart";
-            this.comboBoxGantiPart.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxGantiPart.Size = new System.Drawing.Size(139, 28);
             this.comboBoxGantiPart.TabIndex = 7;
             this.comboBoxGantiPart.Visible = false;
             // 
             // comboBoxGantiFilter
             // 
+            this.comboBoxGantiFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxGantiFilter.FormattingEnabled = true;
             this.comboBoxGantiFilter.Items.AddRange(new object[] {
             "AC",
             "Bensin",
             "Udara"});
-            this.comboBoxGantiFilter.Location = new System.Drawing.Point(385, 178);
+            this.comboBoxGantiFilter.Location = new System.Drawing.Point(265, 198);
             this.comboBoxGantiFilter.Name = "comboBoxGantiFilter";
-            this.comboBoxGantiFilter.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxGantiFilter.Size = new System.Drawing.Size(139, 28);
             this.comboBoxGantiFilter.TabIndex = 10;
             this.comboBoxGantiFilter.Visible = false;
             // 
             // comboBoxRepaint
             // 
+            this.comboBoxRepaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRepaint.FormattingEnabled = true;
             this.comboBoxRepaint.Items.AddRange(new object[] {
             "Merah",
@@ -121,9 +110,9 @@ namespace Project_VS
             "Kuning",
             "Hitam",
             "Silver"});
-            this.comboBoxRepaint.Location = new System.Drawing.Point(385, 178);
+            this.comboBoxRepaint.Location = new System.Drawing.Point(265, 198);
             this.comboBoxRepaint.Name = "comboBoxRepaint";
-            this.comboBoxRepaint.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxRepaint.Size = new System.Drawing.Size(139, 28);
             this.comboBoxRepaint.TabIndex = 11;
             this.comboBoxRepaint.Visible = false;
             // 
@@ -134,7 +123,7 @@ namespace Project_VS
             this.comboBoxOli.Items.AddRange(new object[] {
             "Oli Mesin",
             "Oli Gardan"});
-            this.comboBoxOli.Location = new System.Drawing.Point(367, 178);
+            this.comboBoxOli.Location = new System.Drawing.Point(265, 197);
             this.comboBoxOli.Name = "comboBoxOli";
             this.comboBoxOli.Size = new System.Drawing.Size(139, 28);
             this.comboBoxOli.TabIndex = 12;
@@ -144,7 +133,7 @@ namespace Project_VS
             // 
             this.buttonBackToHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBackToHome.BackgroundImage")));
             this.buttonBackToHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonBackToHome.Location = new System.Drawing.Point(670, 453);
+            this.buttonBackToHome.Location = new System.Drawing.Point(672, 478);
             this.buttonBackToHome.Name = "buttonBackToHome";
             this.buttonBackToHome.Size = new System.Drawing.Size(151, 49);
             this.buttonBackToHome.TabIndex = 8;
@@ -156,7 +145,7 @@ namespace Project_VS
             this.buttonInput.BackColor = System.Drawing.Color.Transparent;
             this.buttonInput.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonInput.BackgroundImage")));
             this.buttonInput.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonInput.Location = new System.Drawing.Point(442, 453);
+            this.buttonInput.Location = new System.Drawing.Point(444, 478);
             this.buttonInput.Name = "buttonInput";
             this.buttonInput.Size = new System.Drawing.Size(147, 49);
             this.buttonInput.TabIndex = 2;
@@ -166,35 +155,53 @@ namespace Project_VS
             // dgvTabelLayanan
             // 
             this.dgvTabelLayanan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTabelLayanan.Location = new System.Drawing.Point(168, 253);
+            this.dgvTabelLayanan.Location = new System.Drawing.Point(117, 259);
             this.dgvTabelLayanan.Name = "dgvTabelLayanan";
             this.dgvTabelLayanan.RowHeadersWidth = 51;
             this.dgvTabelLayanan.RowTemplate.Height = 24;
-            this.dgvTabelLayanan.Size = new System.Drawing.Size(488, 194);
+            this.dgvTabelLayanan.Size = new System.Drawing.Size(622, 194);
             this.dgvTabelLayanan.TabIndex = 13;
             // 
             // comboBoxPegawai
             // 
             this.comboBoxPegawai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxPegawai.FormattingEnabled = true;
-            this.comboBoxPegawai.Location = new System.Drawing.Point(535, 178);
+            this.comboBoxPegawai.Location = new System.Drawing.Point(427, 197);
             this.comboBoxPegawai.Name = "comboBoxPegawai";
             this.comboBoxPegawai.Size = new System.Drawing.Size(143, 28);
             this.comboBoxPegawai.TabIndex = 14;
             // 
             // textBoxKiloMeterMobil
             // 
-            this.textBoxKiloMeterMobil.Location = new System.Drawing.Point(727, 338);
+            this.textBoxKiloMeterMobil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxKiloMeterMobil.Location = new System.Drawing.Point(606, 198);
             this.textBoxKiloMeterMobil.Name = "textBoxKiloMeterMobil";
-            this.textBoxKiloMeterMobil.Size = new System.Drawing.Size(100, 22);
+            this.textBoxKiloMeterMobil.Size = new System.Drawing.Size(100, 27);
             this.textBoxKiloMeterMobil.TabIndex = 15;
             // 
             // textBoxMobilKeteranganWarna
             // 
-            this.textBoxMobilKeteranganWarna.Location = new System.Drawing.Point(727, 384);
+            this.textBoxMobilKeteranganWarna.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMobilKeteranganWarna.Location = new System.Drawing.Point(723, 198);
             this.textBoxMobilKeteranganWarna.Name = "textBoxMobilKeteranganWarna";
-            this.textBoxMobilKeteranganWarna.Size = new System.Drawing.Size(100, 22);
+            this.textBoxMobilKeteranganWarna.Size = new System.Drawing.Size(100, 27);
             this.textBoxMobilKeteranganWarna.TabIndex = 16;
+            // 
+            // labelCurrDate
+            // 
+            this.labelCurrDate.AutoSize = true;
+            this.labelCurrDate.Location = new System.Drawing.Point(201, 73);
+            this.labelCurrDate.Name = "labelCurrDate";
+            this.labelCurrDate.Size = new System.Drawing.Size(65, 17);
+            this.labelCurrDate.TabIndex = 17;
+            this.labelCurrDate.Text = "CurrDate";
+            // 
+            // dtpHariIni
+            // 
+            this.dtpHariIni.Location = new System.Drawing.Point(165, 160);
+            this.dtpHariIni.Name = "dtpHariIni";
+            this.dtpHariIni.Size = new System.Drawing.Size(200, 22);
+            this.dtpHariIni.TabIndex = 18;
             // 
             // FormService
             // 
@@ -203,6 +210,8 @@ namespace Project_VS
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.dtpHariIni);
+            this.Controls.Add(this.labelCurrDate);
             this.Controls.Add(this.textBoxMobilKeteranganWarna);
             this.Controls.Add(this.textBoxKiloMeterMobil);
             this.Controls.Add(this.comboBoxPegawai);
@@ -212,7 +221,6 @@ namespace Project_VS
             this.Controls.Add(this.comboBoxGantiFilter);
             this.Controls.Add(this.buttonBackToHome);
             this.Controls.Add(this.comboBoxGantiPart);
-            this.Controls.Add(this.comboBoxServiceBerkala);
             this.Controls.Add(this.buttonInput);
             this.Controls.Add(this.comboBoxPilihanService);
             this.DoubleBuffered = true;
@@ -230,7 +238,6 @@ namespace Project_VS
         #endregion
         private System.Windows.Forms.ComboBox comboBoxPilihanService;
         private System.Windows.Forms.Button buttonInput;
-        private System.Windows.Forms.ComboBox comboBoxServiceBerkala;
         private System.Windows.Forms.ComboBox comboBoxGantiPart;
         private System.Windows.Forms.Button buttonBackToHome;
         private System.Windows.Forms.ComboBox comboBoxGantiFilter;
@@ -240,5 +247,7 @@ namespace Project_VS
         private System.Windows.Forms.ComboBox comboBoxPegawai;
         private System.Windows.Forms.TextBox textBoxKiloMeterMobil;
         private System.Windows.Forms.TextBox textBoxMobilKeteranganWarna;
+        private System.Windows.Forms.Label labelCurrDate;
+        private System.Windows.Forms.DateTimePicker dtpHariIni;
     }
 }

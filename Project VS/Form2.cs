@@ -19,6 +19,10 @@ namespace Project_VS
         public static string simpanGantiOli;
         public static string simpanBodyRepaint;
         public static string simpanGantiFilter;
+
+        public static int hitungJumlahService;
+
+        public static string simpanTanggal;
         public FormService()
         {
             InitializeComponent();
@@ -33,13 +37,27 @@ namespace Project_VS
         DataTable dtPegawaiUmum = new DataTable();
 
         DataTable dtLayanan = new DataTable();
+
+        DataTable dtInputService = new DataTable();
+        DataTable dtDataServiceSekarang = new DataTable();
+
         private void FormService_Load(object sender, EventArgs e)
         {
-            sqlQuery = "";
+            sqlQuery = "SELECT layanan_nama AS 'Jenis Layanan', layanan_biaya AS 'Biaya', part_nama AS 'Part', biaya_pasang_part AS 'Harga Part' FROM layanan;";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(dtLayanan);
             dgvTabelLayanan.DataSource = dtLayanan;
+
+            labelCurrDate.Text = dtpHariIni.Value.ToString().Substring(0,10);
+
+            sqlQuery = "SELECT * FROM trans_service;";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtDataServiceSekarang);
+
+            hitungJumlahService = Convert.ToInt32(dtDataServiceSekarang.Rows.Count) + 1;
+            simpanTanggal = dtpHariIni.Value.ToString().Substring(0, 10);
         }
 
         private void FormService_FormClosing(object sender, FormClosingEventArgs e)
@@ -53,7 +71,6 @@ namespace Project_VS
         {
             if (comboBoxPilihanService.SelectedIndex == 0)
             {
-                comboBoxServiceBerkala.Visible = true;
                 comboBoxGantiPart.Visible = false;
                 comboBoxOli.Visible = false;
                 comboBoxRepaint.Visible = false;
@@ -74,7 +91,6 @@ namespace Project_VS
   
             else if (comboBoxPilihanService.SelectedIndex == 6)
             {
-                comboBoxServiceBerkala.Visible = false;
                 comboBoxGantiPart.Visible = true;
                 comboBoxOli.Visible = false;
                 comboBoxRepaint.Visible = false;
@@ -95,7 +111,6 @@ namespace Project_VS
 
             else if (comboBoxPilihanService.SelectedIndex == 4)
             {
-                comboBoxServiceBerkala.Visible = false;
                 comboBoxGantiPart.Visible = false;
                 comboBoxOli.Visible = false;
                 comboBoxRepaint.Visible = true;
@@ -115,7 +130,6 @@ namespace Project_VS
 
             else if (comboBoxPilihanService.SelectedIndex == 10)
             {
-                comboBoxServiceBerkala.Visible = false;
                 comboBoxGantiPart.Visible = false;
                 comboBoxOli.Visible = false;
                 comboBoxRepaint.Visible = false;
@@ -136,7 +150,6 @@ namespace Project_VS
 
             else if (comboBoxPilihanService.SelectedIndex == 2)
             {
-                comboBoxServiceBerkala.Visible = false;
                 comboBoxGantiPart.Visible = false;
                 comboBoxRepaint.Visible = false;
                 comboBoxGantiFilter.Visible = false;
@@ -156,7 +169,6 @@ namespace Project_VS
 
             else
             {
-                comboBoxServiceBerkala.Visible = false;
                 comboBoxGantiPart.Visible = false;
                 comboBoxOli.Visible = false;
                 comboBoxRepaint.Visible = false;
@@ -179,8 +191,7 @@ namespace Project_VS
 
         private void buttonInput_Click(object sender, EventArgs e)
         {
-            /*simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
-
+            /*
             if (comboBoxGantiPart.Visible = true)
             {
                 simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
@@ -196,8 +207,24 @@ namespace Project_VS
             else if (comboBoxGantiFilter.Visible = true)
             {
                 simpanGantiFilter = comboBoxGantiFilter.SelectedItem.ToString();
+            }
+            else
+            {
+                simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
             }*/
 
+            simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
+
+            if (dtDataServiceSekarang.Rows.Count < 10)
+            {
+                string sqlInputService = "INSERT INTO trans_service VALUES ('S00" + hitungJumlahService + "','C00" + FormInputCostumer.hitungJumlahCust + "',str_to_date('" +simpanTanggal+ "','%d-%m-%Y'),'01:00:00','"+comboBoxPilihanService.SelectedItem.ToString()+"','"+textBoxKiloMeterMobil.Text+"','"+textBoxMobilKeteranganWarna.Text+"','0');";
+                sqlConnect.Open();
+                sqlCommand = new MySqlCommand(sqlInputService, sqlConnect);
+                sqlCommand.ExecuteNonQuery();
+                sqlConnect.Close();
+            }
+
+            
 
             MessageBox.Show("Berikut adalah stock yang tersedia ! \nJika Barang yang dibutuhkan kosong, silahkan menunggu 3 hari.");
             this.Hide();

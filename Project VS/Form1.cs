@@ -28,8 +28,11 @@ namespace Project_VS
         private void buttonService_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormService BukaFormService = new FormService();
-            BukaFormService.ShowDialog();
+            FormInputCostumer BukaFormInputCostumer = new FormInputCostumer();
+            BukaFormInputCostumer.ShowDialog();
+
+            //FormService BukaFormService = new FormService();
+            //BukaFormService.ShowDialog();
         }
     }
 }
