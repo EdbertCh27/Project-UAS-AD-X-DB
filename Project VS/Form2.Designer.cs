@@ -198,6 +198,7 @@ namespace Project_VS
             // 
             // dtpHariIni
             // 
+            this.dtpHariIni.Checked = false;
             this.dtpHariIni.Location = new System.Drawing.Point(165, 160);
             this.dtpHariIni.Name = "dtpHariIni";
             this.dtpHariIni.Size = new System.Drawing.Size(200, 22);

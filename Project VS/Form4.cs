@@ -72,6 +72,7 @@ namespace Project_VS
 
             }
 
+            hitungJumlahCust = hitungJumlahCust;
 
             MessageBox.Show("Data Sudah Lengkap dan tersimpan");
             this.Hide();
