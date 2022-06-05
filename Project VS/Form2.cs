@@ -185,7 +185,6 @@ namespace Project_VS
 
                 simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
 
-
             }
 
             else if (comboBoxPilihanService.SelectedIndex == 4)
@@ -255,6 +254,7 @@ namespace Project_VS
                 comboBoxOli.Visible = false;
 
                 simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
+                // simpanHargaService = 50;
 
                 sqlQuery = "SELECT Pegawai_Nama, pegawai_id FROM pegawai WHERE layanan_id != '001' and layanan_id != '003'";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
@@ -293,7 +293,7 @@ namespace Project_VS
             }*/
 
 
-            simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
+            //simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
 
             if (dtDataServiceSekarang.Rows.Count < 10)
             {
