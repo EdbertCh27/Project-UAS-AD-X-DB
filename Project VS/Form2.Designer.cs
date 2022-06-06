@@ -61,7 +61,7 @@ namespace Project_VS
             "Spooring Balancing",
             "Ganti Aki",
             "Ganti Filter"});
-            this.comboBoxPilihanService.Location = new System.Drawing.Point(60, 197);
+            this.comboBoxPilihanService.Location = new System.Drawing.Point(89, 168);
             this.comboBoxPilihanService.Name = "comboBoxPilihanService";
             this.comboBoxPilihanService.Size = new System.Drawing.Size(168, 28);
             this.comboBoxPilihanService.TabIndex = 1;
@@ -78,7 +78,7 @@ namespace Project_VS
             "Spion",
             "Ban",
             "Lampu"});
-            this.comboBoxGantiPart.Location = new System.Drawing.Point(265, 197);
+            this.comboBoxGantiPart.Location = new System.Drawing.Point(275, 168);
             this.comboBoxGantiPart.Name = "comboBoxGantiPart";
             this.comboBoxGantiPart.Size = new System.Drawing.Size(139, 28);
             this.comboBoxGantiPart.TabIndex = 7;
@@ -93,7 +93,7 @@ namespace Project_VS
             "AC",
             "Bensin",
             "Udara"});
-            this.comboBoxGantiFilter.Location = new System.Drawing.Point(265, 198);
+            this.comboBoxGantiFilter.Location = new System.Drawing.Point(275, 169);
             this.comboBoxGantiFilter.Name = "comboBoxGantiFilter";
             this.comboBoxGantiFilter.Size = new System.Drawing.Size(139, 28);
             this.comboBoxGantiFilter.TabIndex = 10;
@@ -110,7 +110,7 @@ namespace Project_VS
             "Kuning",
             "Hitam",
             "Silver"});
-            this.comboBoxRepaint.Location = new System.Drawing.Point(265, 198);
+            this.comboBoxRepaint.Location = new System.Drawing.Point(275, 169);
             this.comboBoxRepaint.Name = "comboBoxRepaint";
             this.comboBoxRepaint.Size = new System.Drawing.Size(139, 28);
             this.comboBoxRepaint.TabIndex = 11;
@@ -123,11 +123,12 @@ namespace Project_VS
             this.comboBoxOli.Items.AddRange(new object[] {
             "Oli Mesin",
             "Oli Gardan"});
-            this.comboBoxOli.Location = new System.Drawing.Point(265, 197);
+            this.comboBoxOli.Location = new System.Drawing.Point(275, 168);
             this.comboBoxOli.Name = "comboBoxOli";
             this.comboBoxOli.Size = new System.Drawing.Size(139, 28);
             this.comboBoxOli.TabIndex = 12;
             this.comboBoxOli.Visible = false;
+            this.comboBoxOli.SelectedIndexChanged += new System.EventHandler(this.comboBoxOli_SelectedIndexChanged);
             // 
             // buttonBackToHome
             // 
@@ -155,7 +156,7 @@ namespace Project_VS
             // dgvTabelLayanan
             // 
             this.dgvTabelLayanan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTabelLayanan.Location = new System.Drawing.Point(117, 259);
+            this.dgvTabelLayanan.Location = new System.Drawing.Point(117, 263);
             this.dgvTabelLayanan.Name = "dgvTabelLayanan";
             this.dgvTabelLayanan.RowHeadersWidth = 51;
             this.dgvTabelLayanan.RowTemplate.Height = 24;
@@ -166,33 +167,37 @@ namespace Project_VS
             // 
             this.comboBoxPegawai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxPegawai.FormattingEnabled = true;
-            this.comboBoxPegawai.Location = new System.Drawing.Point(427, 197);
+            this.comboBoxPegawai.Location = new System.Drawing.Point(420, 168);
             this.comboBoxPegawai.Name = "comboBoxPegawai";
             this.comboBoxPegawai.Size = new System.Drawing.Size(143, 28);
             this.comboBoxPegawai.TabIndex = 14;
+            this.comboBoxPegawai.SelectedIndexChanged += new System.EventHandler(this.comboBoxPegawai_SelectedIndexChanged);
             // 
             // textBoxKiloMeterMobil
             // 
             this.textBoxKiloMeterMobil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxKiloMeterMobil.Location = new System.Drawing.Point(606, 198);
+            this.textBoxKiloMeterMobil.Location = new System.Drawing.Point(573, 168);
             this.textBoxKiloMeterMobil.Name = "textBoxKiloMeterMobil";
-            this.textBoxKiloMeterMobil.Size = new System.Drawing.Size(100, 27);
+            this.textBoxKiloMeterMobil.Size = new System.Drawing.Size(104, 27);
             this.textBoxKiloMeterMobil.TabIndex = 15;
+            this.textBoxKiloMeterMobil.TextChanged += new System.EventHandler(this.textBoxKiloMeterMobil_TextChanged);
             // 
             // textBoxMobilKeteranganWarna
             // 
             this.textBoxMobilKeteranganWarna.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMobilKeteranganWarna.Location = new System.Drawing.Point(723, 198);
+            this.textBoxMobilKeteranganWarna.Location = new System.Drawing.Point(693, 168);
             this.textBoxMobilKeteranganWarna.Name = "textBoxMobilKeteranganWarna";
-            this.textBoxMobilKeteranganWarna.Size = new System.Drawing.Size(100, 27);
+            this.textBoxMobilKeteranganWarna.Size = new System.Drawing.Size(104, 27);
             this.textBoxMobilKeteranganWarna.TabIndex = 16;
+            this.textBoxMobilKeteranganWarna.TextChanged += new System.EventHandler(this.textBoxMobilKeteranganWarna_TextChanged);
             // 
             // labelCurrDate
             // 
             this.labelCurrDate.AutoSize = true;
-            this.labelCurrDate.Location = new System.Drawing.Point(201, 73);
+            this.labelCurrDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCurrDate.Location = new System.Drawing.Point(112, 39);
             this.labelCurrDate.Name = "labelCurrDate";
-            this.labelCurrDate.Size = new System.Drawing.Size(65, 17);
+            this.labelCurrDate.Size = new System.Drawing.Size(99, 25);
             this.labelCurrDate.TabIndex = 17;
             this.labelCurrDate.Text = "CurrDate";
             // 

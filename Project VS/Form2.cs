@@ -448,6 +448,24 @@ namespace Project_VS
             BukaFormWelcome.ShowDialog();
         }
 
-        
+        private void comboBoxOli_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxPegawai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxKiloMeterMobil_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxMobilKeteranganWarna_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

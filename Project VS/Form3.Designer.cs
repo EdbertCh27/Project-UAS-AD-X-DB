@@ -62,7 +62,7 @@ namespace Project_VS
             // 
             // textBoxCheckCostNum
             // 
-            this.textBoxCheckCostNum.Location = new System.Drawing.Point(263, 191);
+            this.textBoxCheckCostNum.Location = new System.Drawing.Point(260, 159);
             this.textBoxCheckCostNum.Name = "textBoxCheckCostNum";
             this.textBoxCheckCostNum.Size = new System.Drawing.Size(356, 22);
             this.textBoxCheckCostNum.TabIndex = 1;
@@ -70,7 +70,7 @@ namespace Project_VS
             // dataGridViewCheckCostumer
             // 
             this.dataGridViewCheckCostumer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCheckCostumer.Location = new System.Drawing.Point(83, 258);
+            this.dataGridViewCheckCostumer.Location = new System.Drawing.Point(93, 280);
             this.dataGridViewCheckCostumer.Name = "dataGridViewCheckCostumer";
             this.dataGridViewCheckCostumer.RowHeadersWidth = 51;
             this.dataGridViewCheckCostumer.RowTemplate.Height = 24;
