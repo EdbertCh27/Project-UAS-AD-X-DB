@@ -25,6 +25,15 @@ namespace Project_VS
         public static string simpanTanggal;
 
         public static int simpanHargaService;
+
+        public static string simpanPegawaiID;
+
+        public static int hitungDetailService;
+
+        public static string simpanIDLayanan;
+
+        public static string simpanTanggalSelesai;
+
         public FormService()
         {
             InitializeComponent();
@@ -43,6 +52,8 @@ namespace Project_VS
         DataTable dtInputService = new DataTable();
         DataTable dtDataServiceSekarang = new DataTable();
 
+        DataTable dtDataDetailServiceSekarang = new DataTable();
+
         private void FormService_Load(object sender, EventArgs e)
         {
             sqlQuery = "SELECT layanan_nama AS 'Jenis Layanan', layanan_biaya AS 'Biaya', part_nama AS 'Part', biaya_pasang_part AS 'Harga Part' FROM layanan;";
@@ -51,15 +62,23 @@ namespace Project_VS
             sqlAdapter.Fill(dtLayanan);
             dgvTabelLayanan.DataSource = dtLayanan;
 
-            labelCurrDate.Text = dtpHariIni.Value.ToString().Substring(0,10).Replace("/","-");
 
             sqlQuery = "SELECT * FROM trans_service;";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(dtDataServiceSekarang);
 
+            sqlQuery = "SELECT * FROM detail_service;";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtDataDetailServiceSekarang);
+
             hitungJumlahService = Convert.ToInt32(dtDataServiceSekarang.Rows.Count) + 1;
-            simpanTanggal = dtpHariIni.Value.ToString().Substring(0, 10);
+            hitungDetailService = Convert.ToInt32(dtDataDetailServiceSekarang.Rows.Count) + 1;
+
+            labelCurrDate.Text = DateTime.Now.ToString().Substring(0, 10).Replace("/","-");
+            simpanTanggal = DateTime.Now.ToString().Substring(0, 10).Replace("/","-");
+            simpanTanggalSelesai = DateTime.Now.AddDays(1).ToString().Substring(0, 10).Replace("/", "-");
         }
 
         private void FormService_FormClosing(object sender, FormClosingEventArgs e)
@@ -90,6 +109,8 @@ namespace Project_VS
 
                 simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
                 simpanHargaService = 250000;
+                simpanIDLayanan = "001";
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
             }
   
             else if (comboBoxPilihanService.SelectedIndex == 6)
@@ -111,6 +132,8 @@ namespace Project_VS
                     comboBoxPegawai.ValueMember = "pegawai_ID";
 
                     simpanHargaService = 550000;
+                    simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
+                    simpanIDLayanan = "013";
                 }
                 
                 else if(comboBoxGantiPart.SelectedIndex == 1)
@@ -125,6 +148,8 @@ namespace Project_VS
                     comboBoxPegawai.ValueMember = "pegawai_ID";
 
                     simpanHargaService = 650000;
+                    simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
+                    simpanIDLayanan = "014";
                 }
 
                 else if (comboBoxGantiPart.SelectedIndex == 2)
@@ -139,6 +164,8 @@ namespace Project_VS
                     comboBoxPegawai.ValueMember = "pegawai_ID";
 
                     simpanHargaService = 225000;
+                    simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
+                    simpanIDLayanan = "015";
                 }
 
                 else if (comboBoxGantiPart.SelectedIndex == 3)
@@ -153,6 +180,8 @@ namespace Project_VS
                     comboBoxPegawai.ValueMember = "pegawai_ID";
 
                     simpanHargaService = 325000;
+                    simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
+                    simpanIDLayanan = "016";
                 }
 
                 else if (comboBoxGantiPart.SelectedIndex == 4)
@@ -167,6 +196,8 @@ namespace Project_VS
                     comboBoxPegawai.ValueMember = "pegawai_ID";
 
                     simpanHargaService = 1200000;
+                    simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
+                    simpanIDLayanan = "017";
                 }
 
                 else if (comboBoxGantiPart.SelectedIndex == 5)
@@ -181,6 +212,8 @@ namespace Project_VS
                     comboBoxPegawai.ValueMember = "pegawai_ID";
 
                     simpanHargaService = 400000;
+                    simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
+                    simpanIDLayanan = "018";
                 }
 
                 simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
@@ -268,42 +301,123 @@ namespace Project_VS
             
         }
 
+        private void comboBoxGantiPart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxGantiPart.SelectedIndex == 0)
+            {
+                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 013";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawaiSB);
+
+                comboBoxPegawai.DataSource = dtPegawaiSB;
+                comboBoxPegawai.DisplayMember = "pegawai_nama";
+                comboBoxPegawai.ValueMember = "pegawai_ID";
+
+                simpanHargaService = 550000;
+                simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
+                simpanIDLayanan = "013";
+            }
+
+            else if (comboBoxGantiPart.SelectedIndex == 1)
+            {
+                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 014";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawaiSB);
+
+                comboBoxPegawai.DataSource = dtPegawaiSB;
+                comboBoxPegawai.DisplayMember = "pegawai_nama";
+                comboBoxPegawai.ValueMember = "pegawai_ID";
+
+                simpanHargaService = 650000;
+                simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
+                simpanIDLayanan = "014";
+            }
+
+            else if (comboBoxGantiPart.SelectedIndex == 2)
+            {
+                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 015";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawaiSB);
+
+                comboBoxPegawai.DataSource = dtPegawaiSB;
+                comboBoxPegawai.DisplayMember = "pegawai_nama";
+                comboBoxPegawai.ValueMember = "pegawai_ID";
+
+                simpanHargaService = 225000;
+                simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
+                simpanIDLayanan = "015";
+            }
+
+            else if (comboBoxGantiPart.SelectedIndex == 3)
+            {
+                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 016";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawaiSB);
+
+                comboBoxPegawai.DataSource = dtPegawaiSB;
+                comboBoxPegawai.DisplayMember = "pegawai_nama";
+                comboBoxPegawai.ValueMember = "pegawai_ID";
+
+                simpanHargaService = 325000;
+                simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
+                simpanIDLayanan = "016";
+            }
+
+            else if (comboBoxGantiPart.SelectedIndex == 4)
+            {
+                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 017";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawaiSB);
+
+                comboBoxPegawai.DataSource = dtPegawaiSB;
+                comboBoxPegawai.DisplayMember = "pegawai_nama";
+                comboBoxPegawai.ValueMember = "pegawai_ID";
+
+                simpanHargaService = 1200000;
+                simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
+                simpanIDLayanan = "017";
+            }
+
+            else if (comboBoxGantiPart.SelectedIndex == 5)
+            {
+                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 018";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawaiSB);
+
+                comboBoxPegawai.DataSource = dtPegawaiSB;
+                comboBoxPegawai.DisplayMember = "pegawai_nama";
+                comboBoxPegawai.ValueMember = "pegawai_ID";
+
+                simpanHargaService = 400000;
+                simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
+                simpanIDLayanan = "018";
+            }
+
+        }
+
         private void buttonInput_Click(object sender, EventArgs e)
         {
-            /*
-            if (comboBoxGantiPart.Visible = true)
-            {
-                simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
-            }
-            else if (comboBoxOli.Visible = true)
-            {
-                simpanGantiOli = comboBoxOli.SelectedItem.ToString();
-            }
-            else if (comboBoxRepaint.Visible = true)
-            {
-                simpanBodyRepaint = comboBoxRepaint.SelectedItem.ToString();
-            }
-            else if (comboBoxGantiFilter.Visible = true)
-            {
-                simpanGantiFilter = comboBoxGantiFilter.SelectedItem.ToString();
-            }
-            else
-            {
-                simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
-            }*/
-
-
-            //simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
 
             if (dtDataServiceSekarang.Rows.Count < 10)
             {
-                string sqlInputService = "INSERT INTO trans_service VALUES ('S00"+hitungJumlahService+"','C00"+FormInputCostumer.hitungJumlahCust+"',str_to_date('05-06-2022','%d-%m-%Y'),'01:00:00','"+simpanHargaService+"','"+textBoxKiloMeterMobil.Text+"','"+textBoxMobilKeteranganWarna.Text+"','0');";
+                string sqlInputService = "INSERT INTO trans_service VALUES ('S00"+hitungJumlahService+"','C00"+FormInputCostumer.hitungJumlahCust+"',str_to_date('"+simpanTanggal+"','%d-%m-%Y'),'01:00:00','"+simpanHargaService+"','"+textBoxKiloMeterMobil.Text+"','"+textBoxMobilKeteranganWarna.Text+"','0');";
                 sqlConnect.Open();
                 sqlCommand = new MySqlCommand(sqlInputService, sqlConnect);
                 sqlCommand.ExecuteNonQuery();
                 sqlConnect.Close();
-            }
 
+                string sqlInputDetailService = "INSERT INTO detail_service VALUES('DS00"+hitungDetailService+"','"+simpanIDLayanan+"','"+simpanPegawaiID+"','S00"+hitungJumlahService+"',str_to_date('"+simpanTanggal+"','%d-%m-%Y'), str_to_date('"+simpanTanggalSelesai+"','%d-%m-%Y'),false,'"+simpanHargaService+"','0');";
+                sqlConnect.Open();
+                sqlCommand = new MySqlCommand(sqlInputDetailService, sqlConnect);
+                sqlCommand.ExecuteNonQuery();
+                sqlConnect.Close();
+            }
             
 
             MessageBox.Show("Berikut adalah stock yang tersedia ! \nJika Barang yang dibutuhkan kosong, silahkan menunggu 3 hari.");
@@ -314,21 +428,6 @@ namespace Project_VS
 
         }
 
-        /*public void dataService(int posisi)
-        {
-            if(comboBoxPilihanService.SelectedIndex == 0)
-            {
-                simpanServiceBerkala = "Service Berkala " + comboBoxServiceBerkala.Text;
-            }
-            else if(comboBoxPilihanService.SelectedIndex == 3)
-            {
-                simpanServiceBerkala = comboBoxGantiPart.Text;
-            }
-            else
-            {
-                simpanServiceBerkala = comboBoxPilihanService.Text;
-            }
-        }*/
 
         private void buttonBackToHome_Click(object sender, EventArgs e)
         {
@@ -336,5 +435,7 @@ namespace Project_VS
             FormWelcome BukaFormWelcome = new FormWelcome();
             BukaFormWelcome.ShowDialog();
         }
+
+        
     }
 }

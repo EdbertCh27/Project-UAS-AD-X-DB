@@ -43,10 +43,14 @@ namespace Project_VS
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Silahkan Isi Data Costumer");
+            MessageBox.Show("INVOICE");
             this.Hide();
-            FormInputCostumer BukaFormInputCost = new FormInputCostumer();
-            BukaFormInputCost.ShowDialog();
+
+            FormInvoice bukaFormInvoice = new FormInvoice();
+            bukaFormInvoice.ShowDialog();
+
+            //FormInputCostumer BukaFormInputCost = new FormInputCostumer();
+            //BukaFormInputCost.ShowDialog();
         }
     }
 }

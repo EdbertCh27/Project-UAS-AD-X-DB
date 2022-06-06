@@ -25,7 +25,6 @@ namespace Project_VS
         DataTable dtCustomerID = new DataTable();
 
         string pilianService = FormService.simpanPilihanService;
-        string pilihanPart = FormService.simpanServiceGantiPart;
 
         public void FormInvoice_Load(object sender, EventArgs e)
         {
@@ -39,6 +38,8 @@ namespace Project_VS
             labelIsiService.Text = pilianService;
             labelIsiTypeMobil.Text = FormInputCostumer.simpanTypeMobil;
             labelIsiNoPol.Text = FormInputCostumer.simpanNoPol;
+            labelUsePart.Text = FormService.simpanServiceGantiPart;
+            labelTotalHarga.Text = FormService.simpanHargaService.ToString();
             labelUsePart.Text = FormService.simpanServiceGantiPart;
 
         }

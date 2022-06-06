@@ -42,7 +42,6 @@ namespace Project_VS
             this.textBoxKiloMeterMobil = new System.Windows.Forms.TextBox();
             this.textBoxMobilKeteranganWarna = new System.Windows.Forms.TextBox();
             this.labelCurrDate = new System.Windows.Forms.Label();
-            this.dtpHariIni = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabelLayanan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,6 +83,7 @@ namespace Project_VS
             this.comboBoxGantiPart.Size = new System.Drawing.Size(139, 28);
             this.comboBoxGantiPart.TabIndex = 7;
             this.comboBoxGantiPart.Visible = false;
+            this.comboBoxGantiPart.SelectedIndexChanged += new System.EventHandler(this.comboBoxGantiPart_SelectedIndexChanged);
             // 
             // comboBoxGantiFilter
             // 
@@ -196,14 +196,6 @@ namespace Project_VS
             this.labelCurrDate.TabIndex = 17;
             this.labelCurrDate.Text = "CurrDate";
             // 
-            // dtpHariIni
-            // 
-            this.dtpHariIni.Checked = false;
-            this.dtpHariIni.Location = new System.Drawing.Point(165, 160);
-            this.dtpHariIni.Name = "dtpHariIni";
-            this.dtpHariIni.Size = new System.Drawing.Size(200, 22);
-            this.dtpHariIni.TabIndex = 18;
-            // 
             // FormService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -211,7 +203,6 @@ namespace Project_VS
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(882, 553);
-            this.Controls.Add(this.dtpHariIni);
             this.Controls.Add(this.labelCurrDate);
             this.Controls.Add(this.textBoxMobilKeteranganWarna);
             this.Controls.Add(this.textBoxKiloMeterMobil);
@@ -249,6 +240,5 @@ namespace Project_VS
         private System.Windows.Forms.TextBox textBoxKiloMeterMobil;
         private System.Windows.Forms.TextBox textBoxMobilKeteranganWarna;
         private System.Windows.Forms.Label labelCurrDate;
-        private System.Windows.Forms.DateTimePicker dtpHariIni;
     }
 }
