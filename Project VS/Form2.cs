@@ -134,6 +134,7 @@ namespace Project_VS
                     simpanHargaService = 550000;
                     simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
                     simpanIDLayanan = "013";
+                    simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
                 }
                 
                 else if(comboBoxGantiPart.SelectedIndex == 1)
@@ -150,6 +151,7 @@ namespace Project_VS
                     simpanHargaService = 650000;
                     simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
                     simpanIDLayanan = "014";
+                    simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
                 }
 
                 else if (comboBoxGantiPart.SelectedIndex == 2)
@@ -166,6 +168,7 @@ namespace Project_VS
                     simpanHargaService = 225000;
                     simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
                     simpanIDLayanan = "015";
+                    simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
                 }
 
                 else if (comboBoxGantiPart.SelectedIndex == 3)
@@ -182,6 +185,7 @@ namespace Project_VS
                     simpanHargaService = 325000;
                     simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
                     simpanIDLayanan = "016";
+                    simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
                 }
 
                 else if (comboBoxGantiPart.SelectedIndex == 4)
@@ -198,6 +202,7 @@ namespace Project_VS
                     simpanHargaService = 1200000;
                     simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
                     simpanIDLayanan = "017";
+                    simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
                 }
 
                 else if (comboBoxGantiPart.SelectedIndex == 5)
@@ -214,6 +219,7 @@ namespace Project_VS
                     simpanHargaService = 400000;
                     simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
                     simpanIDLayanan = "018";
+                    simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
                 }
 
                 simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
@@ -317,6 +323,7 @@ namespace Project_VS
                 simpanHargaService = 550000;
                 simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
                 simpanIDLayanan = "013";
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
             }
 
             else if (comboBoxGantiPart.SelectedIndex == 1)
@@ -333,6 +340,7 @@ namespace Project_VS
                 simpanHargaService = 650000;
                 simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
                 simpanIDLayanan = "014";
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
             }
 
             else if (comboBoxGantiPart.SelectedIndex == 2)
@@ -349,6 +357,7 @@ namespace Project_VS
                 simpanHargaService = 225000;
                 simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
                 simpanIDLayanan = "015";
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
             }
 
             else if (comboBoxGantiPart.SelectedIndex == 3)
@@ -365,6 +374,7 @@ namespace Project_VS
                 simpanHargaService = 325000;
                 simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
                 simpanIDLayanan = "016";
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
             }
 
             else if (comboBoxGantiPart.SelectedIndex == 4)
@@ -381,6 +391,7 @@ namespace Project_VS
                 simpanHargaService = 1200000;
                 simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
                 simpanIDLayanan = "017";
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
             }
 
             else if (comboBoxGantiPart.SelectedIndex == 5)
@@ -397,6 +408,7 @@ namespace Project_VS
                 simpanHargaService = 400000;
                 simpanServiceGantiPart = comboBoxGantiPart.SelectedItem.ToString();
                 simpanIDLayanan = "018";
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
             }
 
         }
