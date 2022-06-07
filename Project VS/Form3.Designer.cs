@@ -34,6 +34,7 @@ namespace Project_VS
             this.buttonCheckCostNum = new System.Windows.Forms.Button();
             this.textBoxCheckCostNum = new System.Windows.Forms.TextBox();
             this.dataGridViewCheckCostumer = new System.Windows.Forms.DataGridView();
+            this.buttonPickUp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCheckCostumer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,9 +54,9 @@ namespace Project_VS
             // 
             this.buttonCheckCostNum.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCheckCostNum.BackgroundImage")));
             this.buttonCheckCostNum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonCheckCostNum.Location = new System.Drawing.Point(205, 452);
+            this.buttonCheckCostNum.Location = new System.Drawing.Point(659, 154);
             this.buttonCheckCostNum.Name = "buttonCheckCostNum";
-            this.buttonCheckCostNum.Size = new System.Drawing.Size(161, 63);
+            this.buttonCheckCostNum.Size = new System.Drawing.Size(81, 30);
             this.buttonCheckCostNum.TabIndex = 2;
             this.buttonCheckCostNum.UseVisualStyleBackColor = true;
             this.buttonCheckCostNum.Click += new System.EventHandler(this.buttonCheckCostNum_Click);
@@ -77,6 +78,17 @@ namespace Project_VS
             this.dataGridViewCheckCostumer.Size = new System.Drawing.Size(708, 108);
             this.dataGridViewCheckCostumer.TabIndex = 5;
             // 
+            // buttonPickUp
+            // 
+            this.buttonPickUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPickUp.BackgroundImage")));
+            this.buttonPickUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonPickUp.Location = new System.Drawing.Point(230, 452);
+            this.buttonPickUp.Name = "buttonPickUp";
+            this.buttonPickUp.Size = new System.Drawing.Size(161, 63);
+            this.buttonPickUp.TabIndex = 6;
+            this.buttonPickUp.UseVisualStyleBackColor = true;
+            this.buttonPickUp.Click += new System.EventHandler(this.buttonPickUp_Click);
+            // 
             // FormCheck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -84,6 +96,7 @@ namespace Project_VS
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.buttonPickUp);
             this.Controls.Add(this.dataGridViewCheckCostumer);
             this.Controls.Add(this.buttonBackToHome);
             this.Controls.Add(this.buttonCheckCostNum);
@@ -105,5 +118,6 @@ namespace Project_VS
         private System.Windows.Forms.Button buttonBackToHome;
         private System.Windows.Forms.TextBox textBoxCheckCostNum;
         private System.Windows.Forms.DataGridView dataGridViewCheckCostumer;
+        private System.Windows.Forms.Button buttonPickUp;
     }
 }

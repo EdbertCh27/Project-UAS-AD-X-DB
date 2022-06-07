@@ -22,7 +22,10 @@ namespace Project_VS
         MySqlCommand sqlCommand;
         MySqlDataAdapter sqlAdapter;
         String sqlQuery;
+
         DataTable dtCustomerData = new DataTable();
+        DataTable dtPickUpMobil = new DataTable();
+        DataTable dtCheckCsData = new DataTable();
 
         private void FormCheck_Load(object sender, EventArgs e)
         {
@@ -45,24 +48,46 @@ namespace Project_VS
 
         private void buttonCheckCostNum_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DataTable dtCustomerData = new DataTable();
-                sqlQuery = "SELECT C.CUSTOMER_ID AS 'ID', C.CUSTOMER_NAME AS'NAMA', C.CUSTOMER_MERK_MOBIL AS 'TYPE MOBIL', C.CUSTOMER_NOPOL_MOBIL AS 'NOPOL', concat(L.LAYANAN_NAMA,' ',PART_NAMA) AS 'JENIS SERVICE',DS.SELESAI_KERJA AS 'TANGGAL PENGAMBILAN', TS.SERVICE_TOTAL AS 'TOTAL' FROM CUSTOMER C, TRANS_SERVICE TS, DETAIL_SERVICE DS, LAYANAN L WHERE C.CUSTOMER_ID = TS.CUSTOMER_ID AND TS.SERVICE_ID = DS.SERVICE_ID AND L.LAYANAN_ID = DS.LAYANAN_ID AND C.customer_ID = '" + textBoxCheckCostNum.Text + "';";
-                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(dtCustomerData);
-                dataGridViewCheckCostumer.DataSource = dtCustomerData;
-            }
-            catch (Exception)
-            {
+            sqlQuery = "SELECT * FROM CUSTOMER WHERE CUSTOMER_ID ='"+textBoxCheckCostNum.Text+"';";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtCheckCsData);
 
-                
+            if(dtCheckCsData.Rows.Count == 1)
+            {
+                try
+                {
+
+
+                    sqlQuery = "SELECT C.CUSTOMER_ID AS 'ID', C.CUSTOMER_NAME AS'NAMA', C.CUSTOMER_MERK_MOBIL AS 'TYPE MOBIL', C.CUSTOMER_NOPOL_MOBIL AS 'NOPOL', concat(L.LAYANAN_NAMA,' ',PART_NAMA) AS 'JENIS SERVICE',DS.SELESAI_KERJA AS 'TANGGAL PENGAMBILAN', TS.SERVICE_TOTAL AS 'TOTAL' FROM CUSTOMER C, TRANS_SERVICE TS, DETAIL_SERVICE DS, LAYANAN L WHERE C.CUSTOMER_ID = TS.CUSTOMER_ID AND TS.SERVICE_ID = DS.SERVICE_ID AND L.LAYANAN_ID = DS.LAYANAN_ID AND C.customer_ID = '" + textBoxCheckCostNum.Text + "';";
+                    sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                    sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                    sqlAdapter.Fill(dtCustomerData);
+                    dataGridViewCheckCostumer.DataSource = dtCustomerData;
+                }
+                catch (Exception)
+                {
+
+
+                }
             }
 
+            else
+            {
+                MessageBox.Show("Customer Tidak Terdaftar !");
+            }
             
         }
 
-        
+        private void buttonPickUp_Click(object sender, EventArgs e)
+        {
+            sqlQuery = "UPDATE CUSTOMER SET STATUS_DELETE = '1' WHERE CUSTOMER_ID = '"+textBoxCheckCostNum.Text+"';";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtPickUpMobil);
+
+            MessageBox.Show("Terimakasih telah mempercayakan kendaraan anda kepada kami!");
+            this.Hide();
+        }
     }
 }
