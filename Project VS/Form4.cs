@@ -37,13 +37,13 @@ namespace Project_VS
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(dtDataCustomerSekarang);
+            dataGridView1.DataSource = dtDataCustomerSekarang;
 
             hitungJumlahCust = Convert.ToInt32(dtDataCustomerSekarang.Rows.Count) + 1;
         }
 
         private void buttonInputDataCust_Click(object sender, EventArgs e)
         {
-            
             dataCostumer(0);
 
             if (dtDataCustomerSekarang.Rows.Count < 10)
@@ -54,7 +54,17 @@ namespace Project_VS
                 sqlCommand.ExecuteNonQuery();
                 sqlConnect.Close();
             }
-            else if(dtDataCustomerSekarang.Rows.Count >= 10)
+
+            else if (dtDataCustomerSekarang.Rows.Count == 10)
+            {
+                string sqlInputCustomer = "INSERT INTO customer VALUES('C0" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text + "', '" + textBoxTypeMobilCust.Text + "', '0')";
+                sqlConnect.Open();
+                sqlCommand = new MySqlCommand(sqlInputCustomer, sqlConnect);
+                sqlCommand.ExecuteNonQuery();
+                sqlConnect.Close();
+            }
+
+            else if(dtDataCustomerSekarang.Rows.Count > 10)
             {
                 string sqlInputCustomer = "INSERT INTO customer VALUES('C0" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text + "', '" + textBoxTypeMobilCust.Text + "', '0')";
                 sqlConnect.Open();
@@ -83,11 +93,9 @@ namespace Project_VS
             //FormInvoice BukaFormInvoice = new FormInvoice();
             //BukaFormInvoice.ShowDialog();
         }
-
-        public void dataCostumer(int posisi) //????
+        public void dataCostumer(int posisi)
         {
             simpanNama = textBoxNamaCust.Text;
-
             simpanAlamat = textBoxAlamatCust.Text;
             simpanNoHp = textBoxNoHpCust.Text;
             simpanTypeMobil = textBoxTypeMobilCust.Text;

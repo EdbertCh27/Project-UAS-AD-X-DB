@@ -98,6 +98,7 @@ namespace Project_VS
             this.comboBoxGantiFilter.Size = new System.Drawing.Size(139, 28);
             this.comboBoxGantiFilter.TabIndex = 10;
             this.comboBoxGantiFilter.Visible = false;
+            this.comboBoxGantiFilter.SelectedIndexChanged += new System.EventHandler(this.comboBoxGantiFilter_SelectedIndexChanged);
             // 
             // comboBoxRepaint
             // 
@@ -115,6 +116,7 @@ namespace Project_VS
             this.comboBoxRepaint.Size = new System.Drawing.Size(139, 28);
             this.comboBoxRepaint.TabIndex = 11;
             this.comboBoxRepaint.Visible = false;
+            this.comboBoxRepaint.SelectedIndexChanged += new System.EventHandler(this.comboBoxRepaint_SelectedIndexChanged);
             // 
             // comboBoxOli
             // 
@@ -171,7 +173,7 @@ namespace Project_VS
             this.comboBoxPegawai.Name = "comboBoxPegawai";
             this.comboBoxPegawai.Size = new System.Drawing.Size(143, 28);
             this.comboBoxPegawai.TabIndex = 14;
-            this.comboBoxPegawai.SelectedIndexChanged += new System.EventHandler(this.comboBoxPegawai_SelectedIndexChanged);
+
             // 
             // textBoxKiloMeterMobil
             // 
@@ -180,7 +182,7 @@ namespace Project_VS
             this.textBoxKiloMeterMobil.Name = "textBoxKiloMeterMobil";
             this.textBoxKiloMeterMobil.Size = new System.Drawing.Size(104, 27);
             this.textBoxKiloMeterMobil.TabIndex = 15;
-            this.textBoxKiloMeterMobil.TextChanged += new System.EventHandler(this.textBoxKiloMeterMobil_TextChanged);
+
             // 
             // textBoxMobilKeteranganWarna
             // 
@@ -189,7 +191,7 @@ namespace Project_VS
             this.textBoxMobilKeteranganWarna.Name = "textBoxMobilKeteranganWarna";
             this.textBoxMobilKeteranganWarna.Size = new System.Drawing.Size(104, 27);
             this.textBoxMobilKeteranganWarna.TabIndex = 16;
-            this.textBoxMobilKeteranganWarna.TextChanged += new System.EventHandler(this.textBoxMobilKeteranganWarna_TextChanged);
+
             // 
             // labelCurrDate
             // 

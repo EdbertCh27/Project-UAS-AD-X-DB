@@ -34,5 +34,12 @@ namespace Project_VS
             //FormService BukaFormService = new FormService();
             //BukaFormService.ShowDialog();
         }
+
+        private void FormWelcome_Load(object sender, EventArgs e)
+        {
+            label1.Text = FormInputCostumer.hitungJumlahCust.ToString();
+            label2.Text = FormService.hitungJumlahService.ToString();
+            label3.Text = FormService.hitungDetailService.ToString();
+        }
     }
 }

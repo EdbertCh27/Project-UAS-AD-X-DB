@@ -38,9 +38,8 @@ namespace Project_VS
             labelIsiService.Text = pilianService;
             labelIsiTypeMobil.Text = FormInputCostumer.simpanTypeMobil;
             labelIsiNoPol.Text = FormInputCostumer.simpanNoPol;
-            labelUsePart.Text = FormService.simpanServiceGantiPart;
             labelTotalHarga.Text = FormService.simpanHargaService.ToString();
-            labelUsePart.Text = FormService.simpanServiceGantiPart;
+            labelUsePart.Text = FormService.simpanDetailPilihanService;
 
         }
 

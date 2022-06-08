@@ -36,6 +36,8 @@ namespace Project_VS
             this.textBoxTypeMobilCust = new System.Windows.Forms.TextBox();
             this.textBoxNomorPolisiCust = new System.Windows.Forms.TextBox();
             this.buttonInputDataCust = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxNamaCust
@@ -84,6 +86,16 @@ namespace Project_VS
             this.buttonInputDataCust.UseVisualStyleBackColor = true;
             this.buttonInputDataCust.Click += new System.EventHandler(this.buttonInputDataCust_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(601, 181);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(269, 221);
+            this.dataGridView1.TabIndex = 11;
+            // 
             // FormInputCostumer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -91,6 +103,7 @@ namespace Project_VS
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonInputDataCust);
             this.Controls.Add(this.textBoxNomorPolisiCust);
             this.Controls.Add(this.textBoxTypeMobilCust);
@@ -102,6 +115,7 @@ namespace Project_VS
             this.Name = "FormInputCostumer";
             this.Text = "Costumer Data";
             this.Load += new System.EventHandler(this.FormInputCostumer_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,5 +128,6 @@ namespace Project_VS
         private System.Windows.Forms.TextBox textBoxTypeMobilCust;
         private System.Windows.Forms.TextBox textBoxNomorPolisiCust;
         private System.Windows.Forms.Button buttonInputDataCust;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
