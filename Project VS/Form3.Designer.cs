@@ -87,6 +87,7 @@ namespace Project_VS
             this.buttonPickUp.Size = new System.Drawing.Size(161, 63);
             this.buttonPickUp.TabIndex = 6;
             this.buttonPickUp.UseVisualStyleBackColor = true;
+            this.buttonPickUp.Visible = false;
             this.buttonPickUp.Click += new System.EventHandler(this.buttonPickUp_Click);
             // 
             // FormCheck

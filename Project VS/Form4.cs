@@ -48,7 +48,7 @@ namespace Project_VS
 
             if (dtDataCustomerSekarang.Rows.Count < 10)
             {
-                string sqlInputCustomer = "INSERT INTO customer VALUES('C00"+hitungJumlahCust+"', '"+textBoxNamaCust.Text+"', '"+textBoxAlamatCust.Text+"', '"+textBoxNoHpCust.Text+"', '"+textBoxNomorPolisiCust.Text+"', '"+textBoxTypeMobilCust.Text+"', '0')";
+                string sqlInputCustomer = "INSERT INTO customer VALUES('C00" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text.ToUpper() + "', '" + textBoxTypeMobilCust.Text.ToUpper() +"', '0')";
                 sqlConnect.Open();
                 sqlCommand = new MySqlCommand(sqlInputCustomer, sqlConnect);
                 sqlCommand.ExecuteNonQuery();
@@ -57,7 +57,7 @@ namespace Project_VS
 
             else if (dtDataCustomerSekarang.Rows.Count == 10)
             {
-                string sqlInputCustomer = "INSERT INTO customer VALUES('C0" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text + "', '" + textBoxTypeMobilCust.Text + "', '0')";
+                string sqlInputCustomer = "INSERT INTO customer VALUES('C0" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text.ToUpper() + "', '" + textBoxTypeMobilCust.Text.ToUpper() + "', '0')";
                 sqlConnect.Open();
                 sqlCommand = new MySqlCommand(sqlInputCustomer, sqlConnect);
                 sqlCommand.ExecuteNonQuery();
@@ -66,7 +66,7 @@ namespace Project_VS
 
             else if(dtDataCustomerSekarang.Rows.Count > 10)
             {
-                string sqlInputCustomer = "INSERT INTO customer VALUES('C0" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text + "', '" + textBoxTypeMobilCust.Text + "', '0')";
+                string sqlInputCustomer = "INSERT INTO customer VALUES('C0" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text.ToUpper() + "', '" + textBoxTypeMobilCust.Text.ToUpper() + "', '0')";
                 sqlConnect.Open();
                 sqlCommand = new MySqlCommand(sqlInputCustomer, sqlConnect);
                 sqlCommand.ExecuteNonQuery();
@@ -74,7 +74,7 @@ namespace Project_VS
             }
             else if(dtDataCustomerSekarang.Rows.Count >= 100)
             {
-                string sqlInputCustomer = "INSERT INTO customer VALUES('C" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text + "', '" + textBoxTypeMobilCust.Text + "', '0')";
+                string sqlInputCustomer = "INSERT INTO customer VALUES('C" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text.ToUpper() + "', '" + textBoxTypeMobilCust.Text.ToUpper() + "', '0')";
                 sqlConnect.Open();
                 sqlCommand = new MySqlCommand(sqlInputCustomer, sqlConnect);
                 sqlCommand.ExecuteNonQuery();
