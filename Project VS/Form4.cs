@@ -37,7 +37,6 @@ namespace Project_VS
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(dtDataCustomerSekarang);
-            dataGridView1.DataSource = dtDataCustomerSekarang;
 
             hitungJumlahCust = Convert.ToInt32(dtDataCustomerSekarang.Rows.Count) + 1;
         }

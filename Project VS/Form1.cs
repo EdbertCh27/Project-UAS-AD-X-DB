@@ -34,9 +34,7 @@ namespace Project_VS
 
         private void FormWelcome_Load(object sender, EventArgs e)
         {
-            label1.Text = FormInvoice.hitungStockVelg.ToString();
-            label2.Text = FormService.hitungJumlahService.ToString();
-            label3.Text = FormService.hitungDetailService.ToString();
+
         }
     }
 }

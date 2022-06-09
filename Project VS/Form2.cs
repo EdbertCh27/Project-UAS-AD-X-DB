@@ -110,6 +110,7 @@ namespace Project_VS
                 comboBoxPegawai.DataSource = dtPegawai;
                 comboBoxPegawai.DisplayMember = "pegawai_nama";
                 comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.SelectedIndex = 0;
 
                 simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
                 simpanHargaService = 250000;
@@ -135,6 +136,7 @@ namespace Project_VS
                 comboBoxPegawai.DataSource = dtPegawai;
                 comboBoxPegawai.DisplayMember = "pegawai_nama";
                 comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.SelectedIndex = 0;
 
                 simpanHargaService = 150000;
                 simpanIDLayanan = "002";
@@ -150,8 +152,11 @@ namespace Project_VS
                 comboBoxGantiFilter.Visible = false;
                 comboBoxOli.Visible = true;
                 simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
+                comboBoxOli.SelectedIndex = 0;
+                comboBoxPegawai.SelectedIndex = 0;
 
-                if (comboBoxOli.SelectedIndex == 0)
+
+                /*if (comboBoxOli.SelectedIndex == 0)
                 {
                     dtPegawai.Clear();
                     sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 003";
@@ -162,6 +167,8 @@ namespace Project_VS
                     comboBoxPegawai.DataSource = dtPegawai;
                     comboBoxPegawai.DisplayMember = "pegawai_nama";
                     comboBoxPegawai.ValueMember = "pegawai_ID";
+                    comboBoxPegawai.SelectedIndex = 0;
+
                     simpanIDLayanan = "003";
                     simpanHargaService = 100000;
                     simpanDetailPilihanService = comboBoxOli.SelectedItem.ToString();
@@ -180,11 +187,13 @@ namespace Project_VS
                     comboBoxPegawai.DataSource = dtPegawai;
                     comboBoxPegawai.DisplayMember = "pegawai_nama";
                     comboBoxPegawai.ValueMember = "pegawai_ID";
+                    comboBoxPegawai.SelectedIndex = 0;
+
                     simpanIDLayanan = "004";
                     simpanHargaService = 75000;
                     simpanDetailPilihanService = comboBoxOli.SelectedItem.ToString();
                     simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-                }
+                }*/
                 
             }
 
@@ -206,6 +215,7 @@ namespace Project_VS
                 comboBoxPegawai.DataSource = dtPegawai;
                 comboBoxPegawai.DisplayMember = "pegawai_nama";
                 comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.SelectedIndex = 0;
 
                 simpanHargaService = 50000;
                 simpanIDLayanan = "005";
@@ -222,14 +232,16 @@ namespace Project_VS
                 comboBoxRepaint.Visible = true;
                 comboBoxGantiFilter.Visible = false;
 
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 001";
+                /*sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 001";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
                 comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.ValueMember = "pegawai_ID"; */
+                comboBoxRepaint.SelectedIndex = 0;
+                comboBoxPegawai.SelectedIndex = 0;
 
                 simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
             }
@@ -251,6 +263,7 @@ namespace Project_VS
                 comboBoxPegawai.DataSource = dtPegawai;
                 comboBoxPegawai.DisplayMember = "pegawai_nama";
                 comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.SelectedIndex = 0;
 
                 simpanHargaService = 1000000;
                 simpanIDLayanan = "012";
@@ -266,6 +279,8 @@ namespace Project_VS
                 comboBoxGantiFilter.Visible = false;
 
                 simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
+                comboBoxGantiPart.SelectedIndex = 0;
+                comboBoxPegawai.SelectedIndex = 0;
 
             }
 
@@ -286,6 +301,7 @@ namespace Project_VS
                 comboBoxPegawai.DataSource = dtPegawai;
                 comboBoxPegawai.DisplayMember = "pegawai_nama";
                 comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.SelectedIndex = 0;
 
                 simpanHargaService = 2500000;
                 simpanIDLayanan = "019";
@@ -310,6 +326,7 @@ namespace Project_VS
                 comboBoxPegawai.DataSource = dtPegawai;
                 comboBoxPegawai.DisplayMember = "pegawai_nama";
                 comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.SelectedIndex = 0;
 
                 simpanHargaService = 750000;
                 simpanIDLayanan = "020";
@@ -334,6 +351,7 @@ namespace Project_VS
                 comboBoxPegawai.DataSource = dtPegawai;
                 comboBoxPegawai.DisplayMember = "pegawai_nama";
                 comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.SelectedIndex = 0;
 
                 simpanHargaService = 5500000;
                 simpanIDLayanan = "021";
@@ -352,7 +370,8 @@ namespace Project_VS
                 comboBoxOli.Visible = false;
 
                 simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
-
+                comboBoxGantiFilter.SelectedIndex = 0;
+                comboBoxPegawai.SelectedIndex = 0;
             }
 
         }
