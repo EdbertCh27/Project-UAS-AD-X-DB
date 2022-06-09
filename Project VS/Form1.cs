@@ -30,9 +30,6 @@ namespace Project_VS
             this.Hide();
             FormInputCostumer BukaFormInputCostumer = new FormInputCostumer();
             BukaFormInputCostumer.ShowDialog();
-
-            //FormService BukaFormService = new FormService();
-            //BukaFormService.ShowDialog();
         }
 
         private void FormWelcome_Load(object sender, EventArgs e)

@@ -71,6 +71,9 @@ namespace Project_VS
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(dtDataDetailServiceSekarang);
 
+            comboBoxPilihanService.SelectedIndex = 0;
+            comboBoxPegawai.SelectedIndex = 0;
+
             hitungJumlahService = Convert.ToInt32(dtDataServiceSekarang.Rows.Count) + 1;
             hitungDetailService = Convert.ToInt32(dtDataDetailServiceSekarang.Rows.Count) + 1;
             FormInputCostumer.hitungJumlahCust = Convert.ToInt32(dtDataDetailServiceSekarang.Rows.Count) + 1;
