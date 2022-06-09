@@ -49,8 +49,6 @@ namespace Project_VS
             FormInvoice bukaFormInvoice = new FormInvoice();
             bukaFormInvoice.ShowDialog();
 
-            //FormInputCostumer BukaFormInputCost = new FormInputCostumer();
-            //BukaFormInputCost.ShowDialog();
         }
     }
 }

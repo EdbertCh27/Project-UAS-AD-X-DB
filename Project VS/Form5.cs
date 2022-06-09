@@ -161,6 +161,12 @@ namespace Project_VS
                 sqlConnect.Close();
             }
 
+            else
+            {
+
+            }
+
+            MessageBox.Show("Terimakasih telah mempercayakan kendaraan anda kepada kami!");
             this.Close();
         }
     }

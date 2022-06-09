@@ -207,6 +207,7 @@ namespace Project_VS
                 simpanHargaService = 50000;
                 simpanIDLayanan = "005";
                 simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+                simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
             }
 
             else if (comboBoxPilihanService.SelectedIndex == 4)
@@ -251,6 +252,7 @@ namespace Project_VS
                 simpanHargaService = 1000000;
                 simpanIDLayanan = "012";
                 simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+                simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
             }
 
             else if (comboBoxPilihanService.SelectedIndex == 6)
@@ -285,6 +287,7 @@ namespace Project_VS
                 simpanHargaService = 2500000;
                 simpanIDLayanan = "019";
                 simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+                simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
             }
 
             else if (comboBoxPilihanService.SelectedIndex == 8)
@@ -308,6 +311,7 @@ namespace Project_VS
                 simpanHargaService = 750000;
                 simpanIDLayanan = "020";
                 simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+                simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
             }
 
             else if (comboBoxPilihanService.SelectedIndex == 9)
@@ -331,6 +335,7 @@ namespace Project_VS
                 simpanHargaService = 5500000;
                 simpanIDLayanan = "021";
                 simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+                simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
             }
 
 
@@ -663,7 +668,7 @@ namespace Project_VS
         private void buttonInput_Click(object sender, EventArgs e)
         {
 
-            if (dtDataServiceSekarang.Rows.Count < 10)
+            if (dtDataServiceSekarang.Rows.Count + 1 < 10)
             {
                 string sqlInputService = "INSERT INTO trans_service VALUES ('S00" + hitungJumlahService + "','C00" + FormInputCostumer.hitungJumlahCust + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'),'01:00:00','" + simpanHargaService + "','" + textBoxKiloMeterMobil.Text + "','" + textBoxMobilKeteranganWarna.Text + "','0');";
                 sqlConnect.Open();
@@ -678,7 +683,7 @@ namespace Project_VS
                 sqlConnect.Close();
             }
 
-            else if (dtDataServiceSekarang.Rows.Count >= 10)
+            else if (dtDataServiceSekarang.Rows.Count + 1 >= 10)
             {
                 string sqlInputService = "INSERT INTO trans_service VALUES ('S0" + hitungJumlahService + "','C0" + FormInputCostumer.hitungJumlahCust + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'),'01:00:00','" + simpanHargaService + "','" + textBoxKiloMeterMobil.Text + "','" + textBoxMobilKeteranganWarna.Text + "','0');";
                 sqlConnect.Open();
@@ -693,7 +698,7 @@ namespace Project_VS
                 sqlConnect.Close();
             }
 
-            else if (dtDataServiceSekarang.Rows.Count >= 100)
+            else if (dtDataServiceSekarang.Rows.Count + 1 >= 100)
             {
                 string sqlInputService = "INSERT INTO trans_service VALUES ('S" + hitungJumlahService + "','C" + FormInputCostumer.hitungJumlahCust + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'),'01:00:00','" + simpanHargaService + "','" + textBoxKiloMeterMobil.Text + "','" + textBoxMobilKeteranganWarna.Text + "','0');";
                 sqlConnect.Open();

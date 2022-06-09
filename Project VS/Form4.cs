@@ -46,7 +46,7 @@ namespace Project_VS
         {
             dataCostumer(0);
 
-            if (dtDataCustomerSekarang.Rows.Count < 10)
+            if (dtDataCustomerSekarang.Rows.Count + 1 < 10)
             {
                 string sqlInputCustomer = "INSERT INTO customer VALUES('C00" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text.ToUpper() + "', '" + textBoxTypeMobilCust.Text.ToUpper() +"', '0')";
                 sqlConnect.Open();
@@ -55,16 +55,16 @@ namespace Project_VS
                 sqlConnect.Close();
             }
 
-            else if (dtDataCustomerSekarang.Rows.Count == 10)
+            /*else if (dtDataCustomerSekarang.Rows.Count == 10)
             {
                 string sqlInputCustomer = "INSERT INTO customer VALUES('C0" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text.ToUpper() + "', '" + textBoxTypeMobilCust.Text.ToUpper() + "', '0')";
                 sqlConnect.Open();
                 sqlCommand = new MySqlCommand(sqlInputCustomer, sqlConnect);
                 sqlCommand.ExecuteNonQuery();
                 sqlConnect.Close();
-            }
+            }*/
 
-            else if(dtDataCustomerSekarang.Rows.Count > 10)
+            else if(dtDataCustomerSekarang.Rows.Count + 1 >= 10)
             {
                 string sqlInputCustomer = "INSERT INTO customer VALUES('C0" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text.ToUpper() + "', '" + textBoxTypeMobilCust.Text.ToUpper() + "', '0')";
                 sqlConnect.Open();
@@ -72,7 +72,7 @@ namespace Project_VS
                 sqlCommand.ExecuteNonQuery();
                 sqlConnect.Close();
             }
-            else if(dtDataCustomerSekarang.Rows.Count >= 100)
+            else if(dtDataCustomerSekarang.Rows.Count + 1 >= 100)
             {
                 string sqlInputCustomer = "INSERT INTO customer VALUES('C" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text.ToUpper() + "', '" + textBoxTypeMobilCust.Text.ToUpper() + "', '0')";
                 sqlConnect.Open();
