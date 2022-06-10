@@ -88,6 +88,9 @@ namespace Project_VS
 
             else
             {
+                dtCustomerData = new DataTable();
+                dtCheckCsData = new DataTable();
+                dataGridViewCheckCostumer.DataSource = dtCustomerData;
                 MessageBox.Show("Customer Tidak Terdaftar !");
             }
             
