@@ -15,10 +15,7 @@ namespace Project_VS
     {
         //public static string simpanServiceBerkala;
         public static string simpanPilihanService;
-        //public static string simpanServiceGantiPart;
-        //public static string simpanGantiOli;
-        //public static string simpanBodyRepaint;
-        //public static string simpanGantiFilter;
+
         public static string simpanDetailPilihanService;
 
         public static int hitungJumlahService;
