@@ -36,13 +36,18 @@ namespace Project_VS
             labelStockWiper.Text = dtStokBarang.Rows[2][0].ToString();
             labelStockSpion.Text = dtStokBarang.Rows[3][0].ToString();
             labelStockBan.Text = dtStokBarang.Rows[4][0].ToString();
-            labelStockLampu.Text = dtStokBarang.Rows[5][0].ToString();
-            
+            labelStockLampu.Text = dtStokBarang.Rows[5][0].ToString();            
             
         }
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
+            if(FormService.simpanDetailPilihanService == "Velg" && labelStockVelg.Text == "0 Buah")
+            {
+                FormService.simpanTanggalSelesai = DateTime.Now.AddDays(4).ToString().Substring(0, 10).Replace("/", "-");
+            }
+
+
             MessageBox.Show("INVOICE");
             this.Hide();
 

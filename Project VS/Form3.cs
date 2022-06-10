@@ -48,10 +48,8 @@ namespace Project_VS
 
         private void buttonCheckCostNum_Click(object sender, EventArgs e)
         {
-            dtCheckCsData.Clear();
-            dataGridViewCheckCostumer.DataSource = null;
-            dataGridViewCheckCostumer.Rows.Clear();
-            dataGridViewCheckCostumer.Refresh();
+            dtCustomerData = new DataTable();
+            dtCheckCsData = new DataTable();
 
             sqlQuery = "SELECT * FROM CUSTOMER WHERE CUSTOMER_ID ='" + textBoxCheckCostNum.Text.ToUpper() +"';";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
@@ -66,7 +64,26 @@ namespace Project_VS
                 sqlAdapter.Fill(dtCustomerData);
                 dataGridViewCheckCostumer.DataSource = dtCustomerData;
 
-                buttonPickUp.Visible = true;
+                int tanggalSkrg = Convert.ToInt32(DateTime.Today.ToString("ddMMyyyy"));
+                int tanggalPickup = Convert.ToInt32(Convert.ToDateTime(dtCustomerData.Rows[0][5]).ToString("ddMMyyyy"));
+
+                if (tanggalPickup <= tanggalSkrg  && dtCheckCsData.Rows[0][6].ToString() == "0")
+                {
+                    buttonPickUp.Visible = true;
+                    MessageBox.Show("Mobil Anda Telah Selesai di Proses,\nSilahkan diambil");
+                }
+
+                else if(tanggalPickup <= tanggalSkrg && dtCheckCsData.Rows[0][6].ToString() == "1")
+                {
+                    buttonPickUp.Visible = false;
+                    MessageBox.Show("Mobil Anda Telah Diambil,\nTerimakasih");
+                }
+
+                else if(tanggalPickup >= tanggalSkrg)
+                {
+                    buttonPickUp.Visible = false;
+                    MessageBox.Show("Mobil Anda sedang dalam proses,\nDapat diambil sesuai tanggal pengambilan");
+                }
             }
 
             else

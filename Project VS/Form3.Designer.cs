@@ -70,6 +70,8 @@ namespace Project_VS
             // 
             // dataGridViewCheckCostumer
             // 
+            this.dataGridViewCheckCostumer.AllowUserToAddRows = false;
+            this.dataGridViewCheckCostumer.AllowUserToDeleteRows = false;
             this.dataGridViewCheckCostumer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCheckCostumer.Location = new System.Drawing.Point(93, 280);
             this.dataGridViewCheckCostumer.Name = "dataGridViewCheckCostumer";
