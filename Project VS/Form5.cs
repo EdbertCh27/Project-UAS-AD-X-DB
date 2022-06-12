@@ -20,12 +20,14 @@ namespace Project_VS
         public static int hitungStockBan;
         public static int hitungStockLampu;
 
+        public static int hitungBeliPartID;
+
         public FormInvoice()
         {
             InitializeComponent();
         }
 
-        MySqlConnection sqlConnect = new MySqlConnection("server=localhost;uid=root;pwd=;database=servicehonda");
+        MySqlConnection sqlConnect = new MySqlConnection("server=139.255.11.84;uid=student;pwd=isbmantap;database=DBD_06_SERVICEMOBIL");
         MySqlCommand sqlCommand;
         MySqlDataAdapter sqlAdapter;
         String sqlQuery;
@@ -38,12 +40,12 @@ namespace Project_VS
 
         public void FormInvoice_Load(object sender, EventArgs e)
         {
-            sqlQuery = "SELECT customer_ID FROM customer ORDER BY 1 DESC limit 1 ;";
+            sqlQuery = "SELECT customer_ID FROM CUSTOMER ORDER BY 1 DESC limit 1 ;";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(dtCustomerID);
 
-            sqlQuery = "SELECT PART_ID, STOCK FROM SPAREPARTS;";
+            sqlQuery = "SELECT PART_ID, PART_STOCK FROM SPAREPARTS;";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(dtStockBarang);
@@ -53,6 +55,7 @@ namespace Project_VS
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(dtDetailServID);
 
+
             labelIsiCodeCost.Text = dtCustomerID.Rows[0][0].ToString();
             labelIsiCustomerName.Text = FormInputCostumer.simpanNama;
             labelIsiService.Text = pilianService;
@@ -60,16 +63,16 @@ namespace Project_VS
             labelIsiNoPol.Text = FormInputCostumer.simpanNoPol.ToUpper();
             labelTotalHarga.Text = FormService.simpanHargaService.ToString();
             labelUsePart.Text = FormService.simpanDetailPilihanService;
-
         }
 
         private void buttonDone_Click(object sender, EventArgs e)
         {
+            
             if (FormService.simpanDetailPilihanService == "Velg")
             {
                 hitungStockVelg = Convert.ToInt32(dtStockBarang.Rows[0][1].ToString()) - 1;
 
-                sqlQuery = "UPDATE SPAREPARTS SET STOCK = '"+hitungStockVelg+"' WHERE PART_ID = 'PT001';";
+                sqlQuery = "UPDATE SPAREPARTS SET PART_STOCK = '"+hitungStockVelg+"' WHERE PART_ID = 'PT001';";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtStockBarang);
@@ -85,7 +88,7 @@ namespace Project_VS
             {
                 hitungStockBumper = Convert.ToInt32(dtStockBarang.Rows[1][1].ToString()) - 1;
 
-                sqlQuery = "UPDATE SPAREPARTS SET STOCK = '" + hitungStockBumper + "' WHERE PART_ID = 'PT002';";
+                sqlQuery = "UPDATE SPAREPARTS SET PART_STOCK = '" + hitungStockBumper + "' WHERE PART_ID = 'PT002';";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtStockBarang);
@@ -101,7 +104,7 @@ namespace Project_VS
             {
                 hitungStockWiperBlade = Convert.ToInt32(dtStockBarang.Rows[2][1].ToString()) - 1;
 
-                sqlQuery = "UPDATE SPAREPARTS SET STOCK = '" + hitungStockWiperBlade + "' WHERE PART_ID = 'PT003';";
+                sqlQuery = "UPDATE SPAREPARTS SET PART_STOCK = '" + hitungStockWiperBlade + "' WHERE PART_ID = 'PT003';";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtStockBarang);
@@ -117,7 +120,8 @@ namespace Project_VS
             {
                 hitungStockSpion = Convert.ToInt32(dtStockBarang.Rows[3][1].ToString()) - 1;
 
-                sqlQuery = "UPDATE SPAREPARTS SET STOCK = '" + hitungStockSpion + "' WHERE PART_ID = 'PT004';";
+
+                sqlQuery = "UPDATE SPAREPARTS SET PART_STOCK = '" + hitungStockSpion + "' WHERE PART_ID = 'PT004';";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtStockBarang);
@@ -133,7 +137,7 @@ namespace Project_VS
             {
                 hitungStockBan = Convert.ToInt32(dtStockBarang.Rows[4][1].ToString()) - 1;
 
-                sqlQuery = "UPDATE SPAREPARTS SET STOCK = '" + hitungStockBan + "' WHERE PART_ID = 'PT005';";
+                sqlQuery = "UPDATE SPAREPARTS SET PART_STOCK = '" + hitungStockBan + "' WHERE PART_ID = 'PT005';";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtStockBarang);
@@ -149,7 +153,7 @@ namespace Project_VS
             {
                 hitungStockLampu = Convert.ToInt32(dtStockBarang.Rows[5][1].ToString()) - 1;
 
-                sqlQuery = "UPDATE SPAREPARTS SET STOCK = '" + hitungStockVelg + "' WHERE PART_ID = 'PT006';";
+                sqlQuery = "UPDATE SPAREPARTS SET PART_STOCK = '" + hitungStockVelg + "' WHERE PART_ID = 'PT006';";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtStockBarang);
@@ -159,11 +163,6 @@ namespace Project_VS
                 sqlCommand = new MySqlCommand(sqlInputUsePart, sqlConnect);
                 sqlCommand.ExecuteNonQuery();
                 sqlConnect.Close();
-            }
-
-            else
-            {
-
             }
 
             MessageBox.Show("Terimakasih telah mempercayakan kendaraan anda kepada kami!");

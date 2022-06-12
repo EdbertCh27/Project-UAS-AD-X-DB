@@ -40,11 +40,10 @@ namespace Project_VS
             InitializeComponent();
         }
 
-        MySqlConnection sqlConnect = new MySqlConnection("server=localhost;uid=root;pwd=;database=servicehonda");
+        MySqlConnection sqlConnect = new MySqlConnection("server=139.255.11.84;uid=student;pwd=isbmantap;database=DBD_06_SERVICEMOBIL");
         MySqlCommand sqlCommand;
         MySqlDataAdapter sqlAdapter;
         String sqlQuery;
-        DataTable dtPegawaiSB = new DataTable();
         DataTable dtPegawai = new DataTable();
         DataTable dtLayanan = new DataTable();
 
@@ -54,19 +53,19 @@ namespace Project_VS
 
         private void FormService_Load(object sender, EventArgs e)
         {
-            sqlQuery = "SELECT layanan_nama AS 'Jenis Layanan', layanan_biaya AS 'Biaya', part_nama AS 'Part', biaya_pasang_part AS 'Harga Part' FROM layanan;";
+            sqlQuery = "SELECT LAYANAN_NAMA AS 'Jenis Layanan', LAYANAN_BIAYA AS 'Biaya', PART_NAMA AS 'Part', PART_HARGA AS 'Harga Part' FROM LAYANAN;";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(dtLayanan);
             dgvTabelLayanan.DataSource = dtLayanan;
 
 
-            sqlQuery = "SELECT * FROM trans_service;";
+            sqlQuery = "SELECT * FROM TRANS_SERVICE;";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(dtDataServiceSekarang);
 
-            sqlQuery = "SELECT * FROM detail_service;";
+            sqlQuery = "SELECT * FROM DETAIL_SERVICE;";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(dtDataDetailServiceSekarang);
@@ -102,14 +101,14 @@ namespace Project_VS
                 comboBoxGantiFilter.Visible = false;
                 comboBoxOli.Visible = false;
 
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 001";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 001";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
                 comboBoxPegawai.SelectedIndex = 0;
 
                 simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
@@ -128,18 +127,19 @@ namespace Project_VS
                 comboBoxGantiFilter.Visible = false;
                 comboBoxOli.Visible = false;
 
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 002";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 002";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
                 comboBoxPegawai.SelectedIndex = 0;
 
                 simpanHargaService = 150000;
                 simpanIDLayanan = "002";
+                simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
                 simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
             }
 
@@ -155,46 +155,6 @@ namespace Project_VS
                 comboBoxOli.SelectedIndex = 0;
                 comboBoxPegawai.SelectedIndex = 0;
 
-
-                /*if (comboBoxOli.SelectedIndex == 0)
-                {
-                    dtPegawai.Clear();
-                    sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 003";
-                    sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                    sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                    sqlAdapter.Fill(dtPegawai);
-
-                    comboBoxPegawai.DataSource = dtPegawai;
-                    comboBoxPegawai.DisplayMember = "pegawai_nama";
-                    comboBoxPegawai.ValueMember = "pegawai_ID";
-                    comboBoxPegawai.SelectedIndex = 0;
-
-                    simpanIDLayanan = "003";
-                    simpanHargaService = 100000;
-                    simpanDetailPilihanService = comboBoxOli.SelectedItem.ToString();
-                    simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-                }
-
-                else if(comboBoxOli.SelectedIndex == 1)
-                {
-                    dtPegawai.Clear();
-                    simpanPegawaiID = "";
-                    sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 004";
-                    sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                    sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                    sqlAdapter.Fill(dtPegawai);
-
-                    comboBoxPegawai.DataSource = dtPegawai;
-                    comboBoxPegawai.DisplayMember = "pegawai_nama";
-                    comboBoxPegawai.ValueMember = "pegawai_ID";
-                    comboBoxPegawai.SelectedIndex = 0;
-
-                    simpanIDLayanan = "004";
-                    simpanHargaService = 75000;
-                    simpanDetailPilihanService = comboBoxOli.SelectedItem.ToString();
-                    simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-                }*/
-                
             }
 
             else if (comboBoxPilihanService.SelectedIndex == 3)
@@ -207,14 +167,14 @@ namespace Project_VS
                 comboBoxGantiFilter.Visible = false;
                 comboBoxOli.Visible = false;
 
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 005";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 005";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
                 comboBoxPegawai.SelectedIndex = 0;
 
                 simpanHargaService = 50000;
@@ -232,14 +192,6 @@ namespace Project_VS
                 comboBoxRepaint.Visible = true;
                 comboBoxGantiFilter.Visible = false;
 
-                /*sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 001";
-                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(dtPegawai);
-
-                comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID"; */
                 comboBoxRepaint.SelectedIndex = 0;
                 comboBoxPegawai.SelectedIndex = 0;
 
@@ -255,14 +207,14 @@ namespace Project_VS
                 comboBoxGantiFilter.Visible = false;
                 comboBoxOli.Visible = false;
 
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 012";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 012";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
                 comboBoxPegawai.SelectedIndex = 0;
 
                 simpanHargaService = 1000000;
@@ -273,6 +225,7 @@ namespace Project_VS
 
             else if (comboBoxPilihanService.SelectedIndex == 6)
             {
+                dtPegawai.Clear();
                 comboBoxGantiPart.Visible = true;
                 comboBoxOli.Visible = false;
                 comboBoxRepaint.Visible = false;
@@ -293,14 +246,14 @@ namespace Project_VS
                 comboBoxGantiFilter.Visible = false;
                 comboBoxOli.Visible = false;
 
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 019";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 019";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
                 comboBoxPegawai.SelectedIndex = 0;
 
                 simpanHargaService = 2500000;
@@ -318,14 +271,14 @@ namespace Project_VS
                 comboBoxGantiFilter.Visible = false;
                 comboBoxOli.Visible = false;
 
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 020";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 020";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
                 comboBoxPegawai.SelectedIndex = 0;
 
                 simpanHargaService = 750000;
@@ -343,14 +296,14 @@ namespace Project_VS
                 comboBoxGantiFilter.Visible = false;
                 comboBoxOli.Visible = false;
 
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 021";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 021";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
                 comboBoxPegawai.SelectedIndex = 0;
 
                 simpanHargaService = 5500000;
@@ -367,7 +320,6 @@ namespace Project_VS
                 comboBoxOli.Visible = false;
                 comboBoxRepaint.Visible = false;
                 comboBoxGantiFilter.Visible = true;
-                comboBoxOli.Visible = false;
 
                 simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
                 comboBoxGantiFilter.SelectedIndex = 0;
@@ -381,54 +333,52 @@ namespace Project_VS
             if (comboBoxGantiPart.SelectedIndex == 0)
             {
                 dtPegawai.Clear();
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 013";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 013";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
 
                 simpanHargaService = 550000;
                 simpanDetailPilihanService = comboBoxGantiPart.SelectedItem.ToString();
                 simpanIDLayanan = "013";
                 simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-
                 
             }
 
             else if (comboBoxGantiPart.SelectedIndex == 1)
             {
                 dtPegawai.Clear();
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 014";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 014";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
 
                 simpanHargaService = 650000;
                 simpanDetailPilihanService = comboBoxGantiPart.SelectedItem.ToString();
                 simpanIDLayanan = "014";
                 simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-
                 
             }
 
             else if (comboBoxGantiPart.SelectedIndex == 2)
             {
                 dtPegawai.Clear();
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 015";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 015";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
 
                 simpanHargaService = 225000;
                 simpanDetailPilihanService = comboBoxGantiPart.SelectedItem.ToString();
@@ -439,14 +389,14 @@ namespace Project_VS
             else if (comboBoxGantiPart.SelectedIndex == 3)
             {
                 dtPegawai.Clear();
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 016";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 016";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
 
                 simpanHargaService = 325000;
                 simpanDetailPilihanService = comboBoxGantiPart.SelectedItem.ToString();
@@ -457,14 +407,14 @@ namespace Project_VS
             else if (comboBoxGantiPart.SelectedIndex == 4)
             {
                 dtPegawai.Clear();
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 017";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 017";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
 
                 simpanHargaService = 1200000;
                 simpanDetailPilihanService = comboBoxGantiPart.SelectedItem.ToString();
@@ -475,14 +425,14 @@ namespace Project_VS
             else if (comboBoxGantiPart.SelectedIndex == 5)
             {
                 dtPegawai.Clear();
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 018";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 018";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
 
                 simpanHargaService = 400000;
                 simpanDetailPilihanService = comboBoxGantiPart.SelectedItem.ToString();
@@ -497,14 +447,14 @@ namespace Project_VS
             if (comboBoxOli.SelectedIndex == 0)
             {
                 dtPegawai.Clear();
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 003";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 003";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
                 simpanIDLayanan = "003";
                 simpanHargaService = 100000;
                 simpanDetailPilihanService = comboBoxOli.SelectedItem.ToString();
@@ -513,14 +463,14 @@ namespace Project_VS
             else if(comboBoxOli.SelectedIndex == 1)
             {
                 dtPegawai.Clear();
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 004";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 004";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
                 simpanIDLayanan = "004";
                 simpanHargaService = 75000;
                 simpanDetailPilihanService = comboBoxOli.SelectedItem.ToString();
@@ -533,14 +483,14 @@ namespace Project_VS
             if(comboBoxRepaint.SelectedIndex == 0)
             {
                 dtPegawai.Clear();
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 006";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 006";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
                 simpanIDLayanan = "006";
                 simpanHargaService = 500000;
                 simpanDetailPilihanService = comboBoxRepaint.SelectedItem.ToString();
@@ -549,14 +499,14 @@ namespace Project_VS
             else if(comboBoxRepaint.SelectedIndex == 1)
             {
                 dtPegawai.Clear();
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 007";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 007";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
                 simpanIDLayanan = "007";
                 simpanHargaService = 500000;
                 simpanDetailPilihanService = comboBoxRepaint.SelectedItem.ToString();
@@ -566,14 +516,14 @@ namespace Project_VS
             else if (comboBoxRepaint.SelectedIndex == 2)
             {
                 dtPegawai.Clear();
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 008";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 008";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
                 simpanIDLayanan = "008";
                 simpanHargaService = 500000;
                 simpanDetailPilihanService = comboBoxRepaint.SelectedItem.ToString();
@@ -583,14 +533,14 @@ namespace Project_VS
             else if (comboBoxRepaint.SelectedIndex == 3)
             {
                 dtPegawai.Clear();
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 009";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 009";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
                 simpanIDLayanan = "009";
                 simpanHargaService = 500000;
                 simpanDetailPilihanService = comboBoxRepaint.SelectedItem.ToString();
@@ -600,14 +550,14 @@ namespace Project_VS
             else if(comboBoxRepaint.SelectedIndex == 4)
             {
                 dtPegawai.Clear();
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 010";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 010";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
                 simpanIDLayanan = "010";
                 simpanHargaService = 500000;
                 simpanDetailPilihanService = comboBoxRepaint.SelectedItem.ToString();
@@ -617,14 +567,14 @@ namespace Project_VS
             else if(comboBoxRepaint.SelectedIndex == 5)
             {
                 dtPegawai.Clear();
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 011";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 011";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
                 simpanIDLayanan = "011";
                 simpanHargaService = 500000;
                 simpanDetailPilihanService = comboBoxRepaint.SelectedItem.ToString();
@@ -634,17 +584,18 @@ namespace Project_VS
 
         private void comboBoxGantiFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBoxGantiFilter.SelectedIndex == 0)
+            dtPegawai.Clear();
+            if (comboBoxGantiFilter.SelectedIndex == 0)
             {
-                dtPegawai.Clear();
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 022";
+                
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 022";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
                 simpanIDLayanan = "022";
                 simpanHargaService = 150000;
                 simpanDetailPilihanService = comboBoxGantiFilter.SelectedItem.ToString();
@@ -654,14 +605,14 @@ namespace Project_VS
             else if (comboBoxGantiFilter.SelectedIndex == 1)
             {
                 dtPegawai.Clear();
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 023";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 023";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
                 simpanIDLayanan = "023";
                 simpanHargaService = 250000;
                 simpanDetailPilihanService = comboBoxGantiFilter.SelectedItem.ToString();
@@ -671,14 +622,14 @@ namespace Project_VS
             else if(comboBoxGantiFilter.SelectedIndex == 2)
             {
                 dtPegawai.Clear();
-                sqlQuery = "SELECT Pegawai_Nama, pegawai_ID FROM pegawai WHERE layanan_id = 024";
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 024";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawai);
 
                 comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "pegawai_nama";
-                comboBoxPegawai.ValueMember = "pegawai_ID";
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
                 simpanIDLayanan = "024";
                 simpanHargaService = 200000;
                 simpanDetailPilihanService = comboBoxGantiFilter.SelectedItem.ToString();
@@ -692,13 +643,13 @@ namespace Project_VS
 
             if (dtDataServiceSekarang.Rows.Count + 1 < 10)
             {
-                string sqlInputService = "INSERT INTO trans_service VALUES ('S00" + hitungJumlahService + "','C00" + FormInputCostumer.hitungJumlahCust + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'),'01:00:00','" + simpanHargaService + "','" + textBoxKiloMeterMobil.Text + "','" + textBoxMobilKeteranganWarna.Text + "','0');";
+                string sqlInputService = "INSERT INTO TRANS_SERVICE VALUES ('S00" + hitungJumlahService + "','C00" + FormInputCostumer.hitungJumlahCust + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'),'05:00:00','" + simpanHargaService + "','" + textBoxKiloMeterMobil.Text + "','" + textBoxMobilKeteranganWarna.Text + "','0');";
                 sqlConnect.Open();
                 sqlCommand = new MySqlCommand(sqlInputService, sqlConnect);
                 sqlCommand.ExecuteNonQuery();
                 sqlConnect.Close();
 
-                string sqlInputDetailService = "INSERT INTO detail_service VALUES('DS00" + hitungDetailService + "','" + simpanIDLayanan + "','" + simpanPegawaiID + "','S00" + hitungJumlahService + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'), str_to_date('" + simpanTanggalSelesai + "','%d-%m-%Y'),false,'" + simpanHargaService + "','0');";
+                string sqlInputDetailService = "INSERT INTO DETAIL_SERVICE VALUES('DS00" + hitungDetailService + "','" + simpanIDLayanan + "','" + simpanPegawaiID + "','S00" + hitungJumlahService + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'), str_to_date('" + simpanTanggalSelesai + "','%d-%m-%Y'),false,'" + simpanHargaService + "','0');";
                 sqlConnect.Open();
                 sqlCommand = new MySqlCommand(sqlInputDetailService, sqlConnect);
                 sqlCommand.ExecuteNonQuery();
@@ -707,13 +658,13 @@ namespace Project_VS
 
             else if (dtDataServiceSekarang.Rows.Count + 1 >= 10)
             {
-                string sqlInputService = "INSERT INTO trans_service VALUES ('S0" + hitungJumlahService + "','C0" + FormInputCostumer.hitungJumlahCust + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'),'01:00:00','" + simpanHargaService + "','" + textBoxKiloMeterMobil.Text + "','" + textBoxMobilKeteranganWarna.Text + "','0');";
+                string sqlInputService = "INSERT INTO TRANS_SERVICE VALUES ('S0" + hitungJumlahService + "','C0" + FormInputCostumer.hitungJumlahCust + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'),'05:00:00','" + simpanHargaService + "','" + textBoxKiloMeterMobil.Text + "','" + textBoxMobilKeteranganWarna.Text + "','0');";
                 sqlConnect.Open();
                 sqlCommand = new MySqlCommand(sqlInputService, sqlConnect);
                 sqlCommand.ExecuteNonQuery();
                 sqlConnect.Close();
 
-                string sqlInputDetailService = "INSERT INTO detail_service VALUES('DS0" + hitungDetailService + "','" + simpanIDLayanan + "','" + simpanPegawaiID + "','S0" + hitungJumlahService + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'), str_to_date('" + simpanTanggalSelesai + "','%d-%m-%Y'),false,'" + simpanHargaService + "','0');";
+                string sqlInputDetailService = "INSERT INTO DETAIL_SERVICE VALUES('DS0" + hitungDetailService + "','" + simpanIDLayanan + "','" + simpanPegawaiID + "','S0" + hitungJumlahService + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'), str_to_date('" + simpanTanggalSelesai + "','%d-%m-%Y'),false,'" + simpanHargaService + "','0');";
                 sqlConnect.Open();
                 sqlCommand = new MySqlCommand(sqlInputDetailService, sqlConnect);
                 sqlCommand.ExecuteNonQuery();
@@ -722,13 +673,13 @@ namespace Project_VS
 
             else if (dtDataServiceSekarang.Rows.Count + 1 >= 100)
             {
-                string sqlInputService = "INSERT INTO trans_service VALUES ('S" + hitungJumlahService + "','C" + FormInputCostumer.hitungJumlahCust + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'),'01:00:00','" + simpanHargaService + "','" + textBoxKiloMeterMobil.Text + "','" + textBoxMobilKeteranganWarna.Text + "','0');";
+                string sqlInputService = "INSERT INTO TRANS_SERVICE VALUES ('S" + hitungJumlahService + "','C" + FormInputCostumer.hitungJumlahCust + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'),'05:00:00','" + simpanHargaService + "','" + textBoxKiloMeterMobil.Text + "','" + textBoxMobilKeteranganWarna.Text + "','0');";
                 sqlConnect.Open();
                 sqlCommand = new MySqlCommand(sqlInputService, sqlConnect);
                 sqlCommand.ExecuteNonQuery();
                 sqlConnect.Close();
 
-                string sqlInputDetailService = "INSERT INTO detail_service VALUES('DS" + hitungDetailService + "','" + simpanIDLayanan + "','" + simpanPegawaiID + "','S" + hitungJumlahService + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'), str_to_date('" + simpanTanggalSelesai + "','%d-%m-%Y'),false,'" + simpanHargaService + "','0');";
+                string sqlInputDetailService = "INSERT INTO DETAIL_SERVICE VALUES('DS" + hitungDetailService + "','" + simpanIDLayanan + "','" + simpanPegawaiID + "','S" + hitungJumlahService + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'), str_to_date('" + simpanTanggalSelesai + "','%d-%m-%Y'),false,'" + simpanHargaService + "','0');";
                 sqlConnect.Open();
                 sqlCommand = new MySqlCommand(sqlInputDetailService, sqlConnect);
                 sqlCommand.ExecuteNonQuery();
@@ -736,7 +687,7 @@ namespace Project_VS
             }
 
 
-            MessageBox.Show("Berikut adalah stock yang tersedia ! \nJika Barang yang dibutuhkan kosong, silahkan menunggu 3 hari.");
+            MessageBox.Show("Berikut adalah stock yang tersedia !");
             this.Hide();
 
             FormCheckStock BukaFormStock = new FormCheckStock();

@@ -58,6 +58,7 @@ namespace Project_VS
             this.textBoxNoHpCust.Name = "textBoxNoHpCust";
             this.textBoxNoHpCust.Size = new System.Drawing.Size(143, 22);
             this.textBoxNoHpCust.TabIndex = 7;
+            this.textBoxNoHpCust.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNoHpCust_KeyPress);
             // 
             // textBoxTypeMobilCust
             // 

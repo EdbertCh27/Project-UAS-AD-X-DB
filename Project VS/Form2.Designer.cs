@@ -173,16 +173,14 @@ namespace Project_VS
             this.comboBoxPegawai.Name = "comboBoxPegawai";
             this.comboBoxPegawai.Size = new System.Drawing.Size(143, 28);
             this.comboBoxPegawai.TabIndex = 14;
-
             // 
             // textBoxKiloMeterMobil
             // 
-            this.textBoxKiloMeterMobil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxKiloMeterMobil.Location = new System.Drawing.Point(573, 168);
+            this.textBoxKiloMeterMobil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxKiloMeterMobil.Location = new System.Drawing.Point(571, 168);
             this.textBoxKiloMeterMobil.Name = "textBoxKiloMeterMobil";
-            this.textBoxKiloMeterMobil.Size = new System.Drawing.Size(104, 27);
+            this.textBoxKiloMeterMobil.Size = new System.Drawing.Size(108, 28);
             this.textBoxKiloMeterMobil.TabIndex = 15;
-
             // 
             // textBoxMobilKeteranganWarna
             // 
@@ -191,7 +189,6 @@ namespace Project_VS
             this.textBoxMobilKeteranganWarna.Name = "textBoxMobilKeteranganWarna";
             this.textBoxMobilKeteranganWarna.Size = new System.Drawing.Size(104, 27);
             this.textBoxMobilKeteranganWarna.TabIndex = 16;
-
             // 
             // labelCurrDate
             // 

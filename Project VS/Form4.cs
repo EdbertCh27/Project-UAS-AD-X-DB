@@ -23,7 +23,7 @@ namespace Project_VS
             InitializeComponent();
         }
 
-        MySqlConnection sqlConnect = new MySqlConnection("server=localhost;uid=root;pwd=;database=servicehonda");
+        MySqlConnection sqlConnect = new MySqlConnection("server=139.255.11.84;uid=student;pwd=isbmantap;database=DBD_06_SERVICEMOBIL");
         MySqlCommand sqlCommand;
         MySqlDataAdapter sqlAdapter;
         String sqlQuery;
@@ -33,7 +33,7 @@ namespace Project_VS
 
         private void FormInputCostumer_Load(object sender, EventArgs e)
         {
-            sqlQuery = "SELECT * FROM customer;";
+            sqlQuery = "SELECT * FROM CUSTOMER;";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(dtDataCustomerSekarang);
@@ -45,52 +45,45 @@ namespace Project_VS
         {
             dataCostumer(0);
 
-            if (dtDataCustomerSekarang.Rows.Count + 1 < 10)
+            if(textBoxNamaCust.Text == "" || textBoxAlamatCust.Text == "" || textBoxNoHpCust.Text == "" || textBoxTypeMobilCust.Text == "" || textBoxNomorPolisiCust.Text == "")
             {
-                string sqlInputCustomer = "INSERT INTO customer VALUES('C00" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text.ToUpper() + "', '" + textBoxTypeMobilCust.Text.ToUpper() +"', '0')";
-                sqlConnect.Open();
-                sqlCommand = new MySqlCommand(sqlInputCustomer, sqlConnect);
-                sqlCommand.ExecuteNonQuery();
-                sqlConnect.Close();
+                MessageBox.Show("ADA DATA YANG BELUM TERISI !!");
             }
-
-            /*else if (dtDataCustomerSekarang.Rows.Count == 10)
+            else
             {
-                string sqlInputCustomer = "INSERT INTO customer VALUES('C0" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text.ToUpper() + "', '" + textBoxTypeMobilCust.Text.ToUpper() + "', '0')";
-                sqlConnect.Open();
-                sqlCommand = new MySqlCommand(sqlInputCustomer, sqlConnect);
-                sqlCommand.ExecuteNonQuery();
-                sqlConnect.Close();
-            }*/
+                if (dtDataCustomerSekarang.Rows.Count + 1 < 10)
+                {
+                    string sqlInputCustomer = "INSERT INTO CUSTOMER VALUES('C00" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text.ToUpper() + "', '" + textBoxTypeMobilCust.Text.ToUpper() + "', '0')";
+                    sqlConnect.Open();
+                    sqlCommand = new MySqlCommand(sqlInputCustomer, sqlConnect);
+                    sqlCommand.ExecuteNonQuery();
+                    sqlConnect.Close();
+                }
 
-            else if(dtDataCustomerSekarang.Rows.Count + 1 >= 10)
-            {
-                string sqlInputCustomer = "INSERT INTO customer VALUES('C0" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text.ToUpper() + "', '" + textBoxTypeMobilCust.Text.ToUpper() + "', '0')";
-                sqlConnect.Open();
-                sqlCommand = new MySqlCommand(sqlInputCustomer, sqlConnect);
-                sqlCommand.ExecuteNonQuery();
-                sqlConnect.Close();
+                else if (dtDataCustomerSekarang.Rows.Count + 1 >= 10)
+                {
+                    string sqlInputCustomer = "INSERT INTO CUSTOMER VALUES('C0" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text.ToUpper() + "', '" + textBoxTypeMobilCust.Text.ToUpper() + "', '0')";
+                    sqlConnect.Open();
+                    sqlCommand = new MySqlCommand(sqlInputCustomer, sqlConnect);
+                    sqlCommand.ExecuteNonQuery();
+                    sqlConnect.Close();
+                }
+                else if (dtDataCustomerSekarang.Rows.Count + 1 >= 100)
+                {
+                    string sqlInputCustomer = "INSERT INTO CUSTOMER VALUES('C" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text.ToUpper() + "', '" + textBoxTypeMobilCust.Text.ToUpper() + "', '0')";
+                    sqlConnect.Open();
+                    sqlCommand = new MySqlCommand(sqlInputCustomer, sqlConnect);
+                    sqlCommand.ExecuteNonQuery();
+                    sqlConnect.Close();
+
+                }
             }
-            else if(dtDataCustomerSekarang.Rows.Count + 1 >= 100)
-            {
-                string sqlInputCustomer = "INSERT INTO customer VALUES('C" + hitungJumlahCust + "', '" + textBoxNamaCust.Text + "', '" + textBoxAlamatCust.Text + "', '" + textBoxNoHpCust.Text + "', '" + textBoxNomorPolisiCust.Text.ToUpper() + "', '" + textBoxTypeMobilCust.Text.ToUpper() + "', '0')";
-                sqlConnect.Open();
-                sqlCommand = new MySqlCommand(sqlInputCustomer, sqlConnect);
-                sqlCommand.ExecuteNonQuery();
-                sqlConnect.Close();
-
-            }
-
-            hitungJumlahCust = hitungJumlahCust;
 
             MessageBox.Show("Data Sudah Lengkap dan tersimpan");
             this.Hide();
 
             FormService BukaFormService = new FormService();
             BukaFormService.ShowDialog();
-
-            //FormInvoice BukaFormInvoice = new FormInvoice();
-            //BukaFormInvoice.ShowDialog();
         }
         public void dataCostumer(int posisi)
         {
@@ -101,6 +94,9 @@ namespace Project_VS
             simpanNoPol = textBoxNomorPolisiCust.Text;
         }
 
-        
+        private void textBoxNoHpCust_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }
