@@ -181,6 +181,7 @@ namespace Project_VS
             this.textBoxKiloMeterMobil.Name = "textBoxKiloMeterMobil";
             this.textBoxKiloMeterMobil.Size = new System.Drawing.Size(108, 28);
             this.textBoxKiloMeterMobil.TabIndex = 15;
+            this.textBoxKiloMeterMobil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxKiloMeterMobil_KeyPress);
             // 
             // textBoxMobilKeteranganWarna
             // 

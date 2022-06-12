@@ -702,5 +702,10 @@ namespace Project_VS
             FormWelcome BukaFormWelcome = new FormWelcome();
             BukaFormWelcome.ShowDialog();
         }
+
+        private void textBoxKiloMeterMobil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }
