@@ -18,6 +18,8 @@ namespace Project_VS
         string simpanNoHp;
         public static string simpanTypeMobil;
         public static string simpanNoPol;
+        public static int hitungJumlahCust;
+
         public FormInputCostumer()
         {
             InitializeComponent();
@@ -28,8 +30,6 @@ namespace Project_VS
         MySqlDataAdapter sqlAdapter;
         String sqlQuery;
         DataTable dtDataCustomerSekarang = new DataTable();
-
-        public static int hitungJumlahCust;
 
         private void FormInputCostumer_Load(object sender, EventArgs e)
         {

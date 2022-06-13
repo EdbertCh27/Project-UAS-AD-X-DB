@@ -628,7 +628,6 @@ namespace Project_VS
         private void comboBoxGantiPart_SelectedIndexChanged(object sender, EventArgs e)
         {
             pilihanPart();
-
         }
 
         private void comboBoxOli_SelectedIndexChanged(object sender, EventArgs e)
@@ -713,7 +712,6 @@ namespace Project_VS
                 bukaFormInvoice.ShowDialog();
             }
         }
-
 
         private void buttonBackToHome_Click(object sender, EventArgs e)
         {

@@ -32,6 +32,7 @@ namespace Project_VS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormWelcome));
             this.buttonCheck = new System.Windows.Forms.Button();
             this.buttonService = new System.Windows.Forms.Button();
+            this.buttonCheckStock = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCheck
@@ -57,6 +58,18 @@ namespace Project_VS
             this.buttonService.UseVisualStyleBackColor = false;
             this.buttonService.Click += new System.EventHandler(this.buttonService_Click);
             // 
+            // buttonCheckStock
+            // 
+            this.buttonCheckStock.BackColor = System.Drawing.Color.Transparent;
+            this.buttonCheckStock.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCheckStock.BackgroundImage")));
+            this.buttonCheckStock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonCheckStock.Location = new System.Drawing.Point(295, 447);
+            this.buttonCheckStock.Name = "buttonCheckStock";
+            this.buttonCheckStock.Size = new System.Drawing.Size(290, 65);
+            this.buttonCheckStock.TabIndex = 2;
+            this.buttonCheckStock.UseVisualStyleBackColor = false;
+            this.buttonCheckStock.Click += new System.EventHandler(this.buttonCheckStock_Click);
+            // 
             // FormWelcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -64,6 +77,7 @@ namespace Project_VS
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.buttonCheckStock);
             this.Controls.Add(this.buttonCheck);
             this.Controls.Add(this.buttonService);
             this.DoubleBuffered = true;
@@ -81,6 +95,7 @@ namespace Project_VS
 
         private System.Windows.Forms.Button buttonService;
         private System.Windows.Forms.Button buttonCheck;
+        private System.Windows.Forms.Button buttonCheckStock;
     }
 }
 

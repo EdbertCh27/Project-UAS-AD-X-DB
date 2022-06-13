@@ -36,5 +36,12 @@ namespace Project_VS
         {
 
         }
+
+        private void buttonCheckStock_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLogin bukaFormLogin = new FormLogin();
+            bukaFormLogin.ShowDialog();
+        }
     }
 }
