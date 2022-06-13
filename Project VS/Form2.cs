@@ -13,26 +13,14 @@ namespace Project_VS
 {
     public partial class FormService : Form
     {
-        //public static string simpanServiceBerkala;
         public static string simpanPilihanService;
-        //public static string simpanServiceGantiPart;
-        //public static string simpanGantiOli;
-        //public static string simpanBodyRepaint;
-        //public static string simpanGantiFilter;
         public static string simpanDetailPilihanService;
-
         public static int hitungJumlahService;
-
         public static string simpanTanggal;
-
         public static int simpanHargaService;
-
         public static string simpanPegawaiID;
-
         public static int hitungDetailService;
-
         public static string simpanIDLayanan;
-
         public static string simpanTanggalSelesai;
 
         public FormService()
@@ -48,7 +36,6 @@ namespace Project_VS
         DataTable dtLayanan = new DataTable();
 
         DataTable dtDataServiceSekarang = new DataTable();
-
         DataTable dtDataDetailServiceSekarang = new DataTable();
 
         private void FormService_Load(object sender, EventArgs e)
@@ -87,6 +74,312 @@ namespace Project_VS
             this.Hide();
             FormWelcome BukaFormWelcome = new FormWelcome();
             BukaFormWelcome.ShowDialog();
+        }
+
+        public void pilihanOli()
+        {
+            if (comboBoxOli.SelectedIndex == 0)
+            {
+                dtPegawai.Clear();
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 003";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawai);
+
+                comboBoxPegawai.DataSource = dtPegawai;
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
+                simpanIDLayanan = "003";
+                simpanHargaService = 100000;
+                simpanDetailPilihanService = comboBoxOli.SelectedItem.ToString();
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+            }
+            else if (comboBoxOli.SelectedIndex == 1)
+            {
+                dtPegawai.Clear();
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 004";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawai);
+
+                comboBoxPegawai.DataSource = dtPegawai;
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
+                simpanIDLayanan = "004";
+                simpanHargaService = 75000;
+                simpanDetailPilihanService = comboBoxOli.SelectedItem.ToString();
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+            }
+        }
+
+        public void pilihanPart()
+        {
+            if (comboBoxGantiPart.SelectedIndex == 0)
+            {
+                dtPegawai.Clear();
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 013";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawai);
+
+                comboBoxPegawai.DataSource = dtPegawai;
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
+
+                simpanHargaService = 550000;
+                simpanDetailPilihanService = comboBoxGantiPart.SelectedItem.ToString();
+                simpanIDLayanan = "013";
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+
+            }
+
+            else if (comboBoxGantiPart.SelectedIndex == 1)
+            {
+                dtPegawai.Clear();
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 014";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawai);
+
+                comboBoxPegawai.DataSource = dtPegawai;
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
+
+                simpanHargaService = 650000;
+                simpanDetailPilihanService = comboBoxGantiPart.SelectedItem.ToString();
+                simpanIDLayanan = "014";
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+
+            }
+
+            else if (comboBoxGantiPart.SelectedIndex == 2)
+            {
+                dtPegawai.Clear();
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 015";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawai);
+
+                comboBoxPegawai.DataSource = dtPegawai;
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
+
+                simpanHargaService = 225000;
+                simpanDetailPilihanService = comboBoxGantiPart.SelectedItem.ToString();
+                simpanIDLayanan = "015";
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+            }
+
+            else if (comboBoxGantiPart.SelectedIndex == 3)
+            {
+                dtPegawai.Clear();
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 016";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawai);
+
+                comboBoxPegawai.DataSource = dtPegawai;
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
+
+                simpanHargaService = 325000;
+                simpanDetailPilihanService = comboBoxGantiPart.SelectedItem.ToString();
+                simpanIDLayanan = "016";
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+            }
+
+            else if (comboBoxGantiPart.SelectedIndex == 4)
+            {
+                dtPegawai.Clear();
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 017";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawai);
+
+                comboBoxPegawai.DataSource = dtPegawai;
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
+
+                simpanHargaService = 1200000;
+                simpanDetailPilihanService = comboBoxGantiPart.SelectedItem.ToString();
+                simpanIDLayanan = "017";
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+            }
+
+            else if (comboBoxGantiPart.SelectedIndex == 5)
+            {
+                dtPegawai.Clear();
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 018";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawai);
+
+                comboBoxPegawai.DataSource = dtPegawai;
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
+
+                simpanHargaService = 400000;
+                simpanDetailPilihanService = comboBoxGantiPart.SelectedItem.ToString();
+                simpanIDLayanan = "018";
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+            }
+        }
+
+        public void pilihanRepaint()
+        {
+            if (comboBoxRepaint.SelectedIndex == 0)
+            {
+                dtPegawai.Clear();
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 006";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawai);
+
+                comboBoxPegawai.DataSource = dtPegawai;
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
+                simpanIDLayanan = "006";
+                simpanHargaService = 500000;
+                simpanDetailPilihanService = comboBoxRepaint.SelectedItem.ToString();
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+            }
+            else if (comboBoxRepaint.SelectedIndex == 1)
+            {
+                dtPegawai.Clear();
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 007";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawai);
+
+                comboBoxPegawai.DataSource = dtPegawai;
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
+                simpanIDLayanan = "007";
+                simpanHargaService = 500000;
+                simpanDetailPilihanService = comboBoxRepaint.SelectedItem.ToString();
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+            }
+
+            else if (comboBoxRepaint.SelectedIndex == 2)
+            {
+                dtPegawai.Clear();
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 008";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawai);
+
+                comboBoxPegawai.DataSource = dtPegawai;
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
+                simpanIDLayanan = "008";
+                simpanHargaService = 500000;
+                simpanDetailPilihanService = comboBoxRepaint.SelectedItem.ToString();
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+            }
+
+            else if (comboBoxRepaint.SelectedIndex == 3)
+            {
+                dtPegawai.Clear();
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 009";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawai);
+
+                comboBoxPegawai.DataSource = dtPegawai;
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
+                simpanIDLayanan = "009";
+                simpanHargaService = 500000;
+                simpanDetailPilihanService = comboBoxRepaint.SelectedItem.ToString();
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+            }
+
+            else if (comboBoxRepaint.SelectedIndex == 4)
+            {
+                dtPegawai.Clear();
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 010";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawai);
+
+                comboBoxPegawai.DataSource = dtPegawai;
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
+                simpanIDLayanan = "010";
+                simpanHargaService = 500000;
+                simpanDetailPilihanService = comboBoxRepaint.SelectedItem.ToString();
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+            }
+
+            else if (comboBoxRepaint.SelectedIndex == 5)
+            {
+                dtPegawai.Clear();
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 011";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawai);
+
+                comboBoxPegawai.DataSource = dtPegawai;
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
+                simpanIDLayanan = "011";
+                simpanHargaService = 500000;
+                simpanDetailPilihanService = comboBoxRepaint.SelectedItem.ToString();
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+            }
+        }
+        public void pilihanFilter()
+        {
+            if (comboBoxGantiFilter.SelectedIndex == 0)
+            {
+
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 022";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawai);
+
+                comboBoxPegawai.DataSource = dtPegawai;
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
+                simpanIDLayanan = "022";
+                simpanHargaService = 150000;
+                simpanDetailPilihanService = comboBoxGantiFilter.SelectedItem.ToString();
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+            }
+
+            else if (comboBoxGantiFilter.SelectedIndex == 1)
+            {
+                dtPegawai.Clear();
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 023";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawai);
+
+                comboBoxPegawai.DataSource = dtPegawai;
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
+                simpanIDLayanan = "023";
+                simpanHargaService = 250000;
+                simpanDetailPilihanService = comboBoxGantiFilter.SelectedItem.ToString();
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+            }
+
+            else if (comboBoxGantiFilter.SelectedIndex == 2)
+            {
+                dtPegawai.Clear();
+                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 024";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtPegawai);
+
+                comboBoxPegawai.DataSource = dtPegawai;
+                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
+                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
+                simpanIDLayanan = "024";
+                simpanHargaService = 200000;
+                simpanDetailPilihanService = comboBoxGantiFilter.SelectedItem.ToString();
+                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
+            }
         }
 
         public void comboBoxPilihanService_SelectedIndexChanged(object sender, EventArgs e)
@@ -151,6 +444,8 @@ namespace Project_VS
                 comboBoxRepaint.Visible = false;
                 comboBoxGantiFilter.Visible = false;
                 comboBoxOli.Visible = true;
+
+                pilihanOli();
                 simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
                 comboBoxOli.SelectedIndex = 0;
                 comboBoxPegawai.SelectedIndex = 0;
@@ -192,9 +487,9 @@ namespace Project_VS
                 comboBoxRepaint.Visible = true;
                 comboBoxGantiFilter.Visible = false;
 
+                pilihanRepaint();
                 comboBoxRepaint.SelectedIndex = 0;
                 comboBoxPegawai.SelectedIndex = 0;
-
                 simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
             }
 
@@ -231,6 +526,7 @@ namespace Project_VS
                 comboBoxRepaint.Visible = false;
                 comboBoxGantiFilter.Visible = false;
 
+                pilihanPart();
                 simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
                 comboBoxGantiPart.SelectedIndex = 0;
                 comboBoxPegawai.SelectedIndex = 0;
@@ -321,6 +617,7 @@ namespace Project_VS
                 comboBoxRepaint.Visible = false;
                 comboBoxGantiFilter.Visible = true;
 
+                pilihanFilter();
                 simpanPilihanService = comboBoxPilihanService.SelectedItem.ToString();
                 comboBoxGantiFilter.SelectedIndex = 0;
                 comboBoxPegawai.SelectedIndex = 0;
@@ -330,311 +627,26 @@ namespace Project_VS
 
         private void comboBoxGantiPart_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxGantiPart.SelectedIndex == 0)
-            {
-                dtPegawai.Clear();
-                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 013";
-                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(dtPegawai);
-
-                comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
-                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
-
-                simpanHargaService = 550000;
-                simpanDetailPilihanService = comboBoxGantiPart.SelectedItem.ToString();
-                simpanIDLayanan = "013";
-                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-                
-            }
-
-            else if (comboBoxGantiPart.SelectedIndex == 1)
-            {
-                dtPegawai.Clear();
-                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 014";
-                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(dtPegawai);
-
-                comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
-                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
-
-                simpanHargaService = 650000;
-                simpanDetailPilihanService = comboBoxGantiPart.SelectedItem.ToString();
-                simpanIDLayanan = "014";
-                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-                
-            }
-
-            else if (comboBoxGantiPart.SelectedIndex == 2)
-            {
-                dtPegawai.Clear();
-                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 015";
-                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(dtPegawai);
-
-                comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
-                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
-
-                simpanHargaService = 225000;
-                simpanDetailPilihanService = comboBoxGantiPart.SelectedItem.ToString();
-                simpanIDLayanan = "015";
-                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-            }
-
-            else if (comboBoxGantiPart.SelectedIndex == 3)
-            {
-                dtPegawai.Clear();
-                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 016";
-                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(dtPegawai);
-
-                comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
-                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
-
-                simpanHargaService = 325000;
-                simpanDetailPilihanService = comboBoxGantiPart.SelectedItem.ToString();
-                simpanIDLayanan = "016";
-                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-            }
-
-            else if (comboBoxGantiPart.SelectedIndex == 4)
-            {
-                dtPegawai.Clear();
-                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 017";
-                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(dtPegawai);
-
-                comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
-                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
-
-                simpanHargaService = 1200000;
-                simpanDetailPilihanService = comboBoxGantiPart.SelectedItem.ToString();
-                simpanIDLayanan = "017";
-                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-            }
-
-            else if (comboBoxGantiPart.SelectedIndex == 5)
-            {
-                dtPegawai.Clear();
-                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 018";
-                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(dtPegawai);
-
-                comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
-                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
-
-                simpanHargaService = 400000;
-                simpanDetailPilihanService = comboBoxGantiPart.SelectedItem.ToString();
-                simpanIDLayanan = "018";
-                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-            }
+            pilihanPart();
 
         }
 
         private void comboBoxOli_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxOli.SelectedIndex == 0)
-            {
-                dtPegawai.Clear();
-                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 003";
-                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(dtPegawai);
-
-                comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
-                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
-                simpanIDLayanan = "003";
-                simpanHargaService = 100000;
-                simpanDetailPilihanService = comboBoxOli.SelectedItem.ToString();
-                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-            }
-            else if(comboBoxOli.SelectedIndex == 1)
-            {
-                dtPegawai.Clear();
-                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 004";
-                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(dtPegawai);
-
-                comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
-                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
-                simpanIDLayanan = "004";
-                simpanHargaService = 75000;
-                simpanDetailPilihanService = comboBoxOli.SelectedItem.ToString();
-                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-            }    
+            dtPegawai.Clear();
+            pilihanOli();
         }
 
         private void comboBoxRepaint_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBoxRepaint.SelectedIndex == 0)
-            {
-                dtPegawai.Clear();
-                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 006";
-                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(dtPegawai);
-
-                comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
-                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
-                simpanIDLayanan = "006";
-                simpanHargaService = 500000;
-                simpanDetailPilihanService = comboBoxRepaint.SelectedItem.ToString();
-                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-            }
-            else if(comboBoxRepaint.SelectedIndex == 1)
-            {
-                dtPegawai.Clear();
-                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 007";
-                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(dtPegawai);
-
-                comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
-                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
-                simpanIDLayanan = "007";
-                simpanHargaService = 500000;
-                simpanDetailPilihanService = comboBoxRepaint.SelectedItem.ToString();
-                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-            }
-
-            else if (comboBoxRepaint.SelectedIndex == 2)
-            {
-                dtPegawai.Clear();
-                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 008";
-                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(dtPegawai);
-
-                comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
-                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
-                simpanIDLayanan = "008";
-                simpanHargaService = 500000;
-                simpanDetailPilihanService = comboBoxRepaint.SelectedItem.ToString();
-                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-            }
-
-            else if (comboBoxRepaint.SelectedIndex == 3)
-            {
-                dtPegawai.Clear();
-                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 009";
-                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(dtPegawai);
-
-                comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
-                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
-                simpanIDLayanan = "009";
-                simpanHargaService = 500000;
-                simpanDetailPilihanService = comboBoxRepaint.SelectedItem.ToString();
-                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-            }
-
-            else if(comboBoxRepaint.SelectedIndex == 4)
-            {
-                dtPegawai.Clear();
-                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 010";
-                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(dtPegawai);
-
-                comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
-                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
-                simpanIDLayanan = "010";
-                simpanHargaService = 500000;
-                simpanDetailPilihanService = comboBoxRepaint.SelectedItem.ToString();
-                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-            }
-
-            else if(comboBoxRepaint.SelectedIndex == 5)
-            {
-                dtPegawai.Clear();
-                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 011";
-                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(dtPegawai);
-
-                comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
-                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
-                simpanIDLayanan = "011";
-                simpanHargaService = 500000;
-                simpanDetailPilihanService = comboBoxRepaint.SelectedItem.ToString();
-                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-            }    
+            dtPegawai.Clear();
+            pilihanRepaint();
         }
 
         private void comboBoxGantiFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             dtPegawai.Clear();
-            if (comboBoxGantiFilter.SelectedIndex == 0)
-            {
-                
-                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 022";
-                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(dtPegawai);
-
-                comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
-                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
-                simpanIDLayanan = "022";
-                simpanHargaService = 150000;
-                simpanDetailPilihanService = comboBoxGantiFilter.SelectedItem.ToString();
-                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-            }
-
-            else if (comboBoxGantiFilter.SelectedIndex == 1)
-            {
-                dtPegawai.Clear();
-                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 023";
-                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(dtPegawai);
-
-                comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
-                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
-                simpanIDLayanan = "023";
-                simpanHargaService = 250000;
-                simpanDetailPilihanService = comboBoxGantiFilter.SelectedItem.ToString();
-                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-            }
-            
-            else if(comboBoxGantiFilter.SelectedIndex == 2)
-            {
-                dtPegawai.Clear();
-                sqlQuery = "SELECT PEGAWAI_NAMA, PEGAWAI_ID FROM PEGAWAI WHERE LAYANAN_ID = 024";
-                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(dtPegawai);
-
-                comboBoxPegawai.DataSource = dtPegawai;
-                comboBoxPegawai.DisplayMember = "PEGAWAI_NAMA";
-                comboBoxPegawai.ValueMember = "PEGAWAI_ID";
-                simpanIDLayanan = "024";
-                simpanHargaService = 200000;
-                simpanDetailPilihanService = comboBoxGantiFilter.SelectedItem.ToString();
-                simpanPegawaiID = comboBoxPegawai.SelectedValue.ToString();
-            }    
+            pilihanFilter();   
         }
 
 
@@ -686,13 +698,20 @@ namespace Project_VS
                 sqlConnect.Close();
             }
 
+            if (simpanDetailPilihanService == "Velg" || simpanDetailPilihanService == "Bumper" || simpanDetailPilihanService == "Wiper Blade" || simpanDetailPilihanService == "Spion" || simpanDetailPilihanService == "Ban" || simpanDetailPilihanService == "Lampu")
+            {
+                this.Hide();
+                FormCheckStock BukaFormStock = new FormCheckStock();
+                BukaFormStock.ShowDialog();
+            }
+            else 
+            {
+                this.Hide();
+                MessageBox.Show("INVOICE");
 
-            MessageBox.Show("Berikut adalah stock yang tersedia !");
-            this.Hide();
-
-            FormCheckStock BukaFormStock = new FormCheckStock();
-            BukaFormStock.ShowDialog();
-
+                FormInvoice bukaFormInvoice = new FormInvoice();
+                bukaFormInvoice.ShowDialog();
+            }
         }
 
 

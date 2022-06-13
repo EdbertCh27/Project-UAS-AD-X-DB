@@ -41,6 +41,7 @@ namespace Project_VS
             // textBoxNamaCust
             // 
             this.textBoxNamaCust.Location = new System.Drawing.Point(279, 181);
+            this.textBoxNamaCust.MaxLength = 50;
             this.textBoxNamaCust.Name = "textBoxNamaCust";
             this.textBoxNamaCust.Size = new System.Drawing.Size(286, 22);
             this.textBoxNamaCust.TabIndex = 5;
@@ -48,6 +49,7 @@ namespace Project_VS
             // textBoxAlamatCust
             // 
             this.textBoxAlamatCust.Location = new System.Drawing.Point(279, 232);
+            this.textBoxAlamatCust.MaxLength = 20;
             this.textBoxAlamatCust.Name = "textBoxAlamatCust";
             this.textBoxAlamatCust.Size = new System.Drawing.Size(286, 22);
             this.textBoxAlamatCust.TabIndex = 6;
@@ -55,6 +57,7 @@ namespace Project_VS
             // textBoxNoHpCust
             // 
             this.textBoxNoHpCust.Location = new System.Drawing.Point(279, 279);
+            this.textBoxNoHpCust.MaxLength = 15;
             this.textBoxNoHpCust.Name = "textBoxNoHpCust";
             this.textBoxNoHpCust.Size = new System.Drawing.Size(143, 22);
             this.textBoxNoHpCust.TabIndex = 7;
@@ -63,6 +66,7 @@ namespace Project_VS
             // textBoxTypeMobilCust
             // 
             this.textBoxTypeMobilCust.Location = new System.Drawing.Point(279, 330);
+            this.textBoxTypeMobilCust.MaxLength = 15;
             this.textBoxTypeMobilCust.Name = "textBoxTypeMobilCust";
             this.textBoxTypeMobilCust.Size = new System.Drawing.Size(143, 22);
             this.textBoxTypeMobilCust.TabIndex = 8;
@@ -70,6 +74,7 @@ namespace Project_VS
             // textBoxNomorPolisiCust
             // 
             this.textBoxNomorPolisiCust.Location = new System.Drawing.Point(279, 380);
+            this.textBoxNomorPolisiCust.MaxLength = 10;
             this.textBoxNomorPolisiCust.Name = "textBoxNomorPolisiCust";
             this.textBoxNomorPolisiCust.Size = new System.Drawing.Size(143, 22);
             this.textBoxNomorPolisiCust.TabIndex = 9;
@@ -99,7 +104,9 @@ namespace Project_VS
             this.Controls.Add(this.textBoxAlamatCust);
             this.Controls.Add(this.textBoxNamaCust);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormInputCostumer";
             this.Text = "Costumer Data";
             this.Load += new System.EventHandler(this.FormInputCostumer_Load);

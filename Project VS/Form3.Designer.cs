@@ -41,73 +41,53 @@ namespace Project_VS
             // buttonBackToHome
             // 
             this.buttonBackToHome.BackColor = System.Drawing.Color.Transparent;
-            this.buttonBackToHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBackToHome.BackgroundImage")));
-            this.buttonBackToHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonBackToHome.Location = new System.Drawing.Point(498, 452);
+            resources.ApplyResources(this.buttonBackToHome, "buttonBackToHome");
             this.buttonBackToHome.Name = "buttonBackToHome";
-            this.buttonBackToHome.Size = new System.Drawing.Size(160, 63);
-            this.buttonBackToHome.TabIndex = 3;
             this.buttonBackToHome.UseVisualStyleBackColor = false;
             this.buttonBackToHome.Click += new System.EventHandler(this.buttonBackToHome_Click);
             // 
             // buttonCheckCostNum
             // 
-            this.buttonCheckCostNum.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCheckCostNum.BackgroundImage")));
-            this.buttonCheckCostNum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonCheckCostNum.Location = new System.Drawing.Point(659, 154);
+            resources.ApplyResources(this.buttonCheckCostNum, "buttonCheckCostNum");
             this.buttonCheckCostNum.Name = "buttonCheckCostNum";
-            this.buttonCheckCostNum.Size = new System.Drawing.Size(81, 30);
-            this.buttonCheckCostNum.TabIndex = 2;
             this.buttonCheckCostNum.UseVisualStyleBackColor = true;
             this.buttonCheckCostNum.Click += new System.EventHandler(this.buttonCheckCostNum_Click);
             // 
             // textBoxCheckCostNum
             // 
-            this.textBoxCheckCostNum.Location = new System.Drawing.Point(260, 159);
+            resources.ApplyResources(this.textBoxCheckCostNum, "textBoxCheckCostNum");
             this.textBoxCheckCostNum.Name = "textBoxCheckCostNum";
-            this.textBoxCheckCostNum.Size = new System.Drawing.Size(356, 22);
-            this.textBoxCheckCostNum.TabIndex = 1;
             // 
             // dataGridViewCheckCostumer
             // 
             this.dataGridViewCheckCostumer.AllowUserToAddRows = false;
             this.dataGridViewCheckCostumer.AllowUserToDeleteRows = false;
             this.dataGridViewCheckCostumer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCheckCostumer.Location = new System.Drawing.Point(93, 280);
+            resources.ApplyResources(this.dataGridViewCheckCostumer, "dataGridViewCheckCostumer");
             this.dataGridViewCheckCostumer.Name = "dataGridViewCheckCostumer";
-            this.dataGridViewCheckCostumer.RowHeadersWidth = 51;
+            this.dataGridViewCheckCostumer.ReadOnly = true;
             this.dataGridViewCheckCostumer.RowTemplate.Height = 24;
-            this.dataGridViewCheckCostumer.Size = new System.Drawing.Size(708, 108);
-            this.dataGridViewCheckCostumer.TabIndex = 5;
             // 
             // buttonPickUp
             // 
-            this.buttonPickUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPickUp.BackgroundImage")));
-            this.buttonPickUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonPickUp.Location = new System.Drawing.Point(230, 452);
+            resources.ApplyResources(this.buttonPickUp, "buttonPickUp");
             this.buttonPickUp.Name = "buttonPickUp";
-            this.buttonPickUp.Size = new System.Drawing.Size(161, 63);
-            this.buttonPickUp.TabIndex = 6;
             this.buttonPickUp.UseVisualStyleBackColor = true;
-            this.buttonPickUp.Visible = false;
             this.buttonPickUp.Click += new System.EventHandler(this.buttonPickUp_Click);
             // 
             // FormCheck
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(882, 553);
             this.Controls.Add(this.buttonPickUp);
             this.Controls.Add(this.dataGridViewCheckCostumer);
             this.Controls.Add(this.buttonBackToHome);
             this.Controls.Add(this.buttonCheckCostNum);
             this.Controls.Add(this.textBoxCheckCostNum);
             this.DoubleBuffered = true;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormCheck";
-            this.Text = "Check Your Service";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCheck_FormClosing);
             this.Load += new System.EventHandler(this.FormCheck_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCheckCostumer)).EndInit();

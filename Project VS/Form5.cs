@@ -19,7 +19,6 @@ namespace Project_VS
         public static int hitungStockSpion;
         public static int hitungStockBan;
         public static int hitungStockLampu;
-
         public static int hitungBeliPartID;
 
         public FormInvoice()

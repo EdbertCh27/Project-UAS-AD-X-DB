@@ -137,6 +137,7 @@ namespace Project_VS
             this.Controls.Add(this.labelIsiService);
             this.Controls.Add(this.labelIsiCodeCost);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormInvoice";
             this.Text = "Invoice";

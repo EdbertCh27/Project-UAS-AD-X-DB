@@ -28,6 +28,80 @@ namespace Project_VS
         DataTable dtDetailServ = new DataTable();
 
         string updateTanggalSelesai = DateTime.Now.AddDays(4).ToString().Substring(0, 10).Replace("/", "-");
+
+        public void checkStockNol()
+        {
+            if (Convert.ToInt32(hitungBarang.Rows[0][0]) <= 0)
+            {
+                labelStockVelg.Text = "0 Buah";
+                labelStockVelg.BackColor = Color.Red;
+            }
+            if (Convert.ToInt32(hitungBarang.Rows[1][0]) <= 0)
+            {
+                labelStockBumper.Text = "0 Buah";
+                labelStockBumper.BackColor = Color.Red;
+            }
+            if (Convert.ToInt32(hitungBarang.Rows[2][0]) <= 0)
+            {
+                labelStockWiper.Text = "0 Buah";
+                labelStockWiper.BackColor = Color.Red;
+            }
+            if (Convert.ToInt32(hitungBarang.Rows[3][0]) <= 0)
+            {
+                labelStockSpion.Text = "0 Buah";
+                labelStockSpion.BackColor = Color.Red;
+            }
+            if (Convert.ToInt32(hitungBarang.Rows[4][0]) <= 0)
+            {
+                labelStockBan.Text = "0 Buah";
+                labelStockBan.BackColor = Color.Red;
+            }
+            if (Convert.ToInt32(hitungBarang.Rows[5][0]) <= 0)
+            {
+                labelStockLampu.Text = "0 Buah";
+                labelStockLampu.BackColor = Color.Red;
+            }
+            
+        }
+
+        public void checkStockDipilih()
+        {
+            if (FormService.simpanDetailPilihanService == "Velg" && Convert.ToInt32(hitungBarang.Rows[0][0]) <= 0)
+            {
+                labelStockVelg.Text = "0 Buah";
+                MessageBox.Show("Stock yang anda butuhkan sedang habis, akan tersedia 3 hari dari sekarang");
+            }
+
+            else if (FormService.simpanDetailPilihanService == "Bumper" && Convert.ToInt32(hitungBarang.Rows[1][0]) <= 0)
+            {
+                labelStockBumper.Text = "0 Buah";
+                MessageBox.Show("Stock yang anda butuhkan sedang habis, akan tersedia 3 hari dari sekarang");
+            }
+
+            else if (FormService.simpanDetailPilihanService == "Wiper Blade" && Convert.ToInt32(hitungBarang.Rows[2][0]) <= 0)
+            {
+                MessageBox.Show("Stock yang anda butuhkan sedang habis, akan tersedia 3 hari dari sekarang");
+            }
+
+            else if (FormService.simpanDetailPilihanService == "Spion" && Convert.ToInt32(hitungBarang.Rows[3][0]) <= 0)
+            {
+                MessageBox.Show("Stock yang anda butuhkan sedang habis, akan tersedia 3 hari dari sekarang");
+            }
+
+            else if (FormService.simpanDetailPilihanService == "Ban" && Convert.ToInt32(hitungBarang.Rows[4][0]) <= 0)
+            {
+                MessageBox.Show("Stock yang anda butuhkan sedang habis, akan tersedia 3 hari dari sekarang");
+            }
+
+            else if (FormService.simpanDetailPilihanService == "Lampu" && Convert.ToInt32(hitungBarang.Rows[5][0]) <= 0)
+            {
+                MessageBox.Show("Stock yang anda butuhkan sedang habis, akan tersedia 3 hari dari sekarang");
+            }
+            else
+            {
+                MessageBox.Show("Berikut adalah stock yang tersedia");
+            }
+        }
         private void FormCheckStock_Load(object sender, EventArgs e)
         {
             sqlQuery = "SELECT concat(PART_STOCK, ' Buah') FROM SPAREPARTS;";
@@ -57,35 +131,31 @@ namespace Project_VS
             labelStockBan.Text = dtStokBarang.Rows[4][0].ToString();
             labelStockLampu.Text = dtStokBarang.Rows[5][0].ToString();
 
+            checkStockNol();
+            checkStockDipilih();
 
-            if (FormService.simpanDetailPilihanService != "Velg" || FormService.simpanDetailPilihanService != "Bumper" || FormService.simpanDetailPilihanService != "Wiper Blade" || FormService.simpanDetailPilihanService != "Spion" || FormService.simpanDetailPilihanService != "Ban" || FormService.simpanDetailPilihanService != "Lampu")
-            {
-                MessageBox.Show("Layanan Service Anda Tidak Membutuhkan Sparepart, Silahkan Tekan Tombol OK");
-            }
         }
-
-        
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            if(FormService.simpanDetailPilihanService == "Velg" && Convert.ToInt32(hitungBarang.Rows[0][0]) <= 0) 
+            if (FormService.simpanDetailPilihanService == "Velg" && Convert.ToInt32(hitungBarang.Rows[0][0]) <= 0)
             {
 
-                sqlQuery = "UPDATE DETAIL_SERVICE SET SELESAI_KERJA = str_to_date('" + updateTanggalSelesai + "','%d-%m-%Y') WHERE DETAIL_SERVICE_ID = '" + dtCustTerakhir.Rows[0][0].ToString()+"';";
+                sqlQuery = "UPDATE DETAIL_SERVICE SET SELESAI_KERJA = str_to_date('" + updateTanggalSelesai + "','%d-%m-%Y') WHERE DETAIL_SERVICE_ID = '" + dtCustTerakhir.Rows[0][0].ToString() + "';";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtCustTerakhir);
             }
 
-            else if(FormService.simpanDetailPilihanService == "Bumper" && Convert.ToInt32(hitungBarang.Rows[1][0]) <= 0) 
+            else if (FormService.simpanDetailPilihanService == "Bumper" && Convert.ToInt32(hitungBarang.Rows[1][0]) <= 0)
             {
-                sqlQuery = "UPDATE DETAIL_SERVICE SET SELESAI_KERJA = str_to_date('" + updateTanggalSelesai + "','%d-%m-%Y') WHERE DETAIL_SERVICE_ID = '" + dtCustTerakhir.Rows[0][0].ToString() +"';";
+                sqlQuery = "UPDATE DETAIL_SERVICE SET SELESAI_KERJA = str_to_date('" + updateTanggalSelesai + "','%d-%m-%Y') WHERE DETAIL_SERVICE_ID = '" + dtCustTerakhir.Rows[0][0].ToString() + "';";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtCustTerakhir);
             }
 
-            else if(FormService.simpanDetailPilihanService == "Wiper Blade" && Convert.ToInt32(hitungBarang.Rows[2][0]) <= 0)
+            else if (FormService.simpanDetailPilihanService == "Wiper Blade" && Convert.ToInt32(hitungBarang.Rows[2][0]) <= 0)
             {
                 sqlQuery = "UPDATE DETAIL_SERVICE SET SELESAI_KERJA = str_to_date('" + updateTanggalSelesai + "','%d-%m-%Y') WHERE DETAIL_SERVICE_ID = '" + dtCustTerakhir.Rows[0][0].ToString() + "';";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);

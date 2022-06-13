@@ -151,6 +151,32 @@
         wzAMwzD6ce4PeIBVVTFXH5kAAAAASUVORK5CYII=
 </value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonBackToHome.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="buttonBackToHome.Location" type="System.Drawing.Point, System.Drawing">
+    <value>498, 452</value>
+  </data>
+  <data name="buttonBackToHome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 63</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonBackToHome.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;buttonBackToHome.Name" xml:space="preserve">
+    <value>buttonBackToHome</value>
+  </data>
+  <data name="&gt;&gt;buttonBackToHome.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonBackToHome.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonBackToHome.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="buttonCheckCostNum.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMoAAAAvCAMAAACVMqWrAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
@@ -168,6 +194,75 @@
         KUsRKqbhuBAqs73+/hZdf0tSlIrrQqmYpNvOVlOfMBVjhj8DwZ8SghSpYoa/mQypoiiKovwLxvwBfj+H
         XiMG1dgAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="buttonCheckCostNum.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="buttonCheckCostNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>659, 154</value>
+  </data>
+  <data name="buttonCheckCostNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 30</value>
+  </data>
+  <data name="buttonCheckCostNum.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;buttonCheckCostNum.Name" xml:space="preserve">
+    <value>buttonCheckCostNum</value>
+  </data>
+  <data name="&gt;&gt;buttonCheckCostNum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonCheckCostNum.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonCheckCostNum.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="textBoxCheckCostNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>260, 159</value>
+  </data>
+  <data name="textBoxCheckCostNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>356, 22</value>
+  </data>
+  <data name="textBoxCheckCostNum.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textBoxCheckCostNum.Name" xml:space="preserve">
+    <value>textBoxCheckCostNum</value>
+  </data>
+  <data name="&gt;&gt;textBoxCheckCostNum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxCheckCostNum.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBoxCheckCostNum.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="dataGridViewCheckCostumer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 280</value>
+  </data>
+  <data name="dataGridViewCheckCostumer.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="dataGridViewCheckCostumer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>708, 108</value>
+  </data>
+  <data name="dataGridViewCheckCostumer.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewCheckCostumer.Name" xml:space="preserve">
+    <value>dataGridViewCheckCostumer</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewCheckCostumer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewCheckCostumer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewCheckCostumer.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="buttonPickUp.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -197,6 +292,45 @@
         KF1EHEyex8CuFOzv+vD905UrFbX/uZouDgD+34gDAIk4AJCIAwCJOACQiAMAiTgAkIgDAIk4AJCIAwCJ
         OAAQbib/AgQWTcp1X1ZJAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="buttonPickUp.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="buttonPickUp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 452</value>
+  </data>
+  <data name="buttonPickUp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 63</value>
+  </data>
+  <data name="buttonPickUp.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="buttonPickUp.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;buttonPickUp.Name" xml:space="preserve">
+    <value>buttonPickUp</value>
+  </data>
+  <data name="&gt;&gt;buttonPickUp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonPickUp.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonPickUp.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1727,6 +1861,12 @@
         D16bteKkGQyKAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>882, 553</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAMMOAADDDgAAAAAAAAAA
@@ -1802,5 +1942,17 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
+  </data>
+  <data name="$this.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Check Your Service</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormCheck</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

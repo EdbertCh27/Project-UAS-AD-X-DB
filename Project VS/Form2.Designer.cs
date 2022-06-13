@@ -157,9 +157,15 @@ namespace Project_VS
             // 
             // dgvTabelLayanan
             // 
+            this.dgvTabelLayanan.AllowUserToAddRows = false;
+            this.dgvTabelLayanan.AllowUserToDeleteRows = false;
+            this.dgvTabelLayanan.AllowUserToOrderColumns = true;
+            this.dgvTabelLayanan.AllowUserToResizeColumns = false;
+            this.dgvTabelLayanan.AllowUserToResizeRows = false;
             this.dgvTabelLayanan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTabelLayanan.Location = new System.Drawing.Point(117, 263);
             this.dgvTabelLayanan.Name = "dgvTabelLayanan";
+            this.dgvTabelLayanan.ReadOnly = true;
             this.dgvTabelLayanan.RowHeadersWidth = 51;
             this.dgvTabelLayanan.RowTemplate.Height = 24;
             this.dgvTabelLayanan.Size = new System.Drawing.Size(622, 194);
@@ -221,6 +227,7 @@ namespace Project_VS
             this.Controls.Add(this.buttonInput);
             this.Controls.Add(this.comboBoxPilihanService);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormService";
             this.Text = "Service Center";

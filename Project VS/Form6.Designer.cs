@@ -125,6 +125,7 @@ namespace Project_VS
             this.Controls.Add(this.labelStockBumper);
             this.Controls.Add(this.labelStockVelg);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCheckStock";
             this.Text = "Stock Part";

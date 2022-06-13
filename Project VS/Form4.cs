@@ -45,7 +45,7 @@ namespace Project_VS
         {
             dataCostumer(0);
 
-            if(textBoxNamaCust.Text == "" || textBoxAlamatCust.Text == "" || textBoxNoHpCust.Text == "" || textBoxTypeMobilCust.Text == "" || textBoxNomorPolisiCust.Text == "")
+            if(textBoxNamaCust.Text == string.Empty || textBoxAlamatCust.Text == string.Empty || textBoxNoHpCust.Text == string.Empty || textBoxTypeMobilCust.Text == string.Empty || textBoxNomorPolisiCust.Text == string.Empty)
             {
                 MessageBox.Show("ADA DATA YANG BELUM TERISI !!");
             }
@@ -77,13 +77,15 @@ namespace Project_VS
                     sqlConnect.Close();
 
                 }
+
+                MessageBox.Show("Data Sudah Lengkap dan tersimpan");
+                this.Hide();
+
+                FormService BukaFormService = new FormService();
+                BukaFormService.ShowDialog();
             }
 
-            MessageBox.Show("Data Sudah Lengkap dan tersimpan");
-            this.Hide();
-
-            FormService BukaFormService = new FormService();
-            BukaFormService.ShowDialog();
+            
         }
         public void dataCostumer(int posisi)
         {
