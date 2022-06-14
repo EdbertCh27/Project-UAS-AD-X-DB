@@ -286,9 +286,6 @@ namespace Project_VS
             }
             MessageBox.Show("Part Berhasil Dibeli");
             refresh();
-            //this.Hide();
-            //FormReStock bukaformReStock = new FormReStock();
-            //bukaformReStock.ShowDialog();
 
         }
 

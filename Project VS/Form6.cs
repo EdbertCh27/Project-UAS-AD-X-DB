@@ -25,7 +25,6 @@ namespace Project_VS
         DataTable dtStokBarang = new DataTable();
         DataTable dtCustTerakhir = new DataTable();
         DataTable hitungBarang = new DataTable();
-        DataTable dtDetailServ = new DataTable();
 
         string updateTanggalSelesai = DateTime.Now.AddDays(4).ToString().Substring(0, 10).Replace("/", "-");
 
@@ -118,11 +117,6 @@ namespace Project_VS
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(dtCustTerakhir);
-
-            sqlQuery = "SELECT * FROM DETAIL_SERVICE;";
-            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-            sqlAdapter = new MySqlDataAdapter(sqlCommand);
-            sqlAdapter.Fill(dtDetailServ);
 
             labelStockVelg.Text = dtStokBarang.Rows[0][0].ToString();
             labelStockBumper.Text = dtStokBarang.Rows[1][0].ToString();
