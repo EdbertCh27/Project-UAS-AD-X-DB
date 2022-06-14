@@ -79,7 +79,7 @@ namespace Project_VS
                     MessageBox.Show("Mobil Anda Telah Diambil,\nTerimakasih");
                 }
 
-                else if(tanggalPickup >= tanggalSkrg)
+                else if(tanggalPickup > tanggalSkrg)
                 {
                     buttonPickUp.Visible = false;
                     MessageBox.Show("Mobil Anda sedang dalam proses,\nDapat diambil sesuai tanggal pengambilan");

@@ -33,7 +33,7 @@ namespace Project_VS
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.buttonLogin = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonBackHome = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxID
@@ -64,16 +64,16 @@ namespace Project_VS
             this.buttonLogin.UseVisualStyleBackColor = true;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
-            // button2
+            // buttonBackHome
             // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(277, 349);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 45);
-            this.button2.TabIndex = 5;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonBackHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBackHome.BackgroundImage")));
+            this.buttonBackHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonBackHome.Location = new System.Drawing.Point(277, 349);
+            this.buttonBackHome.Name = "buttonBackHome";
+            this.buttonBackHome.Size = new System.Drawing.Size(126, 45);
+            this.buttonBackHome.TabIndex = 5;
+            this.buttonBackHome.UseVisualStyleBackColor = true;
+            this.buttonBackHome.Click += new System.EventHandler(this.button2_Click);
             // 
             // FormLogin
             // 
@@ -82,7 +82,7 @@ namespace Project_VS
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(482, 453);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonBackHome);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxID);
@@ -102,6 +102,6 @@ namespace Project_VS
         private System.Windows.Forms.TextBox textBoxID;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Button buttonLogin;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonBackHome;
     }
 }

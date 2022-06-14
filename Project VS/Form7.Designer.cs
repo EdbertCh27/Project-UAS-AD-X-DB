@@ -29,11 +29,11 @@ namespace Project_VS
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReStock));
             this.DGVStock = new System.Windows.Forms.DataGridView();
             this.buttonAddStock = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonBackToHome = new System.Windows.Forms.Button();
             this.NUDQtyPart = new System.Windows.Forms.NumericUpDown();
             this.labelSTOCKSEKARANG = new System.Windows.Forms.Label();
             this.buttonListHargaPart = new System.Windows.Forms.Button();
@@ -59,8 +59,8 @@ namespace Project_VS
             this.DGVStock.Name = "DGVStock";
             this.DGVStock.ReadOnly = true;
             this.DGVStock.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.DGVStock.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.DGVStock.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVStock.RowTemplate.Height = 24;
             this.DGVStock.Size = new System.Drawing.Size(709, 171);
             this.DGVStock.TabIndex = 0;
@@ -76,17 +76,17 @@ namespace Project_VS
             this.buttonAddStock.UseVisualStyleBackColor = true;
             this.buttonAddStock.Click += new System.EventHandler(this.buttonAddStock_Click);
             // 
-            // button2
+            // buttonBackToHome
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(692, 473);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 53);
-            this.button2.TabIndex = 2;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonBackToHome.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBackToHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBackToHome.BackgroundImage")));
+            this.buttonBackToHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonBackToHome.Location = new System.Drawing.Point(692, 473);
+            this.buttonBackToHome.Name = "buttonBackToHome";
+            this.buttonBackToHome.Size = new System.Drawing.Size(110, 53);
+            this.buttonBackToHome.TabIndex = 2;
+            this.buttonBackToHome.UseVisualStyleBackColor = false;
+            this.buttonBackToHome.Click += new System.EventHandler(this.buttonBackToHome_Click);
             // 
             // NUDQtyPart
             // 
@@ -168,7 +168,7 @@ namespace Project_VS
             this.comboBoxPilihPart.Name = "comboBoxPilihPart";
             this.comboBoxPilihPart.Size = new System.Drawing.Size(121, 28);
             this.comboBoxPilihPart.TabIndex = 11;
-            this.comboBoxPilihPart.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBoxPilihPart.SelectedIndexChanged += new System.EventHandler(this.comboBoxPilihPart_SelectedIndexChanged);
             // 
             // labelHarga
             // 
@@ -227,7 +227,7 @@ namespace Project_VS
             this.Controls.Add(this.buttonCheckStockSkrg);
             this.Controls.Add(this.labelSTOCKSEKARANG);
             this.Controls.Add(this.NUDQtyPart);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonBackToHome);
             this.Controls.Add(this.buttonAddStock);
             this.Controls.Add(this.DGVStock);
             this.DoubleBuffered = true;
@@ -249,7 +249,7 @@ namespace Project_VS
 
         private System.Windows.Forms.DataGridView DGVStock;
         private System.Windows.Forms.Button buttonAddStock;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonBackToHome;
         private System.Windows.Forms.NumericUpDown NUDQtyPart;
         private System.Windows.Forms.Label labelSTOCKSEKARANG;
         private System.Windows.Forms.Button buttonListHargaPart;

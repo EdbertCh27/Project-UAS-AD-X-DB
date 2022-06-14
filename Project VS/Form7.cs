@@ -173,7 +173,7 @@ namespace Project_VS
             hitungJumlahBeliID = Convert.ToInt32(dtTransPembelian.Rows.Count) + 1;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonBackToHome_Click(object sender, EventArgs e)
         {
             this.Hide();
             FormWelcome bukaFormWelcome = new FormWelcome();
@@ -220,7 +220,7 @@ namespace Project_VS
             DGVStock.DataSource = dtSupplier;
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxPilihPart_SelectedIndexChanged(object sender, EventArgs e)
         {
             pilihanPart();
         }
