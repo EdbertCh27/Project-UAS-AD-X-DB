@@ -61,12 +61,14 @@ namespace Project_VS
             // buttonCheckStock
             // 
             this.buttonCheckStock.BackColor = System.Drawing.Color.Transparent;
-            this.buttonCheckStock.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCheckStock.BackgroundImage")));
             this.buttonCheckStock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonCheckStock.Location = new System.Drawing.Point(295, 447);
+            this.buttonCheckStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCheckStock.ForeColor = System.Drawing.Color.DarkBlue;
+            this.buttonCheckStock.Location = new System.Drawing.Point(711, 484);
             this.buttonCheckStock.Name = "buttonCheckStock";
-            this.buttonCheckStock.Size = new System.Drawing.Size(290, 65);
+            this.buttonCheckStock.Size = new System.Drawing.Size(159, 57);
             this.buttonCheckStock.TabIndex = 2;
+            this.buttonCheckStock.Text = "CHECK STOCK";
             this.buttonCheckStock.UseVisualStyleBackColor = false;
             this.buttonCheckStock.Click += new System.EventHandler(this.buttonCheckStock_Click);
             // 

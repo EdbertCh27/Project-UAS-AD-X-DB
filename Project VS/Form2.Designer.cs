@@ -47,6 +47,7 @@ namespace Project_VS
             // 
             // comboBoxPilihanService
             // 
+            this.comboBoxPilihanService.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPilihanService.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxPilihanService.FormattingEnabled = true;
             this.comboBoxPilihanService.Items.AddRange(new object[] {
@@ -69,6 +70,7 @@ namespace Project_VS
             // 
             // comboBoxGantiPart
             // 
+            this.comboBoxGantiPart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGantiPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxGantiPart.FormattingEnabled = true;
             this.comboBoxGantiPart.Items.AddRange(new object[] {
@@ -87,6 +89,7 @@ namespace Project_VS
             // 
             // comboBoxGantiFilter
             // 
+            this.comboBoxGantiFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGantiFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxGantiFilter.FormattingEnabled = true;
             this.comboBoxGantiFilter.Items.AddRange(new object[] {
@@ -102,6 +105,7 @@ namespace Project_VS
             // 
             // comboBoxRepaint
             // 
+            this.comboBoxRepaint.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRepaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRepaint.FormattingEnabled = true;
             this.comboBoxRepaint.Items.AddRange(new object[] {
@@ -120,6 +124,7 @@ namespace Project_VS
             // 
             // comboBoxOli
             // 
+            this.comboBoxOli.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxOli.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxOli.FormattingEnabled = true;
             this.comboBoxOli.Items.AddRange(new object[] {
@@ -173,6 +178,7 @@ namespace Project_VS
             // 
             // comboBoxPegawai
             // 
+            this.comboBoxPegawai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPegawai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxPegawai.FormattingEnabled = true;
             this.comboBoxPegawai.Location = new System.Drawing.Point(420, 168);

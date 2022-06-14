@@ -183,6 +183,9 @@ namespace Project_VS
         private void buttonCheckStockSkrg_Click(object sender, EventArgs e)
         {
             reset();
+            labelHistory.Visible = false;
+            labelSTOCKSEKARANG.Visible = true;
+            labelTabelHarga.Visible = false;
             sqlQuery = "SELECT PART_ID, PART_NAMA AS 'PART', concat(PART_STOCK, ' Buah') AS 'STOCK AVAILABLE' FROM SPAREPARTS";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
@@ -193,6 +196,9 @@ namespace Project_VS
         private void buttonHistory_Click(object sender, EventArgs e)
         {
             reset();
+            labelHistory.Visible = true;
+            labelSTOCKSEKARANG.Visible = false;
+            labelTabelHarga.Visible = false;
             sqlQuery = "SELECT TP.BELI_ID AS 'BELI ID', SU.SUPPLIER_NAMA AS 'SUPPLIER', SU.PART_NAMA AS 'PART', TP.BELI_TGL AS 'TANGGAL TRANSAKSI', TP.BELI_QTY_PART AS 'QUANTITY', TP.BELI_TOTAL AS 'TOTAL' FROM DETAIL_BELI_PART DBP, TRANS_PEMBELIAN TP, SUPPLIER SU WHERE DBP.BELI_ID = TP.BELI_ID AND SU.SUPPLIER_ID = TP.SUPPLIER_ID ORDER BY 1;";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
@@ -204,6 +210,9 @@ namespace Project_VS
         private void buttonListHargaPart_Click(object sender, EventArgs e)
         {
             reset();
+            labelHistory.Visible = false;
+            labelSTOCKSEKARANG.Visible = false;
+            labelTabelHarga.Visible = true;
             sqlQuery = "SELECT SU.SUPPLIER_ID AS 'SUPPLIER ID',SU.SUPPLIER_NAMA AS 'SUPPLIER', S.PART_NAMA AS 'PART', S.PART_HARGA AS 'HARGA/PCS' FROM SPAREPARTS S, SUPPLIER SU WHERE S.PART_NAMA = SU.PART_NAMA;";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
