@@ -108,6 +108,7 @@ namespace Project_VS
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormInputCostumer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Costumer Data";
             this.Load += new System.EventHandler(this.FormInputCostumer_Load);
             this.ResumeLayout(false);

@@ -127,7 +127,9 @@ namespace Project_VS
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormCheckStock";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stock Part";
             this.Load += new System.EventHandler(this.FormCheckStock_Load);
             this.ResumeLayout(false);

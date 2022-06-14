@@ -651,65 +651,71 @@ namespace Project_VS
 
         private void buttonInput_Click(object sender, EventArgs e)
         {
-
-            if (dtDataServiceSekarang.Rows.Count + 1 < 10)
+            if(textBoxKiloMeterMobil.Text == "" || textBoxMobilKeteranganWarna.Text == "")
             {
-                string sqlInputService = "INSERT INTO TRANS_SERVICE VALUES ('S00" + hitungJumlahService + "','C00" + FormInputCostumer.hitungJumlahCust + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'),'05:00:00','" + simpanHargaService + "','" + textBoxKiloMeterMobil.Text + "','" + textBoxMobilKeteranganWarna.Text + "','0');";
-                sqlConnect.Open();
-                sqlCommand = new MySqlCommand(sqlInputService, sqlConnect);
-                sqlCommand.ExecuteNonQuery();
-                sqlConnect.Close();
-
-                string sqlInputDetailService = "INSERT INTO DETAIL_SERVICE VALUES('DS00" + hitungDetailService + "','" + simpanIDLayanan + "','" + simpanPegawaiID + "','S00" + hitungJumlahService + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'), str_to_date('" + simpanTanggalSelesai + "','%d-%m-%Y'),false,'" + simpanHargaService + "','0');";
-                sqlConnect.Open();
-                sqlCommand = new MySqlCommand(sqlInputDetailService, sqlConnect);
-                sqlCommand.ExecuteNonQuery();
-                sqlConnect.Close();
+                MessageBox.Show("Data belum lengkap !!");
             }
-
-            else if (dtDataServiceSekarang.Rows.Count + 1 >= 10)
+            else
             {
-                string sqlInputService = "INSERT INTO TRANS_SERVICE VALUES ('S0" + hitungJumlahService + "','C0" + FormInputCostumer.hitungJumlahCust + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'),'05:00:00','" + simpanHargaService + "','" + textBoxKiloMeterMobil.Text + "','" + textBoxMobilKeteranganWarna.Text + "','0');";
-                sqlConnect.Open();
-                sqlCommand = new MySqlCommand(sqlInputService, sqlConnect);
-                sqlCommand.ExecuteNonQuery();
-                sqlConnect.Close();
+                if (dtDataServiceSekarang.Rows.Count + 1 < 10)
+                {
+                    string sqlInputService = "INSERT INTO TRANS_SERVICE VALUES ('S00" + hitungJumlahService + "','C00" + FormInputCostumer.hitungJumlahCust + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'),'05:00:00','" + simpanHargaService + "','" + textBoxKiloMeterMobil.Text + "','" + textBoxMobilKeteranganWarna.Text + "','0');";
+                    sqlConnect.Open();
+                    sqlCommand = new MySqlCommand(sqlInputService, sqlConnect);
+                    sqlCommand.ExecuteNonQuery();
+                    sqlConnect.Close();
 
-                string sqlInputDetailService = "INSERT INTO DETAIL_SERVICE VALUES('DS0" + hitungDetailService + "','" + simpanIDLayanan + "','" + simpanPegawaiID + "','S0" + hitungJumlahService + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'), str_to_date('" + simpanTanggalSelesai + "','%d-%m-%Y'),false,'" + simpanHargaService + "','0');";
-                sqlConnect.Open();
-                sqlCommand = new MySqlCommand(sqlInputDetailService, sqlConnect);
-                sqlCommand.ExecuteNonQuery();
-                sqlConnect.Close();
-            }
+                    string sqlInputDetailService = "INSERT INTO DETAIL_SERVICE VALUES('DS00" + hitungDetailService + "','" + simpanIDLayanan + "','" + simpanPegawaiID + "','S00" + hitungJumlahService + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'), str_to_date('" + simpanTanggalSelesai + "','%d-%m-%Y'),false,'" + simpanHargaService + "','0');";
+                    sqlConnect.Open();
+                    sqlCommand = new MySqlCommand(sqlInputDetailService, sqlConnect);
+                    sqlCommand.ExecuteNonQuery();
+                    sqlConnect.Close();
+                }
 
-            else if (dtDataServiceSekarang.Rows.Count + 1 >= 100)
-            {
-                string sqlInputService = "INSERT INTO TRANS_SERVICE VALUES ('S" + hitungJumlahService + "','C" + FormInputCostumer.hitungJumlahCust + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'),'05:00:00','" + simpanHargaService + "','" + textBoxKiloMeterMobil.Text + "','" + textBoxMobilKeteranganWarna.Text + "','0');";
-                sqlConnect.Open();
-                sqlCommand = new MySqlCommand(sqlInputService, sqlConnect);
-                sqlCommand.ExecuteNonQuery();
-                sqlConnect.Close();
+                else if (dtDataServiceSekarang.Rows.Count + 1 >= 10)
+                {
+                    string sqlInputService = "INSERT INTO TRANS_SERVICE VALUES ('S0" + hitungJumlahService + "','C0" + FormInputCostumer.hitungJumlahCust + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'),'05:00:00','" + simpanHargaService + "','" + textBoxKiloMeterMobil.Text + "','" + textBoxMobilKeteranganWarna.Text + "','0');";
+                    sqlConnect.Open();
+                    sqlCommand = new MySqlCommand(sqlInputService, sqlConnect);
+                    sqlCommand.ExecuteNonQuery();
+                    sqlConnect.Close();
 
-                string sqlInputDetailService = "INSERT INTO DETAIL_SERVICE VALUES('DS" + hitungDetailService + "','" + simpanIDLayanan + "','" + simpanPegawaiID + "','S" + hitungJumlahService + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'), str_to_date('" + simpanTanggalSelesai + "','%d-%m-%Y'),false,'" + simpanHargaService + "','0');";
-                sqlConnect.Open();
-                sqlCommand = new MySqlCommand(sqlInputDetailService, sqlConnect);
-                sqlCommand.ExecuteNonQuery();
-                sqlConnect.Close();
-            }
+                    string sqlInputDetailService = "INSERT INTO DETAIL_SERVICE VALUES('DS0" + hitungDetailService + "','" + simpanIDLayanan + "','" + simpanPegawaiID + "','S0" + hitungJumlahService + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'), str_to_date('" + simpanTanggalSelesai + "','%d-%m-%Y'),false,'" + simpanHargaService + "','0');";
+                    sqlConnect.Open();
+                    sqlCommand = new MySqlCommand(sqlInputDetailService, sqlConnect);
+                    sqlCommand.ExecuteNonQuery();
+                    sqlConnect.Close();
+                }
 
-            if (simpanDetailPilihanService == "Velg" || simpanDetailPilihanService == "Bumper" || simpanDetailPilihanService == "Wiper Blade" || simpanDetailPilihanService == "Spion" || simpanDetailPilihanService == "Ban" || simpanDetailPilihanService == "Lampu")
-            {
-                this.Hide();
-                FormCheckStock BukaFormStock = new FormCheckStock();
-                BukaFormStock.ShowDialog();
-            }
-            else 
-            {
-                this.Hide();
-                MessageBox.Show("INVOICE");
+                else if (dtDataServiceSekarang.Rows.Count + 1 >= 100)
+                {
+                    string sqlInputService = "INSERT INTO TRANS_SERVICE VALUES ('S" + hitungJumlahService + "','C" + FormInputCostumer.hitungJumlahCust + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'),'05:00:00','" + simpanHargaService + "','" + textBoxKiloMeterMobil.Text + "','" + textBoxMobilKeteranganWarna.Text + "','0');";
+                    sqlConnect.Open();
+                    sqlCommand = new MySqlCommand(sqlInputService, sqlConnect);
+                    sqlCommand.ExecuteNonQuery();
+                    sqlConnect.Close();
 
-                FormInvoice bukaFormInvoice = new FormInvoice();
-                bukaFormInvoice.ShowDialog();
+                    string sqlInputDetailService = "INSERT INTO DETAIL_SERVICE VALUES('DS" + hitungDetailService + "','" + simpanIDLayanan + "','" + simpanPegawaiID + "','S" + hitungJumlahService + "',str_to_date('" + simpanTanggal + "','%d-%m-%Y'), str_to_date('" + simpanTanggalSelesai + "','%d-%m-%Y'),false,'" + simpanHargaService + "','0');";
+                    sqlConnect.Open();
+                    sqlCommand = new MySqlCommand(sqlInputDetailService, sqlConnect);
+                    sqlCommand.ExecuteNonQuery();
+                    sqlConnect.Close();
+                }
+
+                if (simpanDetailPilihanService == "Velg" || simpanDetailPilihanService == "Bumper" || simpanDetailPilihanService == "Wiper Blade" || simpanDetailPilihanService == "Spion" || simpanDetailPilihanService == "Ban" || simpanDetailPilihanService == "Lampu")
+                {
+                    this.Hide();
+                    FormCheckStock BukaFormStock = new FormCheckStock();
+                    BukaFormStock.ShowDialog();
+                }
+                else
+                {
+                    this.Hide();
+                    MessageBox.Show("INVOICE");
+
+                    FormInvoice bukaFormInvoice = new FormInvoice();
+                    bukaFormInvoice.ShowDialog();
+                }
             }
         }
 

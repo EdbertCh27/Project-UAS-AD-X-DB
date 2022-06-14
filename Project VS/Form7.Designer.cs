@@ -231,7 +231,11 @@ namespace Project_VS
             this.Controls.Add(this.buttonAddStock);
             this.Controls.Add(this.DGVStock);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormReStock";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Re-Stock";
             this.Load += new System.EventHandler(this.FormReStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVStock)).EndInit();

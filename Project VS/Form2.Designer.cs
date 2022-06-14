@@ -235,7 +235,9 @@ namespace Project_VS
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormService";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Service Center";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormService_FormClosing);
             this.Load += new System.EventHandler(this.FormService_Load);
