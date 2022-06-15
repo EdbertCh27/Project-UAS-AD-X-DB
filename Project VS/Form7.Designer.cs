@@ -54,6 +54,7 @@ namespace Project_VS
             this.DGVStock.AllowUserToDeleteRows = false;
             this.DGVStock.AllowUserToResizeColumns = false;
             this.DGVStock.AllowUserToResizeRows = false;
+            this.DGVStock.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DGVStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVStock.Location = new System.Drawing.Point(93, 99);
             this.DGVStock.Name = "DGVStock";
@@ -91,7 +92,7 @@ namespace Project_VS
             // NUDQtyPart
             // 
             this.NUDQtyPart.Enabled = false;
-            this.NUDQtyPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NUDQtyPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NUDQtyPart.Location = new System.Drawing.Point(644, 347);
             this.NUDQtyPart.Minimum = new decimal(new int[] {
             1,
@@ -155,7 +156,7 @@ namespace Project_VS
             // comboBoxPilihPart
             // 
             this.comboBoxPilihPart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxPilihPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxPilihPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxPilihPart.FormattingEnabled = true;
             this.comboBoxPilihPart.Items.AddRange(new object[] {
             "Velg",
@@ -166,25 +167,27 @@ namespace Project_VS
             "Lampu"});
             this.comboBoxPilihPart.Location = new System.Drawing.Point(287, 346);
             this.comboBoxPilihPart.Name = "comboBoxPilihPart";
-            this.comboBoxPilihPart.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxPilihPart.Size = new System.Drawing.Size(174, 28);
             this.comboBoxPilihPart.TabIndex = 11;
             this.comboBoxPilihPart.SelectedIndexChanged += new System.EventHandler(this.comboBoxPilihPart_SelectedIndexChanged);
             // 
             // labelHarga
             // 
             this.labelHarga.AutoSize = true;
+            this.labelHarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHarga.Location = new System.Drawing.Point(289, 405);
             this.labelHarga.Name = "labelHarga";
-            this.labelHarga.Size = new System.Drawing.Size(56, 17);
+            this.labelHarga.Size = new System.Drawing.Size(71, 20);
             this.labelHarga.TabIndex = 14;
             this.labelHarga.Text = "[..........]";
             // 
             // labelTotal
             // 
             this.labelTotal.AutoSize = true;
+            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTotal.Location = new System.Drawing.Point(645, 403);
             this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(56, 17);
+            this.labelTotal.Size = new System.Drawing.Size(71, 20);
             this.labelTotal.TabIndex = 15;
             this.labelTotal.Text = "[..........]";
             // 

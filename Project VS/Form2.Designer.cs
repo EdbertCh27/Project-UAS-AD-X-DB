@@ -167,6 +167,7 @@ namespace Project_VS
             this.dgvTabelLayanan.AllowUserToOrderColumns = true;
             this.dgvTabelLayanan.AllowUserToResizeColumns = false;
             this.dgvTabelLayanan.AllowUserToResizeRows = false;
+            this.dgvTabelLayanan.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvTabelLayanan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTabelLayanan.Location = new System.Drawing.Point(117, 263);
             this.dgvTabelLayanan.Name = "dgvTabelLayanan";

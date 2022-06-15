@@ -62,6 +62,7 @@ namespace Project_VS
             // 
             this.dataGridViewCheckCostumer.AllowUserToAddRows = false;
             this.dataGridViewCheckCostumer.AllowUserToDeleteRows = false;
+            this.dataGridViewCheckCostumer.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewCheckCostumer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.dataGridViewCheckCostumer, "dataGridViewCheckCostumer");
             this.dataGridViewCheckCostumer.Name = "dataGridViewCheckCostumer";
