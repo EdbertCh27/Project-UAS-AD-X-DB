@@ -63,7 +63,7 @@ namespace Project_VS
             
         }
 
-        public void checkStockDipilih()
+        public void checkStockDipilihKosong()
         {
             if (FormService.simpanDetailPilihanService == "Velg" && Convert.ToInt32(hitungBarang.Rows[0][0]) <= 0)
             {
@@ -101,6 +101,39 @@ namespace Project_VS
                 MessageBox.Show("Berikut adalah stock yang tersedia");
             }
         }
+
+        public void checkStockDipilih()
+        {
+            if (FormService.simpanDetailPilihanService == "Velg")
+            {
+                labelStockVelg.BackColor = Color.Yellow;
+            }
+
+            else if (FormService.simpanDetailPilihanService == "Bumper")
+            {
+                labelStockBumper.BackColor = Color.Yellow;
+            }
+
+            else if (FormService.simpanDetailPilihanService == "Wiper Blade")
+            {
+                labelStockWiper.BackColor = Color.Yellow;
+            }
+
+            else if (FormService.simpanDetailPilihanService == "Spion")
+            {
+                labelStockSpion.BackColor = Color.Yellow;
+            }
+
+            else if (FormService.simpanDetailPilihanService == "Ban")
+            {
+                labelStockBan.BackColor = Color.Yellow;
+            }
+
+            else if (FormService.simpanDetailPilihanService == "Lampu")
+            {
+                labelStockLampu.BackColor = Color.Yellow;
+            }
+        }
         private void FormCheckStock_Load(object sender, EventArgs e)
         {
             sqlQuery = "SELECT concat(PART_STOCK, ' Buah') FROM SPAREPARTS;";
@@ -126,6 +159,7 @@ namespace Project_VS
             labelStockLampu.Text = dtStokBarang.Rows[5][0].ToString();
 
             checkStockNol();
+            checkStockDipilihKosong();
             checkStockDipilih();
 
         }

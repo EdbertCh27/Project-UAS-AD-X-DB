@@ -43,7 +43,7 @@ namespace Project_VS
 
         private void buttonInputDataCust_Click(object sender, EventArgs e)
         {
-            dataCostumer(0);
+            dataCostumer();
 
             if(textBoxNamaCust.Text == string.Empty || textBoxAlamatCust.Text == string.Empty || textBoxNoHpCust.Text == string.Empty || textBoxTypeMobilCust.Text == string.Empty || textBoxNomorPolisiCust.Text == string.Empty)
             {
@@ -87,7 +87,7 @@ namespace Project_VS
 
             
         }
-        public void dataCostumer(int posisi)
+        public void dataCostumer()
         {
             simpanNama = textBoxNamaCust.Text;
             simpanAlamat = textBoxAlamatCust.Text;
