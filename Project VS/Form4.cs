@@ -100,5 +100,12 @@ namespace Project_VS
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
+        private void buttonBackToHome_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormWelcome bukaFormWelcome = new FormWelcome();
+            bukaFormWelcome.ShowDialog();
+        }
     }
 }

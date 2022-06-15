@@ -36,6 +36,7 @@ namespace Project_VS
             this.textBoxTypeMobilCust = new System.Windows.Forms.TextBox();
             this.textBoxNomorPolisiCust = new System.Windows.Forms.TextBox();
             this.buttonInputDataCust = new System.Windows.Forms.Button();
+            this.buttonBackToHome = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxNamaCust
@@ -83,12 +84,23 @@ namespace Project_VS
             // 
             this.buttonInputDataCust.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonInputDataCust.BackgroundImage")));
             this.buttonInputDataCust.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonInputDataCust.Location = new System.Drawing.Point(575, 464);
+            this.buttonInputDataCust.Location = new System.Drawing.Point(464, 464);
             this.buttonInputDataCust.Name = "buttonInputDataCust";
             this.buttonInputDataCust.Size = new System.Drawing.Size(150, 51);
             this.buttonInputDataCust.TabIndex = 10;
             this.buttonInputDataCust.UseVisualStyleBackColor = true;
             this.buttonInputDataCust.Click += new System.EventHandler(this.buttonInputDataCust_Click);
+            // 
+            // buttonBackToHome
+            // 
+            this.buttonBackToHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBackToHome.BackgroundImage")));
+            this.buttonBackToHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonBackToHome.Location = new System.Drawing.Point(670, 464);
+            this.buttonBackToHome.Name = "buttonBackToHome";
+            this.buttonBackToHome.Size = new System.Drawing.Size(150, 51);
+            this.buttonBackToHome.TabIndex = 11;
+            this.buttonBackToHome.UseVisualStyleBackColor = true;
+            this.buttonBackToHome.Click += new System.EventHandler(this.buttonBackToHome_Click);
             // 
             // FormInputCostumer
             // 
@@ -97,6 +109,7 @@ namespace Project_VS
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(882, 553);
+            this.Controls.Add(this.buttonBackToHome);
             this.Controls.Add(this.buttonInputDataCust);
             this.Controls.Add(this.textBoxNomorPolisiCust);
             this.Controls.Add(this.textBoxTypeMobilCust);
@@ -123,5 +136,6 @@ namespace Project_VS
         private System.Windows.Forms.TextBox textBoxTypeMobilCust;
         private System.Windows.Forms.TextBox textBoxNomorPolisiCust;
         private System.Windows.Forms.Button buttonInputDataCust;
+        private System.Windows.Forms.Button buttonBackToHome;
     }
 }
